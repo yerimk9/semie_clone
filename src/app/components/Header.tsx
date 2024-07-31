@@ -1,9 +1,14 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
 import logoImg from "@/../public/svgs/logo.svg";
 import Image from "next/image";
 
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleOpen = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
   return (
     <>
       <header className="header">
@@ -54,22 +59,27 @@ function Header() {
             <input type="text" placeholder="어떤 요리가 궁금하신가요?" />
             <button>검색</button>
           </div>
-          <button type="button" className="ham">
+          {/*  이거 클릭시 토글 창 구현 */}
+          <button
+            type="button"
+            className={`ham ${isMenuOpen && "cross"}`}
+            onClick={toggleOpen}
+          >
             <div className="bar"></div>
             <div className="bar"></div>
             <div className="bar"></div>
           </button>
         </div>
 
-        <div className="scrollindicator" style={{ visibility: "visible" }}>
+        {/* <div className="scrollindicator" style={{ visibility: "visible" }}>
           <div
             className="scrollprogress"
             style={{ transform: "translate3d(-100%, 0px, 0px)" }}
           ></div>
-        </div>
+        </div> */}
       </header>
-      <div className="allMenu_bg" style={{ display: "block" }}></div>
-      <div className="allMenu" style={{ display: "block" }}>
+      <div className={`allMenu_bg ${isMenuOpen && "block"}`}></div>
+      <div className={`allMenu ${isMenuOpen && "block"}`}>
         <div className="log loginWrap">
           <Link href={"/"}>로그인을 해주세요</Link>
         </div>
