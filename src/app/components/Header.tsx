@@ -17,10 +17,18 @@ function Header() {
   useEffect(() => {
     let scrollTimeout: number;
 
-    const hideHeaderOnScroll = () => {
+    const handleScroll = () => {
       const header = document.querySelector("header");
 
       if (header) {
+        // 스크롤 위치에 따라 active 클래스 추가/제거
+        if (window.scrollY >= 100) {
+          header.classList.add("active");
+        } else {
+          header.classList.remove("active");
+        }
+
+        // 헤더 숨기기 애니메이션
         gsap.to(header, {
           y: -header.offsetHeight,
           duration: 0.5,
@@ -31,21 +39,23 @@ function Header() {
           clearTimeout(scrollTimeout);
         }
 
+        // 헤더 다시 표시 애니메이션
         scrollTimeout = window.setTimeout(() => {
           gsap.to(header, { y: 0, duration: 0.5, ease: "power2.out" });
-        }, 200); // 200ms 후에 헤더를 다시 보여줍니다.
+        }, 200);
       }
     };
 
-    window.addEventListener("scroll", hideHeaderOnScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", hideHeaderOnScroll);
+      window.removeEventListener("scroll", handleScroll);
       if (scrollTimeout) {
         clearTimeout(scrollTimeout);
       }
     };
   }, []);
+
   return (
     <>
       <header className="header">

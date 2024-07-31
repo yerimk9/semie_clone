@@ -424,6 +424,45 @@ header {
         }
       }
     }
+
+    &.active {
+      .logo {
+        width: 2.5rem;
+        margin-left: 20px;
+        background-image: url(../../../public/images/logo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% auto;
+
+        img {
+          display: none;
+        }
+      }
+
+      .searchWrap {
+        display: flex;
+        align-items: center;
+        width: calc(100% - 6rem);
+        height: 3rem;
+        border-radius: 100px;
+        border: solid 1px #c4c4c4;
+
+        input {
+          order: 1;
+          display: block;
+          width: calc(100% - 4.75rem);
+          height: 100%;
+          margin-right: 1rem;
+          border: none;
+          outline: none;
+        }
+
+        button {
+          order: 0;
+          margin-left: 1rem;
+        }
+      }
+    }
   }
 
   .scrollindicator {

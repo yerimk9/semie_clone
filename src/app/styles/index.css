@@ -524,6 +524,38 @@ header .utWrap .ham {
     width: 0.269rem;
     height: 0.269rem;
   }
+  header.active .logo {
+    width: 2.5rem;
+    margin-left: 20px;
+    background-image: url(../../../public/images/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+  }
+  header.active .logo img {
+    display: none;
+  }
+  header.active .searchWrap {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 6rem);
+    height: 3rem;
+    border-radius: 100px;
+    border: solid 1px #c4c4c4;
+  }
+  header.active .searchWrap input {
+    order: 1;
+    display: block;
+    width: calc(100% - 4.75rem);
+    height: 100%;
+    margin-right: 1rem;
+    border: none;
+    outline: none;
+  }
+  header.active .searchWrap button {
+    order: 0;
+    margin-left: 1rem;
+  }
   .scrollindicator {
     top: 7.5rem;
   }
