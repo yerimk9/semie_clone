@@ -94,6 +94,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  font-size: 12.8px;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -151,6 +152,21 @@ a {
   cursor: pointer;
 }
 
+@media screen and (max-width: 1200px) {
+  body {
+    font-size: 11.52px;
+  }
+}
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 10.4px;
+  }
+}
+@media screen and (max-width: 560px) {
+  body {
+    font-size: 10px;
+  }
+}
 header {
   display: flex;
   position: fixed;
@@ -178,16 +194,16 @@ header .logo img {
 }
 header .gnb {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 100%;
   height: 5.625rem;
   margin: 0 auto;
 }
 header .gnb .depth-1 {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100%;
   font-weight: bold;
 }
@@ -233,11 +249,6 @@ header .utWrap {
   font-size: 1.125rem;
   z-index: 10000000;
 }
-header .utWrap input {
-  display: none;
-  width: 0;
-  transition: width 0.3s;
-}
 header .utWrap .logWrap {
   font-size: 1rem;
 }
@@ -246,6 +257,11 @@ header .utWrap .searchWrap {
   width: 2rem;
   height: 2rem;
   margin-left: 0.6rem;
+}
+header .utWrap .searchWrap input {
+  display: none;
+  width: 0;
+  transition: width 0.3s;
 }
 header .utWrap .searchWrap button {
   width: 1.875rem;
@@ -257,6 +273,33 @@ header .utWrap .searchWrap button {
 }
 header .utWrap .ham {
   display: none;
+}
+
+.scrollindicator {
+  width: 100%;
+  height: 0.313rem;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 5.625rem;
+  cursor: pointer;
+  visibility: hidden;
+  background: transparent;
+  -webkit-transition: height 0.2s ease;
+  transition: height 0.2s ease;
+  z-index: 1000000;
+  opacity: 0;
+}
+
+.scrollprogress {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #15a775;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+  -webkit-transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
 @media screen and (max-width: 1024px) {
@@ -329,35 +372,118 @@ header .utWrap .ham {
     background-color: #15a775;
     content: "";
   }
+  .allMenu_bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 499;
+  }
+  .allMenu {
+    display: none;
+    position: fixed;
+    top: 5.625rem;
+    right: 0;
+    width: 46.875rem;
+    height: 100%;
+    padding: 1.9rem 1.275rem;
+    background-color: #fff;
+    z-index: 1500;
+  }
+  .allMenu .log {
+    margin: 0 0 4.4rem;
+    border-radius: 10px;
+    background-color: #eaf6eb;
+  }
+  .allMenu .log.loginWrap {
+    background-image: url(../../../public/images/right.png);
+    background-repeat: no-repeat;
+    background-size: auto 1.5rem;
+    background-position: calc(100% - 1.9rem) center;
+  }
+  .allMenu .log.loginWrap a {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 1.713rem 1.9rem;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.025rem;
+    font-weight: 500;
+  }
+  .allMenu .log.loginWrap a::before {
+    width: 2.9rem;
+    height: 2.9rem;
+    margin-right: 0.275rem;
+    background-image: url(../../../public/images/user.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    content: "";
+  }
+  .allMenu .anb .depth-1 > li + li {
+    margin-top: 1.65rem;
+    padding-top: 1.65rem;
+    border-top: 1px solid #e5e5e5;
+  }
+  .allMenu .anb .depth-1 > li > a {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 1.65rem;
+    font-weight: bold;
+  }
+  .allMenu .anb .depth-1 > li > a::before {
+    display: inline-block;
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 0.025rem;
+    background-image: url(../../../public/images/star.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+  }
+  .allMenu .anb .depth-2 {
+    padding: 1.275rem 2.275rem 0;
+  }
+  .allMenu .anb .depth-2 li + li {
+    margin-top: 0.9rem;
+  }
+  .allMenu .anb .depth-2 li a {
+    color: #666;
+    font-size: 1.025rem;
+    font-weight: 500;
+  }
 }
 @media screen and (max-width: 800px) {
   header {
-    height: 5.5rem;
+    height: 4.5rem;
   }
   header .logo {
     z-index: 10000001;
     background-size: auto 6.188rem;
+  }
+  header .logo img {
+    height: 4rem;
   }
   header .utWrap {
     justify-content: flex-end;
     width: calc(100% - 3.75rem);
   }
   header .utWrap .searchWrap {
-    width: 2.75rem;
-    height: 2.75rem;
+    width: 3rem;
+    height: 3rem;
     margin-left: 0;
   }
-  header .utWrap .searchWrap input {
-    display: none;
-    width: 0;
-    transition: width 0.3s;
-  }
   header .utWrap .searchWrap button {
-    width: 2.75rem;
-    height: 2.75rem;
+    width: 3rem;
+    height: 3rem;
   }
   header .utWrap .ham {
-    padding: 0.8rem 0.6rem;
+    padding: 0.813rem 0.625rem;
   }
   header .utWrap .ham.cross .bar:nth-of-type(1) {
     transform: translateY(0.925rem) rotate(-45deg);
@@ -368,20 +494,65 @@ header .utWrap .ham {
   }
   header .utWrap .ham .bar {
     width: 2rem;
-    height: 0.2rem;
+    height: 0.249rem;
   }
   header .utWrap .ham .bar:nth-of-type(2) {
-    margin: 0.5rem auto;
+    margin: 0.488rem auto;
   }
   header .utWrap .ham .bar:nth-of-type(3) {
     background-color: transparent;
   }
   header .utWrap .ham .bar:nth-of-type(3)::before {
-    width: 1.5rem;
-    height: 0.2rem;
+    width: 1.6rem;
+    height: 0.249rem;
   }
   header .utWrap .ham .bar:nth-of-type(3)::after {
-    width: 0.3rem;
-    height: 0.2rem;
+    width: 0.269rem;
+    height: 0.269rem;
+  }
+  .scrollindicator {
+    top: 7.5rem;
+  }
+  .allMenu {
+    top: 4.5rem;
+    padding: 1.9rem 1.875rem;
+    width: 100%;
+  }
+  .allMenu .log {
+    margin: 0 0 3rem;
+  }
+  .allMenu .log.loginWrap {
+    background-position: calc(100% - 2.5rem) center;
+    background-size: auto 1rem;
+  }
+  .allMenu .log.loginWrap a {
+    padding: 1.3rem 2rem;
+    font-size: 1rem;
+  }
+  .allMenu .log.loginWrap a::before {
+    width: 2.3rem;
+    height: 2.3rem;
+    margin-right: 0.875rem;
+  }
+  .allMenu .anb .depth-1 > li + li {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+  }
+  .allMenu .anb .depth-1 > li > a {
+    font-size: 1.35rem;
+  }
+  .allMenu .anb .depth-1 > li > a::before {
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-right: 0.625rem;
+  }
+  .allMenu .anb .depth-2 {
+    padding: 0.875rem 2.875rem 0;
+  }
+  .allMenu .anb .depth-2 li + li {
+    margin-top: 1.5rem;
+  }
+  .allMenu .anb .depth-2 li a {
+    font-size: 1rem;
   }
 }

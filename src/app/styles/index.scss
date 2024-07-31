@@ -1,5 +1,6 @@
 @import "../styles/variables";
-@import "../styles/reset";
+@import "../styles/mixins";
 @import "../styles/common";
+@import "../styles/reset";
 
-@import "../styles/components/Header.scss";
+@import "../styles/components/Header";
