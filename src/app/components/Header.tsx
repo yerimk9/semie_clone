@@ -59,7 +59,6 @@ function Header() {
             <input type="text" placeholder="어떤 요리가 궁금하신가요?" />
             <button>검색</button>
           </div>
-          {/*  이거 클릭시 토글 창 구현 */}
           <button
             type="button"
             className={`ham ${isMenuOpen && "cross"}`}

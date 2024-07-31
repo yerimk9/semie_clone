@@ -216,6 +216,16 @@ header .gnb .depth-1 > li {
   position: relative;
   height: 100%;
 }
+header .gnb .depth-1 > li:hover .depth-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+header .gnb .depth-1 > li:hover .depth-2 li a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #999;
+}
 header .gnb .depth-1 > li::after {
   display: inline-block;
   width: 1.5rem;
@@ -232,6 +242,7 @@ header .gnb .depth-2 {
   top: 100%;
   left: -1.35rem;
   width: 100%;
+  text-align: center;
   padding: 1.2rem 0;
   border: 1px solid #15a775;
   border-top: none;
