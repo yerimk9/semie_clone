@@ -21,7 +21,6 @@ function Header() {
       const header = document.querySelector("header");
 
       if (header) {
-        // 스크롤 위치에 따라 active 클래스 추가/제거
         if (window.scrollY >= 100) {
           header.classList.add("active");
         } else {
