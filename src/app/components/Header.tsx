@@ -1,14 +1,51 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import logoImg from "@/../public/svgs/logo.svg";
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleOpen = () => {
     setIsMenuOpen((prev) => !prev);
   };
+
+  useEffect(() => {
+    let scrollTimeout: number;
+
+    const hideHeaderOnScroll = () => {
+      const header = document.querySelector("header");
+
+      if (header) {
+        gsap.to(header, {
+          y: -header.offsetHeight,
+          duration: 0.5,
+          ease: "power2.out",
+        });
+
+        if (scrollTimeout) {
+          clearTimeout(scrollTimeout);
+        }
+
+        scrollTimeout = window.setTimeout(() => {
+          gsap.to(header, { y: 0, duration: 0.5, ease: "power2.out" });
+        }, 200); // 200ms 후에 헤더를 다시 보여줍니다.
+      }
+    };
+
+    window.addEventListener("scroll", hideHeaderOnScroll);
+
+    return () => {
+      window.removeEventListener("scroll", hideHeaderOnScroll);
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+    };
+  }, []);
   return (
     <>
       <header className="header">
