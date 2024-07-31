@@ -1,0 +1,387 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v5.0.2 | 20191019
+   License: none (public domain)
+*/
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+  display: none;
+}
+
+body {
+  line-height: 1;
+}
+
+menu,
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 1920px;
+  height: 5.625rem;
+  border-bottom: 1px solid #15a775;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  transition: top 0.4s;
+  z-index: 1000;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  left: 7rem;
+}
+header .logo img {
+  height: 4.375rem;
+}
+header .gnb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 5.625rem;
+  margin: 0 auto;
+}
+header .gnb .depth-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-weight: bold;
+}
+header .gnb .depth-1 a {
+  font-size: 1.125rem;
+}
+header .gnb .depth-1 > li {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+header .gnb .depth-1 > li::after {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 0.6rem;
+  background-image: url(../../../public/images/star.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+}
+header .gnb .depth-2 {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -1.35rem;
+  width: 100%;
+  padding: 1.2rem 0;
+  border: 1px solid #15a775;
+  border-top: none;
+  border-radius: 0 0 0.6rem 0.6rem;
+  background-color: #fff;
+  z-index: 1000001;
+}
+header .utWrap {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  right: 7rem;
+  font-size: 1.125rem;
+  z-index: 10000000;
+}
+header .utWrap input {
+  display: none;
+  width: 0;
+  transition: width 0.3s;
+}
+header .utWrap .logWrap {
+  font-size: 1rem;
+}
+header .utWrap .searchWrap {
+  overflow: hidden;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.6rem;
+}
+header .utWrap .searchWrap button {
+  width: 1.875rem;
+  height: 1.875rem;
+  background-image: url(../../../public/images/search.png);
+  background-position: center;
+  background-size: cover;
+  text-indent: -9999px;
+}
+header .utWrap .ham {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  header .logo {
+    left: 1.875rem;
+  }
+  header .gnb {
+    display: none;
+  }
+  header .utWrap {
+    right: 1.875rem;
+  }
+  header .utWrap .logWrap {
+    display: none;
+  }
+  header .utWrap .ham {
+    display: block;
+    position: relative;
+    margin-left: 0.281rem;
+    padding: 0.407rem 0.313rem;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    z-index: 10001;
+  }
+  header .utWrap .ham.cross .bar:nth-of-type(1) {
+    transform: translateY(0.525rem) rotate(-45deg);
+  }
+  header .utWrap .ham.cross .bar:nth-of-type(2) {
+    opacity: 0;
+  }
+  header .utWrap .ham.cross .bar:nth-of-type(3) {
+    background-color: #15a775;
+    transform: translateY(-0.525rem) rotate(45deg);
+  }
+  header .utWrap .ham .bar {
+    position: relative;
+    display: block;
+    width: 1.229rem;
+    height: 0.125rem;
+    border-radius: 100px;
+    margin: 0 auto;
+    background-color: #15a775;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  header .utWrap .ham .bar:nth-of-type(2) {
+    margin: 0.407rem auto;
+  }
+  header .utWrap .ham .bar:nth-of-type(3) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    background-color: #fff;
+  }
+  header .utWrap .ham .bar:nth-of-type(3)::before {
+    display: block;
+    width: 0.938rem;
+    height: 0.127rem;
+    border-radius: 100px;
+    background-color: #15a775;
+    content: "";
+  }
+  header .utWrap .ham .bar:nth-of-type(3)::after {
+    display: block;
+    width: 0.127rem;
+    height: 0.127rem;
+    border-radius: 100%;
+    background-color: #15a775;
+    content: "";
+  }
+}
+@media screen and (max-width: 800px) {
+  header {
+    height: 5.5rem;
+  }
+  header .logo {
+    z-index: 10000001;
+    background-size: auto 6.188rem;
+  }
+  header .utWrap {
+    justify-content: flex-end;
+    width: calc(100% - 3.75rem);
+  }
+  header .utWrap .searchWrap {
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-left: 0;
+  }
+  header .utWrap .searchWrap input {
+    display: none;
+    width: 0;
+    transition: width 0.3s;
+  }
+  header .utWrap .searchWrap button {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+  header .utWrap .ham {
+    padding: 0.8rem 0.6rem;
+  }
+  header .utWrap .ham.cross .bar:nth-of-type(1) {
+    transform: translateY(0.925rem) rotate(-45deg);
+  }
+  header .utWrap .ham.cross .bar:nth-of-type(3) {
+    background-color: #15a775;
+    transform: translateY(-0.925rem) rotate(45deg);
+  }
+  header .utWrap .ham .bar {
+    width: 2rem;
+    height: 0.2rem;
+  }
+  header .utWrap .ham .bar:nth-of-type(2) {
+    margin: 0.5rem auto;
+  }
+  header .utWrap .ham .bar:nth-of-type(3) {
+    background-color: transparent;
+  }
+  header .utWrap .ham .bar:nth-of-type(3)::before {
+    width: 1.5rem;
+    height: 0.2rem;
+  }
+  header .utWrap .ham .bar:nth-of-type(3)::after {
+    width: 0.3rem;
+    height: 0.2rem;
+  }
+}
