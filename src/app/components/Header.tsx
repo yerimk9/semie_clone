@@ -1,10 +1,12 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import logoImg from "@/../public/svgs/logo.svg";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import handleScroll from "../utils/scrollUtils";
+import createScrollHandler from "../utils/scrollUtils";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,47 +16,32 @@ function Header() {
     setIsMenuOpen((prev) => !prev);
   };
 
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(
+    null
+  );
+
+  const handleScroll = createScrollHandler(
+    lastScrollY,
+    setLastScrollY,
+    scrollTimeout,
+    setScrollTimeout,
+    {
+      elementSelector: "header",
+      hideOffset: -100, // 원하는 값으로 조정
+      showOffset: 0, // 원하는 값으로 조정
+      duration: 0.5,
+      ease: "power2.out",
+    }
+  );
+
   useEffect(() => {
-    let scrollTimeout: number;
-
-    const handleScroll = () => {
-      const header = document.querySelector("header");
-
-      if (header) {
-        if (window.scrollY >= 100) {
-          header.classList.add("active");
-        } else {
-          header.classList.remove("active");
-        }
-
-        // 헤더 숨기기 애니메이션
-        gsap.to(header, {
-          y: -header.offsetHeight,
-          duration: 0.5,
-          ease: "power2.out",
-        });
-
-        if (scrollTimeout) {
-          clearTimeout(scrollTimeout);
-        }
-
-        // 헤더 다시 표시 애니메이션
-        scrollTimeout = window.setTimeout(() => {
-          gsap.to(header, { y: 0, duration: 0.5, ease: "power2.out" });
-        }, 200);
-      }
-    };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      if (scrollTimeout) {
-        clearTimeout(scrollTimeout);
-      }
+      if (scrollTimeout) clearTimeout(scrollTimeout);
     };
-  }, []);
-
+  }, [handleScroll, scrollTimeout]);
   return (
     <>
       <header className="header">
