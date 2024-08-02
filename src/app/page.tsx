@@ -1,17 +1,16 @@
+"use client";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Section1 from "./components/Section1";
 
 export default function Home() {
   return (
     <div>
       <Header />
 
-      <div className="h-screen"></div>
-      <div className="h-screen"></div>
-      <div className="h-screen"></div>
-      <div className="h-screen"></div>
-      <div className="h-screen"></div>
-      <div className="h-screen"></div>
+      <div className="h-screen mt-[300px]">
+        <Section1 />
+      </div>
       <div className="h-screen"></div>
 
       <Footer />

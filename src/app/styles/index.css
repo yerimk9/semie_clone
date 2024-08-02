@@ -2,6 +2,39 @@
   display: block !important;
 }
 
+.swiper {
+  border-radius: 20px;
+}
+
+.mySwiper1 {
+  width: 302px;
+  height: 214px;
+}
+
+.mySwiper2 {
+  width: 432px;
+  height: 520px;
+}
+
+.mySwiper3 {
+  width: 259px;
+  height: 260px;
+  align-self: center;
+}
+
+.swiper-container {
+  display: flex;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #faedce;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v5.0.2 | 20191019
    License: none (public domain)
