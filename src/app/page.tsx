@@ -8,7 +8,7 @@ export default function Home() {
     <div>
       <Header />
 
-      <div className="h-screen mt-[300px]">
+      <div className="section1">
         <Section1 />
       </div>
       <div className="h-screen"></div>

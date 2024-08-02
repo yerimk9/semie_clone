@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import Image from "next/image";
+import logo from "../../../public/images/logo.png";
 
 function Section1() {
   const [slideIndex, setSlideIndex] = useState(1);
@@ -10,6 +12,20 @@ function Section1() {
   return (
     <>
       <div className="swiper-container">
+        <div className="title">
+          <p>
+            <Image src={logo} alt="logo" width={42} height={58} />
+            추천드려요!
+          </p>
+          <h3>
+            요리초보
+            <br />
+            가이드
+          </h3>
+          <button type="button">
+            <span>가이드 더보기</span>
+          </button>
+        </div>
         <Swiper
           modules={[Autoplay]}
           spaceBetween={30}

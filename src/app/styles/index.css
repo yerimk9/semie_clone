@@ -2,6 +2,12 @@
   display: block !important;
 }
 
+.section1 {
+  overflow: hidden;
+  padding: 12.5rem 0 6.25rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
 .swiper {
   border-radius: 20px;
 }
@@ -896,4 +902,54 @@ footer p {
     background-size: 1.5rem;
     z-index: 200;
   }
+}
+.section1 .swiper-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  max-width: 1696px;
+  margin: 0 auto;
+  padding: 0 6.25rem;
+  box-sizing: border-box;
+}
+.section1 .swiper-container .title {
+  position: absolute;
+  left: 100px;
+  bottom: 0;
+}
+.section1 .swiper-container .title p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.625rem;
+  color: #0bab6d;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.section1 .swiper-container .title p img {
+  margin-right: 0.625rem;
+}
+.section1 .swiper-container .title h3 {
+  font-size: 3.75rem;
+  font-weight: 800;
+  line-height: 1.17;
+  letter-spacing: -1.5px;
+}
+.section1 .swiper-container .title button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 17.5rem;
+  height: 4.375rem;
+  margin-top: 30px;
+  padding: 0 30px;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border-radius: 35px;
+  box-sizing: border-box;
+  background-color: #0bab6d;
+  background-image: url(../../../public/images/ic_plus.png);
+  background-position: 90% center;
+  background-repeat: no-repeat;
 }
