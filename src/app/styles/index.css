@@ -613,6 +613,7 @@ footer .inner {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-direction: row;
   width: 100%;
   margin: 0 auto;
   padding: 2.75rem 7rem;
@@ -700,8 +701,8 @@ footer .ft_sns .sitemap {
 }
 footer .ft_sns .sitemap button {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   position: relative;
   width: 13.125rem;
   padding: 0.875rem 1.875rem;

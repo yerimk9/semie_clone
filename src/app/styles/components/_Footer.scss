@@ -1,10 +1,8 @@
 footer {
-  background-color: #f2f2f2;
+  background-color: $bg-color1;
 
   .inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    @include flex(space-between, flex-start);
     width: 100%;
     margin: 0 auto;
     padding: 2.75rem 7rem;
@@ -15,8 +13,7 @@ footer {
     margin-bottom: 2.25rem;
 
     li {
-      display: flex;
-      align-items: center;
+      @include flexitems;
 
       &:not(:last-of-type)::after {
         display: inline-block;
@@ -24,7 +21,7 @@ footer {
         height: 5px;
         margin: 0 8px;
         border-radius: 100%;
-        background-color: #c4c4c4;
+        background-color: $bg-color2;
         content: "";
       }
 
@@ -45,7 +42,7 @@ footer {
       position: relative;
       margin-right: 0.625rem;
       padding-right: 0.625rem;
-      color: #666;
+      color: $primary-color3;
       font-size: 1rem;
       cursor: pointer;
 
@@ -68,7 +65,7 @@ footer {
         right: 0;
         width: 1px;
         height: 0.625rem;
-        background-color: #666;
+        background-color: $primary-color3;
         transform: translateY(-50%);
         content: "";
       }
@@ -78,14 +75,13 @@ footer {
   .ft_info_drop {
     display: none;
     margin-bottom: 12px;
-    color: #666;
+    color: $primary-color3;
     font-size: 1rem;
     line-height: 1.6;
   }
 
   .ft_sns {
-    display: flex;
-    align-items: center;
+    @include flexitems;
 
     & > li:not(.sitemap) {
       margin-left: 0.625em;
@@ -97,7 +93,7 @@ footer {
         width: 3rem;
         height: 3rem;
         border-radius: 100%;
-        background-color: #e5e5e5;
+        background-color: $bg-color3;
       }
     }
 
@@ -106,25 +102,23 @@ footer {
       margin-left: 1.25rem;
 
       button {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flexSpaceBetween;
         position: relative;
         width: 13.125rem;
         padding: 0.875rem 1.875rem;
         font-size: 1rem;
         font-weight: bold;
         border-radius: 2.25rem;
-        border: 1px solid #e5e5e5;
+        border: 1px solid $bg-color3;
         box-sizing: border-box;
-        background-color: #e5e5e5;
+        background-color: $bg-color3;
         z-index: 101;
 
         transition: all 0.1s ease;
 
         &.on {
           border: 1px solid #111;
-          background-color: #fff;
+          background-color: $primary-color1;
         }
       }
 
@@ -137,8 +131,8 @@ footer {
         height: 0;
         padding: 0;
         border-radius: 2.25rem;
-        border: solid 1px #d9d9d9;
-        background-color: #fff;
+        border: solid 1px $border-color1;
+        background-color: $primary-color1;
         z-index: 100;
         transform: scaleY(0);
         transform-origin: bottom;
@@ -179,8 +173,8 @@ footer {
     margin-top: 1.875rem;
     text-indent: -9999px;
     border-radius: 12px;
-    border: solid 1px #d4d4d4;
-    background-color: #fff;
+    border: solid 1px $bg-color4;
+    background-color: $primary-color1;
     background-image: url(../../../public/images/ic_top_btn.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -197,7 +191,7 @@ footer {
   }
 
   p {
-    color: #c4c4c4;
+    color: $bg-color2;
     font-size: 0.825rem;
   }
 }

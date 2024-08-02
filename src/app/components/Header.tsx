@@ -1,11 +1,10 @@
 "use client";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import logoImg from "@/../public/svgs/logo.svg";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import handleScroll from "../utils/scrollUtils";
 import createScrollHandler from "../utils/scrollUtils";
 
 gsap.registerPlugin(ScrollTrigger);
