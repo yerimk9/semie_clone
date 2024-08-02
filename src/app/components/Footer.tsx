@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -8,6 +10,9 @@ import ic_kakao from "../../../public/images/ic_kakao.png";
 import ic_plus_b from "../../../public/images/ic_plus_b.png";
 
 function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <footer>
       <div className="inner">
@@ -126,7 +131,7 @@ function Footer() {
               </div>
             </li>
           </ul>
-          <button className="ft_top" type="button">
+          <button className="ft_top" type="button" onClick={scrollToTop}>
             맨 위로
           </button>
         </div>

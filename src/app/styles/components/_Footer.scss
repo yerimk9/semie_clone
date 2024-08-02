@@ -273,7 +273,7 @@ footer {
     }
 
     .ft_top {
-      display: none;
+      //   display: none;
       bottom: 10rem;
       right: 2.188rem;
     }
@@ -290,17 +290,9 @@ footer {
       position: fixed;
       bottom: 4rem;
       right: 1.875rem;
-      width: 5.625rem;
-      height: 5.625rem;
-      border-radius: 1rem;
-      background-size: 2.5rem;
-      z-index: 200;
-    }
 
-    .ft_top {
-      display: none;
-      bottom: 10rem;
-      right: 2.188rem;
+      border-radius: 1rem;
+      background-size: 1.5rem;
       z-index: 200;
     }
   }
