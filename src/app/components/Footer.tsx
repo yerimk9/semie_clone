@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { MouseEvent, useState } from "react";
 import downArrow from "../../../public/images/down.png";
 import logoAward from "../../../public/images/logo_award.png";
 import ic_insta from "../../../public/images/ic_insta.png";
@@ -13,6 +13,18 @@ function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const [siteListVisible, setSiteListVisible] = useState(false);
+  const [bizInfoVisible, setBizInfoVisible] = useState(false);
+
+  const toggleSiteList = (event: MouseEvent<HTMLButtonElement>) => {
+    setSiteListVisible((prev) => !prev);
+  };
+
+  const toggleBizInfo = (event: MouseEvent<HTMLUListElement>) => {
+    setBizInfoVisible((prev) => !prev);
+  };
+
   return (
     <footer>
       <div className="inner">
@@ -31,14 +43,20 @@ function Footer() {
               <Link href={"/"}>ABOUT US</Link>
             </li>
           </ul>
-          <ul className="ft_info">
+          <ul className="ft_info" onClick={toggleBizInfo}>
             <li>샘표식품(주)</li>
             <li>
               사업자 정보
-              <Image src={downArrow} alt="downArrow" width={20} height={20} />
+              <Image
+                src={downArrow}
+                alt="downArrow"
+                width={20}
+                height={20}
+                className={`${bizInfoVisible && "active"}`}
+              />
             </li>
           </ul>
-          <div className="ft_info_drop">
+          <div className={`ft_info_drop ${bizInfoVisible && "block"}`}>
             대표이사: 박진선
             <br />
             사업자 번호: 446-87-00473
@@ -66,11 +84,15 @@ function Footer() {
               </Link>
             </li>
             <li className="sitemap">
-              <button type="button">
+              <button
+                className={`${siteListVisible && "on"}`}
+                type="button"
+                onClick={toggleSiteList}
+              >
                 관련사이트
                 <Image src={ic_plus_b} alt="ic_plus_b" width={16} height={16} />
               </button>
-              <div className="siteList">
+              <div className={`siteList ${siteListVisible && "visible"}`}>
                 <ul>
                   <li>
                     <Link
