@@ -41,18 +41,25 @@ function Section1() {
             </button>
             <span className="all-num">09</span>
           </div>
-          <div className="swiper-button-prev"></div>
-          <div className="swiper-button-next"></div>
+          <div className="swiper-button swiper-button-prev"></div>
+          <div className="swiper-button swiper-button-next"></div>
         </div>
+
         <Swiper
           modules={[Pagination, Autoplay]}
-          spaceBetween={30}
+          spaceBetween={5}
           centeredSlides={true}
+          slidesPerView={3}
           loop={true}
           autoplay={{ delay: 2500, disableOnInteraction: false }}
           initialSlide={0} // 첫 번째 슬라이드로 시작
           onSlideChangeTransitionEnd={(swiperCore) => {
             setSlideIndex(+swiperCore.realIndex + 1); // onSlideChange로 변경
+          }}
+          breakpoints={{
+            800: {
+              slidesPerView: 1,
+            },
           }}
           className="swiper mySwiper1"
         >

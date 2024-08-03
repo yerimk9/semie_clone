@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .block {
   display: block !important;
 }
@@ -8,39 +9,11 @@
   border-bottom: 1px solid #e5e5e5;
 }
 
-.swiper {
-  border-radius: 20px;
+@media screen and (max-width: 800px) {
+  .section1 {
+    padding: 9.5rem 0 2.5rem;
+  }
 }
-
-.mySwiper1 {
-  width: 302px;
-  height: 214px;
-}
-
-.mySwiper2 {
-  width: 432px;
-  height: 520px;
-}
-
-.mySwiper3 {
-  width: 259px;
-  height: 260px;
-  align-self: center;
-}
-
-.swiper-container {
-  display: flex;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #faedce;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 /* http://meyerweb.com/eric/tools/css/reset/
    v5.0.2 | 20191019
    License: none (public domain)
@@ -912,6 +885,7 @@ footer p {
   margin: 0 auto;
   padding: 0 6.25rem;
   box-sizing: border-box;
+  border-radius: 20px;
 }
 .section1 .swiper-container .title {
   position: absolute;
@@ -980,6 +954,7 @@ footer p {
 }
 .section1 .swiper-container .swiper-control .progressbar-container progress {
   height: 2px;
+  width: 185px;
 }
 .section1 .swiper-container .swiper-control .progressbar-container progress::-webkit-progress-bar {
   background-color: #e5e5e5 !important;
@@ -996,47 +971,186 @@ footer p {
   background-repeat: no-repeat;
   background-position: center;
 }
-.section1 .swiper-container .swiper-control .swiper-button-prev {
+.section1 .swiper-container .swiper-control .swiper-button {
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 1px solid #d4d4d4;
+  border-radius: 100%;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
   flex-shrink: 0;
-  position: static;
+  position: static !important;
   margin-top: 0;
-  position: absolute;
-  top: 50%;
   z-index: 10;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.section1 .swiper-container .swiper-control .swiper-button-prev {
   background-image: url("https://semie.cooking/assets/images/common/ic_prev.png") !important;
-  width: 3.5rem !important;
-  height: 3.5rem !important;
-  border: 1px solid #d4d4d4;
-  border-radius: 100%;
-  box-sizing: border-box;
-  background-color: #fff !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  flex-shrink: 0;
-  position: static;
-  margin-top: 0;
 }
 .section1 .swiper-container .swiper-control .swiper-button-next {
-  width: 3.5rem !important;
-  height: 3.5rem !important;
-  border: 1px solid #d4d4d4;
-  border-radius: 100%;
-  box-sizing: border-box;
-  background-color: #fff !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
   background-image: url("https://semie.cooking/assets/images/common/ic_next.png") !important;
-  z-index: 10;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  position: static;
-  margin-top: 0;
   margin-left: 0.438rem;
+}
+.section1 .swiper-container .mySwiper1 {
+  width: 23.625rem;
+  height: 16.75rem;
+}
+.section1 .swiper-container .mySwiper2 {
+  width: 33.75rem;
+  height: 40.625rem;
+  box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.1);
+}
+.section1 .swiper-container .mySwiper3 {
+  height: 23.625rem;
+  width: 23.625rem;
+  margin-top: 8.5rem;
+}
+.section1 .swiper-container .swiper {
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 20px;
+}
+.section1 .swiper-container .swiper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #faedce;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .section1 .swiper-container .title {
+    position: static;
+    margin-right: 3rem;
+  }
+  .section1 .swiper-container .swiper-control {
+    left: 6.25rem;
+    right: auto;
+    width: 14.5rem;
+  }
+  .section1 .swiper-container .swiper-control .swiper-button {
+    display: none;
+  }
+  .section1 .swiper-container .swiper-control .progressbar-container progress {
+    width: 100px;
+  }
+  .section1 .swiper-container .swiper {
+    height: 28.725rem;
+  }
+  .section1 .swiper-container .mySwiper1 {
+    margin-right: 20px;
+  }
+  .section1 .swiper-container .mySwiper2 {
+    box-shadow: none;
+  }
+  .section1 .swiper-container .mySwiper3 {
+    margin-top: 0;
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .section1 .swiper-container .mySwiper1 {
+    width: 92%;
+    margin-right: 0;
+  }
+  .section1 .swiper-container .mySwiper2,
+  .section1 .swiper-container .mySwiper3 {
+    display: none;
+  }
+}
+@media screen and (max-width: 800px) {
+  .section1 {
+    padding: 6rem 0rem 2.5rem;
+  }
+  .section1 .swiper-container {
+    flex-direction: column;
+    padding: 0;
+  }
+  .section1 .swiper-container .title {
+    position: relative;
+    width: 57%;
+    margin-right: 0;
+    bottom: -8px;
+    order: 2;
+  }
+  .section1 .swiper-container .title p {
+    display: none;
+  }
+  .section1 .swiper-container .title h3 {
+    display: none;
+  }
+  .section1 .swiper-container .title button {
+    width: 6rem;
+    height: 2.8rem;
+    margin-top: 0;
+    padding: 0 1rem;
+    font-size: 1rem;
+    background-size: 1.2rem;
+    background-position: 83% center;
+  }
+  .section1 .swiper-container .title button span {
+    display: none;
+  }
+  .section1 .swiper-container .title button::before {
+    content: "더보기";
+  }
+  .section1 .swiper-container .swiper-control {
+    width: 50%;
+  }
+  .section1 .swiper-container .swiper-control .count {
+    justify-content: flex-end;
+  }
+  .section1 .swiper-container .swiper-control .mb_dott {
+    display: block;
+    margin: 0 0.5rem;
+    color: #999;
+  }
+  .section1 .swiper-container .swiper-control .progressbar-container {
+    display: none;
+  }
+  .section1 .swiper-container .swiper-control .pause {
+    order: 1;
+    width: 2rem;
+    height: 1.7rem;
+    margin-left: 1rem;
+  }
+  .section1 .swiper-container .swiper-control .all-num {
+    color: #999;
+  }
+  .section1 .swiper-container .swiper-control * {
+    order: 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .section1 .swiper-container .swiper {
+    height: 42rem !important;
+  }
+  .section1 .swiper-container .mySwiper1 {
+    width: 100% !important;
+  }
+  .section1 .swiper-container .swiper-slide-active {
+    width: 90% !important;
+    border-radius: 20px;
+  }
+  .section1 .swiper-container .swiper-slide-next,
+  .section1 .swiper-container .swiper-slide-prev {
+    width: 5% !important;
+    transform: scale(0.9);
+  }
+  .section1 .swiper-container .swiper-slide-prev {
+    border-radius: 0 20px 20px 0 !important;
+  }
+  .section1 .swiper-container .swiper-slide-next {
+    border-radius: 20px 0 0 20px !important;
+  }
+}
+@media screen and (max-width: 800px) {
+  .section1 .swiper-container .mySwiper1 {
+    height: 31.625rem !important;
+  }
 }

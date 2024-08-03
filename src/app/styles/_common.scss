@@ -8,34 +8,8 @@
   border-bottom: 1px solid #e5e5e5;
 }
 
-.swiper {
-  border-radius: 20px;
-}
-
-.mySwiper1 {
-  width: 302px;
-  height: 214px;
-}
-.mySwiper2 {
-  width: 432px;
-  height: 520px;
-}
-.mySwiper3 {
-  width: 259px;
-  height: 260px;
-
-  align-self: center;
-}
-
-.swiper-container {
-  display: flex;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #faedce;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media screen and (max-width: 800px) {
+  .section1 {
+    padding: 9.5rem 0 2.5rem;
+  }
 }

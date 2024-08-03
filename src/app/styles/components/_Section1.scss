@@ -9,6 +9,8 @@
     padding: 0 6.25rem;
     box-sizing: border-box;
 
+    border-radius: 20px;
+
     .title {
       position: absolute;
       left: 100px;
@@ -83,6 +85,7 @@
 
         progress {
           height: 2px;
+          width: 185px; // ddd
 
           &::-webkit-progress-bar {
             background-color: #e5e5e5 !important;
@@ -103,51 +106,242 @@
         background-position: center;
       }
 
-      .swiper-button-prev {
+      .swiper-button {
+        width: 3.5rem;
+        height: 3.5rem;
+        border: 1px solid #d4d4d4;
+        border-radius: 100%;
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-position: center;
+
         flex-shrink: 0;
-        position: static;
+        position: static !important;
         margin-top: 0;
-        position: absolute;
-        top: 50%;
 
         z-index: 10;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
+      }
+
+      .swiper-button-prev {
         background-image: url("https://semie.cooking/assets/images/common/ic_prev.png") !important;
-        width: 3.5rem !important;
-        height: 3.5rem !important;
-        border: 1px solid #d4d4d4;
-        border-radius: 100%;
-        box-sizing: border-box;
-        background-color: #fff !important;
-        background-repeat: no-repeat !important;
-        background-position: center !important;
-        flex-shrink: 0;
-        position: static;
-        margin-top: 0;
       }
 
       .swiper-button-next {
-        width: 3.5rem !important;
-        height: 3.5rem !important;
-        border: 1px solid #d4d4d4;
-        border-radius: 100%;
-        box-sizing: border-box;
-        background-color: #fff !important;
-        background-repeat: no-repeat !important;
-        background-position: center !important;
         background-image: url("https://semie.cooking/assets/images/common/ic_next.png") !important;
-        z-index: 10;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        position: static;
-        margin-top: 0;
         margin-left: 0.438rem;
+      }
+    }
+
+    .mySwiper1 {
+      width: 23.625rem;
+      height: 16.75rem;
+    }
+    .mySwiper2 {
+      width: 33.75rem;
+      height: 40.625rem;
+      box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.1);
+    }
+    .mySwiper3 {
+      height: 23.625rem;
+      width: 23.625rem;
+      margin-top: 8.5rem;
+    }
+
+    .swiper {
+      margin-left: 0;
+      margin-right: 0;
+      border-radius: 20px;
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #faedce;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .section1 {
+    .swiper-container {
+      .title {
+        position: static;
+        margin-right: 3rem;
+      }
+
+      .swiper-control {
+        left: 6.25rem;
+        right: auto;
+        width: 14.5rem;
+
+        .swiper-button {
+          display: none;
+        }
+
+        .progressbar-container {
+          progress {
+            width: 100px;
+          }
+        }
+      }
+
+      .swiper {
+        height: 28.725rem;
+      }
+
+      .mySwiper1 {
+        // height: 28.725rem;
+        margin-right: 20px;
+      }
+
+      .mySwiper2 {
+        // height: 28.725rem;
+
+        box-shadow: none;
+      }
+
+      .mySwiper3 {
+        // height: 28.725rem;
+        margin-top: 0;
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .section1 {
+    .swiper-container {
+      .mySwiper1 {
+        width: 92%;
+        margin-right: 0;
+      }
+
+      .mySwiper2,
+      .mySwiper3 {
+        display: none;
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .section1 {
+    padding: 6rem 0rem 2.5rem;
+    .swiper-container {
+      flex-direction: column;
+      padding: 0;
+
+      .title {
+        position: relative;
+        width: 57%;
+        margin-right: 0;
+        bottom: -8px;
+
+        order: 2;
+        p {
+          display: none;
+        }
+
+        h3 {
+          display: none;
+        }
+
+        button {
+          width: 6rem;
+          height: 2.8rem;
+          margin-top: 0;
+          padding: 0 1rem;
+          font-size: 1rem;
+          background-size: 1.2rem;
+          background-position: 83% center;
+
+          span {
+            display: none;
+          }
+
+          &::before {
+            content: "더보기";
+          }
+        }
+      }
+
+      .swiper-control {
+        width: 50%;
+
+        .count {
+          justify-content: flex-end;
+        }
+
+        .mb_dott {
+          display: block;
+          margin: 0 0.5rem;
+          color: #999;
+        }
+
+        .progressbar-container {
+          display: none;
+        }
+
+        .pause {
+          order: 1;
+          width: 2rem;
+          height: 1.7rem;
+          margin-left: 1rem;
+        }
+
+        .all-num {
+          color: #999;
+        }
+
+        & * {
+          order: 0;
+          font-size: 1rem;
+          font-weight: 600;
+        }
+      }
+
+      .swiper {
+        height: 42rem !important;
+        // min-width: 736px;
+      }
+
+      .mySwiper1 {
+        width: 100% !important;
+        // height: 31.625rem !important;
+      }
+
+      .swiper-slide-active {
+        width: 90% !important;
+        border-radius: 20px;
+      }
+
+      .swiper-slide-next,
+      .swiper-slide-prev {
+        width: 5% !important;
+        transform: scale(0.9);
+      }
+      .swiper-slide-prev {
+        border-radius: 0 20px 20px 0 !important;
+      }
+      .swiper-slide-next {
+        border-radius: 20px 0 0 20px !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .section1 {
+    .swiper-container {
+      .mySwiper1 {
+        height: 31.625rem !important;
       }
     }
   }
