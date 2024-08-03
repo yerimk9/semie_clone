@@ -161,6 +161,83 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        p {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          padding: 4.063rem 2.5rem;
+          color: #fff;
+          font-size: 2.25rem;
+          font-weight: 800;
+          word-wrap: break-word;
+          border-radius: 20px;
+          background-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.29) 87%,
+            rgba(0, 0, 0, 0.45)
+          );
+          opacity: 0;
+          transform: translateY(50%);
+          transition: all 1s ease-out;
+
+          &::after {
+            position: absolute;
+            top: 0;
+            left: 2.5rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            background-image: url(../../../public/images/il_ribbon.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            content: "";
+          }
+        }
+
+        .totalPic {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: calc(100% - 6.25rem);
+          margin: 0 3.125rem;
+          padding: 3.125rem 0;
+          border-top: 1px solid rgba(255, 255, 255, 0.6);
+          box-sizing: border-box;
+          opacity: 1;
+          transition: all 0.2s ease-out;
+          transition-delay: 0.4s;
+
+          .num {
+            color: #fff;
+            font-size: 3rem;
+            font-weight: 800;
+          }
+
+          #mainVisual
+            .swiperContainer
+            .center-swiper
+            .swiper-slide
+            .picture
+            .totalPic
+            .arrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+            background-image: url(../../../public/images/ic_more.png);
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+        }
       }
     }
   }
@@ -315,17 +392,22 @@
       .swiper {
         height: 42rem !important;
         // min-width: 736px;
-        border-radius: 0;
+        // border-radius: 20px;
       }
 
       .mySwiper1 {
         width: 100% !important;
+
         // height: 31.625rem !important;
       }
 
       .swiper-slide-active {
         width: 90% !important;
         border-radius: 20px;
+
+        img {
+          border-radius: 20px;
+        }
       }
 
       .swiper-slide-next,
@@ -335,15 +417,21 @@
       }
       .swiper-slide-prev {
         border-radius: 0 20px 20px 0 !important;
+        img {
+          border-radius: 0 20px 20px 0 !important;
+        }
       }
       .swiper-slide-next {
         border-radius: 20px 0 0 20px !important;
+        img {
+          border-radius: 20px 0 0 20px !important;
+        }
       }
     }
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 560px) {
   .section1 {
     .swiper-container {
       .mySwiper1 {

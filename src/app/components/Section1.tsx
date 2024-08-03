@@ -5,28 +5,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
 import logo from "../../../public/images/logo.png";
-import { collection, doc, getDocs, query } from "firebase/firestore";
-import { db } from "../../firebase.js";
+import { FoodGuideProps } from "../types";
+import Link from "next/link";
 
-function Section1() {
+function Section1({ list }: FoodGuideProps) {
+  console.log(list);
   const [slideIndex, setSlideIndex] = useState(1);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const querySnapshot = await getDocs(
-          collection(db, "your-collection-name")
-        );
-        querySnapshot.forEach((doc) => {
-          console.log(`${doc.id} => ${doc.data()}`);
-        });
-      } catch (error) {
-        console.error("Error fetching data: ", error);
-      }
-    }
-
-    fetchData();
-  }, []);
+  const [foodList, setFoodList] = useState([]);
 
   return (
     <>
@@ -59,7 +44,7 @@ function Section1() {
                   <em className="hidden">play/stop</em>
                 </span>
               </button>
-              <span className="all-num">09</span>
+              <span className="all-num">44</span>
             </div>
             <div className="swiper-button swiper-button-prev"></div>
             <div className="swiper-button swiper-button-next"></div>
@@ -84,16 +69,18 @@ function Section1() {
           }}
           className="swiper mySwiper1"
         >
-          {}
-          <SwiperSlide className="swiper-slide"></SwiperSlide>
-          <SwiperSlide className="swiper-slide"></SwiperSlide>
-          <SwiperSlide className="swiper-slide"></SwiperSlide>
-          <SwiperSlide className="swiper-slide"></SwiperSlide>
-          <SwiperSlide className="swiper-slide"></SwiperSlide>
-          <SwiperSlide className="swiper-slide"></SwiperSlide>
-          <SwiperSlide className="swiper-slide"></SwiperSlide>
-          <SwiperSlide className="swiper-slide"></SwiperSlide>
-          <SwiperSlide className="swiper-slide"></SwiperSlide>
+          {list.map((food, index) => (
+            <SwiperSlide key={index} className="swiper-slide">
+              <Link href={"/"}>
+                <Image src={food["main_img"]} alt="img" fill />
+                <p>{food["title"]}</p>
+                <div className="totalPic">
+                  <div className="num">8</div>
+                  <div className="arrow"></div>
+                </div>
+              </Link>
+            </SwiperSlide>
+          ))}
         </Swiper>
         <Swiper
           modules={[Autoplay]}
@@ -104,15 +91,18 @@ function Section1() {
           initialSlide={1} // 첫 번째 슬라이드로 시작
           className="swiper mySwiper2"
         >
-          <SwiperSlide className="swiper-slide">Slide 1</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 2</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 3</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 4</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 5</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 6</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 7</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 8</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 9</SwiperSlide>
+          {list.map((food, index) => (
+            <SwiperSlide key={index} className="swiper-slide">
+              <Link href={"/"}>
+                <Image src={food["main_img"]} alt="img" fill />
+                <p>{food["title"]}</p>
+                <div className="totalPic">
+                  <div className="num">8</div>
+                  <div className="arrow"></div>
+                </div>
+              </Link>
+            </SwiperSlide>
+          ))}
         </Swiper>
         <Swiper
           modules={[Autoplay]}
@@ -123,15 +113,18 @@ function Section1() {
           initialSlide={2} // 첫 번째 슬라이드로 시작
           className="swiper mySwiper3"
         >
-          <SwiperSlide className="swiper-slide">Slide 1</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 2</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 3</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 4</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 5</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 6</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 7</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 8</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 9</SwiperSlide>
+          {list.map((food, index) => (
+            <SwiperSlide key={index} className="swiper-slide">
+              <Link href={"/"}>
+                <Image src={food["main_img"]} alt="img" fill />
+                <p>{food["title"]}</p>
+                <div className="totalPic">
+                  <div className="num">8</div>
+                  <div className="arrow"></div>
+                </div>
+              </Link>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </>

@@ -145,7 +145,7 @@
     },
     {
       "id": 7,
-      "": "여유로운 주말 아침,<br />근사한 브런치 한상",
+      "title": "여유로운 주말 아침,<br />근사한 브런치 한상",
       "main_img": "https://semie.cooking/image/contents/recipe/yp/ju/rwqsmbaw/127134661pmxx.jpg",
       "items": [
         {
@@ -685,7 +685,7 @@
     },
     {
       "id": 43,
-      "title": "라면은 이제 지겨워요.<br />라면처럼 쉬운<br />국물요리 없나요?",
+      "title": "라면은 이제 지겨워요.<br />라면처럼 쉬운국물요리 없나요?",
       "main_img": "https://semie.cooking/image/contents/recipe/cf/jq/uafbsanh/121625334lzpj.jpg",
       "items": [
         {
