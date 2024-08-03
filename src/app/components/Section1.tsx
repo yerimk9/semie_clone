@@ -1,13 +1,32 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
 import logo from "../../../public/images/logo.png";
+import { collection, doc, getDocs, query } from "firebase/firestore";
+import { db } from "../../firebase.js";
 
 function Section1() {
   const [slideIndex, setSlideIndex] = useState(1);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const querySnapshot = await getDocs(
+          collection(db, "your-collection-name")
+        );
+        querySnapshot.forEach((doc) => {
+          console.log(`${doc.id} => ${doc.data()}`);
+        });
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      }
+    }
+
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -65,15 +84,16 @@ function Section1() {
           }}
           className="swiper mySwiper1"
         >
-          <SwiperSlide className="swiper-slide">Slide 1</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 2</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 3</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 4</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 5</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 6</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 7</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 8</SwiperSlide>
-          <SwiperSlide className="swiper-slide">Slide 9</SwiperSlide>
+          {}
+          <SwiperSlide className="swiper-slide"></SwiperSlide>
+          <SwiperSlide className="swiper-slide"></SwiperSlide>
+          <SwiperSlide className="swiper-slide"></SwiperSlide>
+          <SwiperSlide className="swiper-slide"></SwiperSlide>
+          <SwiperSlide className="swiper-slide"></SwiperSlide>
+          <SwiperSlide className="swiper-slide"></SwiperSlide>
+          <SwiperSlide className="swiper-slide"></SwiperSlide>
+          <SwiperSlide className="swiper-slide"></SwiperSlide>
+          <SwiperSlide className="swiper-slide"></SwiperSlide>
         </Swiper>
         <Swiper
           modules={[Autoplay]}
