@@ -9,8 +9,6 @@
     padding: 0 6.25rem;
     box-sizing: border-box;
 
-    border-radius: 20px;
-
     .title {
       position: absolute;
       left: 100px;
@@ -238,6 +236,13 @@
       flex-direction: column;
       padding: 0;
 
+      .swiper-title-container {
+        display: flex;
+        order: 1;
+        align-items: center;
+        flex-direction: row-reverse;
+      }
+
       .title {
         position: relative;
         width: 57%;
@@ -310,6 +315,7 @@
       .swiper {
         height: 42rem !important;
         // min-width: 736px;
+        border-radius: 0;
       }
 
       .mySwiper1 {

@@ -885,7 +885,6 @@ footer p {
   margin: 0 auto;
   padding: 0 6.25rem;
   box-sizing: border-box;
-  border-radius: 20px;
 }
 .section1 .swiper-container .title {
   position: absolute;
@@ -1071,6 +1070,12 @@ footer p {
     flex-direction: column;
     padding: 0;
   }
+  .section1 .swiper-container .swiper-title-container {
+    display: flex;
+    order: 1;
+    align-items: center;
+    flex-direction: row-reverse;
+  }
   .section1 .swiper-container .title {
     position: relative;
     width: 57%;
@@ -1129,6 +1134,7 @@ footer p {
   }
   .section1 .swiper-container .swiper {
     height: 42rem !important;
+    border-radius: 0;
   }
   .section1 .swiper-container .mySwiper1 {
     width: 100% !important;

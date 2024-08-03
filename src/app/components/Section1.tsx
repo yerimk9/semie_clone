@@ -12,37 +12,39 @@ function Section1() {
   return (
     <>
       <div className="swiper-container">
-        <div className="title">
-          <p>
-            <Image src={logo} alt="logo" width={42} height={58} />
-            추천드려요!
-          </p>
-          <h3>
-            요리초보
-            <br />
-            가이드
-          </h3>
-          <button type="button">
-            <span>가이드 더보기</span>
-          </button>
-        </div>
-        <div className="swiper-control">
-          <div className="count">
-            <span className="current-num">0{slideIndex}</span>
-            <span className="mb_dott"> · </span>
-            <div className="progressbar-container">
-              <progress max="9" value={slideIndex}></progress>
-            </div>
-
-            <button type="button" className="pause">
-              <span className="stop">
-                <em className="hidden">play/stop</em>
-              </span>
+        <div className="swiper-title-container">
+          <div className="title">
+            <p>
+              <Image src={logo} alt="logo" width={42} height={58} />
+              추천드려요!
+            </p>
+            <h3>
+              요리초보
+              <br />
+              가이드
+            </h3>
+            <button type="button">
+              <span>가이드 더보기</span>
             </button>
-            <span className="all-num">09</span>
           </div>
-          <div className="swiper-button swiper-button-prev"></div>
-          <div className="swiper-button swiper-button-next"></div>
+          <div className="swiper-control">
+            <div className="count">
+              <span className="current-num">0{slideIndex}</span>
+              <span className="mb_dott"> · </span>
+              <div className="progressbar-container">
+                <progress max="9" value={slideIndex}></progress>
+              </div>
+
+              <button type="button" className="pause">
+                <span className="stop">
+                  <em className="hidden">play/stop</em>
+                </span>
+              </button>
+              <span className="all-num">09</span>
+            </div>
+            <div className="swiper-button swiper-button-prev"></div>
+            <div className="swiper-button swiper-button-next"></div>
+          </div>
         </div>
 
         <Swiper
