@@ -1132,9 +1132,18 @@ footer p {
     width: 92%;
     margin-right: 0;
     overflow: hidden;
+    position: relative;
   }
-  .section1 .swiper-container .swiper {
-    min-width: 500px !important;
+  .section1 .swiper-container .mySwiper1 .swiper-slide {
+    position: relative !important;
+  }
+  .section1 .swiper-container .mySwiper1 .swiper-title {
+    z-index: 2;
+    border-radius: 20px;
+  }
+  .section1 .swiper-container .mySwiper1 .totalPic {
+    display: flex;
+    z-index: 2;
   }
   .section1 .swiper-container .mySwiper2,
   .section1 .swiper-container .mySwiper3 {
@@ -1151,8 +1160,6 @@ footer p {
   }
   .section1 .swiper-container .swiper-title-container {
     display: flex;
-    justify-content: start;
-    align-items: center;
     flex-direction: row-reverse;
     order: 1;
   }
@@ -1213,10 +1220,11 @@ footer p {
   .section1 .swiper-container .swiper {
     height: 42rem !important;
     min-width: 736px;
-    border-radius: 0;
+    border-radius: 20px;
   }
   .section1 .swiper-container .mySwiper1 {
     width: 100% !important;
+    border-radius: 20px;
   }
   .section1 .swiper-container img {
     border-radius: 20px;

@@ -218,10 +218,23 @@
         width: 92%;
         margin-right: 0;
         overflow: hidden;
-      }
+        position: relative;
 
-      .swiper {
-        min-width: 500px !important;
+        .swiper-slide {
+          position: relative !important;
+        }
+
+        .swiper-title {
+          z-index: 2;
+          border-radius: 20px;
+        }
+
+        .totalPic {
+          display: flex;
+          z-index: 2;
+        }
+
+        .
       }
 
       .mySwiper2,
@@ -240,7 +253,8 @@
       padding: 0;
 
       .swiper-title-container {
-        @include flex(start, center, row-reverse);
+        display: flex;
+        flex-direction: row-reverse;
         order: 1;
       }
 
@@ -313,11 +327,12 @@
       .swiper {
         height: 42rem !important;
         min-width: 736px;
-        border-radius: 0;
+        border-radius: 20px;
       }
 
       .mySwiper1 {
         width: 100% !important;
+        border-radius: 20px;
       }
 
       img {
