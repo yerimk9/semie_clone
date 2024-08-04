@@ -9,6 +9,71 @@
   border-bottom: 1px solid #e5e5e5;
 }
 
+.swiper-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 4.063rem 2.5rem;
+  color: #fff;
+  font-size: 2.05rem;
+  font-weight: 800;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.29) 87%, rgba(0, 0, 0, 0.45));
+  opacity: 1;
+  transition: all 1s ease-out;
+  text-align: justify;
+  line-height: 2.6rem;
+}
+.swiper-title::after {
+  position: absolute;
+  top: 0;
+  left: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-image: url(../../../public/images/il_ribbon.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+}
+
+.totalPic {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 6.25rem);
+  margin: 0 3.125rem;
+  padding: 3.125rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  box-sizing: border-box;
+  opacity: 1;
+  transition: all 0.2s ease-out;
+  transition-delay: 0.4s;
+}
+.totalPic .arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  background-image: url(../../../public/images/ic_more.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.totalPic .num {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 800;
+}
+.totalPic .num::before {
+  content: "+";
+}
+
 @media screen and (max-width: 800px) {
   .section1 {
     padding: 9.5rem 0 2.5rem;
@@ -879,6 +944,8 @@ footer p {
 .section1 .swiper-container {
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
+  flex-direction: row;
   position: relative;
   width: 100%;
   max-width: 1696px;
@@ -946,8 +1013,8 @@ footer p {
 }
 .section1 .swiper-container .swiper-control .progressbar-container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   position: relative;
   margin: 0 0.813rem;
 }
@@ -973,7 +1040,7 @@ footer p {
 .section1 .swiper-container .swiper-control .swiper-button {
   width: 3.5rem;
   height: 3.5rem;
-  border: 1px solid #d4d4d4;
+  border: 1px solid #0bab6d;
   border-radius: 100%;
   background-color: #fff;
   background-repeat: no-repeat;
@@ -984,19 +1051,23 @@ footer p {
   z-index: 10;
   cursor: pointer;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 .section1 .swiper-container .swiper-control .swiper-button-prev {
-  background-image: url("https://semie.cooking/assets/images/common/ic_prev.png") !important;
+  background-image: url(../../../public/images/ic_prev.png) !important;
 }
 .section1 .swiper-container .swiper-control .swiper-button-next {
-  background-image: url("https://semie.cooking/assets/images/common/ic_next.png") !important;
+  background-image: url(../../../public/images/ic_next.png) !important;
   margin-left: 0.438rem;
 }
 .section1 .swiper-container .mySwiper1 {
   width: 23.625rem;
   height: 16.75rem;
+}
+.section1 .swiper-container .mySwiper1 .swiper-title,
+.section1 .swiper-container .mySwiper1 .totalPic {
+  display: none;
 }
 .section1 .swiper-container .mySwiper2 {
   width: 33.75rem;
@@ -1008,6 +1079,10 @@ footer p {
   width: 23.625rem;
   margin-top: 8.5rem;
 }
+.section1 .swiper-container .mySwiper3 .swiper-title,
+.section1 .swiper-container .mySwiper3 .totalPic {
+  display: none;
+}
 .section1 .swiper-container .swiper {
   margin-left: 0;
   margin-right: 0;
@@ -1016,71 +1091,6 @@ footer p {
 .section1 .swiper-container .swiper .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #faedce;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.section1 .swiper-container .swiper .swiper-slide p {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 4.063rem 2.5rem;
-  color: #fff;
-  font-size: 2.25rem;
-  font-weight: 800;
-  word-wrap: break-word;
-  border-radius: 20px;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.29) 87%, rgba(0, 0, 0, 0.45));
-  opacity: 0;
-  transform: translateY(50%);
-  transition: all 1s ease-out;
-}
-.section1 .swiper-container .swiper .swiper-slide p::after {
-  position: absolute;
-  top: 0;
-  left: 2.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  background-image: url(../../../public/images/il_ribbon.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  content: "";
-}
-.section1 .swiper-container .swiper .swiper-slide .totalPic {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: calc(100% - 6.25rem);
-  margin: 0 3.125rem;
-  padding: 3.125rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.6);
-  box-sizing: border-box;
-  opacity: 1;
-  transition: all 0.2s ease-out;
-  transition-delay: 0.4s;
-}
-.section1 .swiper-container .swiper .swiper-slide .totalPic .num {
-  color: #fff;
-  font-size: 3rem;
-  font-weight: 800;
-}
-.section1 .swiper-container .swiper .swiper-slide .totalPic #mainVisual .swiperContainer .center-swiper .swiper-slide .picture .totalPic .arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
-  background-image: url(../../../public/images/ic_more.png);
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1105,6 +1115,10 @@ footer p {
   .section1 .swiper-container .mySwiper1 {
     margin-right: 20px;
   }
+  .section1 .swiper-container .mySwiper1 .swiper-title,
+  .section1 .swiper-container .mySwiper1 .totalPic {
+    display: block;
+  }
   .section1 .swiper-container .mySwiper2 {
     box-shadow: none;
   }
@@ -1117,6 +1131,10 @@ footer p {
   .section1 .swiper-container .mySwiper1 {
     width: 92%;
     margin-right: 0;
+    overflow: hidden;
+  }
+  .section1 .swiper-container .swiper {
+    min-width: 500px !important;
   }
   .section1 .swiper-container .mySwiper2,
   .section1 .swiper-container .mySwiper3 {
@@ -1133,9 +1151,10 @@ footer p {
   }
   .section1 .swiper-container .swiper-title-container {
     display: flex;
-    order: 1;
+    justify-content: start;
     align-items: center;
     flex-direction: row-reverse;
+    order: 1;
   }
   .section1 .swiper-container .title {
     position: relative;
@@ -1144,9 +1163,7 @@ footer p {
     bottom: -8px;
     order: 2;
   }
-  .section1 .swiper-container .title p {
-    display: none;
-  }
+  .section1 .swiper-container .title p,
   .section1 .swiper-container .title h3 {
     display: none;
   }
@@ -1195,33 +1212,20 @@ footer p {
   }
   .section1 .swiper-container .swiper {
     height: 42rem !important;
+    min-width: 736px;
+    border-radius: 0;
   }
   .section1 .swiper-container .mySwiper1 {
     width: 100% !important;
   }
-  .section1 .swiper-container .swiper-slide-active {
-    width: 90% !important;
+  .section1 .swiper-container img {
     border-radius: 20px;
   }
-  .section1 .swiper-container .swiper-slide-active img {
-    border-radius: 20px;
-  }
-  .section1 .swiper-container .swiper-slide-next,
-  .section1 .swiper-container .swiper-slide-prev {
-    width: 5% !important;
-    transform: scale(0.9);
-  }
-  .section1 .swiper-container .swiper-slide-prev {
-    border-radius: 0 20px 20px 0 !important;
-  }
-  .section1 .swiper-container .swiper-slide-prev img {
-    border-radius: 0 20px 20px 0 !important;
-  }
-  .section1 .swiper-container .swiper-slide-next {
-    border-radius: 20px 0 0 20px !important;
-  }
-  .section1 .swiper-container .swiper-slide-next img {
-    border-radius: 20px 0 0 20px !important;
+  .section1 .swiper-container .swiper-slide-next .swiper-title,
+  .section1 .swiper-container .swiper-slide-next .totalPic,
+  .section1 .swiper-container .swiper-slide-prev .swiper-title,
+  .section1 .swiper-container .swiper-slide-prev .totalPic {
+    display: none;
   }
 }
 @media screen and (max-width: 560px) {

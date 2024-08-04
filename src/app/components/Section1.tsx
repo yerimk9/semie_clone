@@ -57,6 +57,8 @@ function Section1({ list }: FoodGuideProps) {
           centeredSlides={true}
           slidesPerView={3}
           loop={true}
+          speed={900}
+          // watchOverflow
           autoplay={{ delay: 2500, disableOnInteraction: false }}
           initialSlide={0} // 첫 번째 슬라이드로 시작
           onSlideChangeTransitionEnd={(swiperCore) => {
@@ -73,11 +75,25 @@ function Section1({ list }: FoodGuideProps) {
             <SwiperSlide key={index} className="swiper-slide">
               <Link href={"/"}>
                 <Image src={food["main_img"]} alt="img" fill />
-                <p>{food["title"]}</p>
+                <p
+                  className="swiper-title"
+                  dangerouslySetInnerHTML={{ __html: food.title }}
+                />
                 <div className="totalPic">
                   <div className="num">8</div>
                   <div className="arrow"></div>
                 </div>
+                <ul className="thumb">
+                  <li>
+                    <Image src={food["main_img"]} alt="img" fill />
+                  </li>
+                  <li>
+                    <Image src={food["main_img"]} alt="img" fill />
+                  </li>
+                  <li>
+                    <Image src={food["main_img"]} alt="img" fill />
+                  </li>
+                </ul>
               </Link>
             </SwiperSlide>
           ))}
@@ -89,13 +105,17 @@ function Section1({ list }: FoodGuideProps) {
           loop={true}
           autoplay={{ delay: 2500, disableOnInteraction: false }}
           initialSlide={1} // 첫 번째 슬라이드로 시작
+          speed={900}
           className="swiper mySwiper2"
         >
           {list.map((food, index) => (
             <SwiperSlide key={index} className="swiper-slide">
               <Link href={"/"}>
                 <Image src={food["main_img"]} alt="img" fill />
-                <p>{food["title"]}</p>
+                <p
+                  className="swiper-title"
+                  dangerouslySetInnerHTML={{ __html: food.title }}
+                />
                 <div className="totalPic">
                   <div className="num">8</div>
                   <div className="arrow"></div>
@@ -109,6 +129,7 @@ function Section1({ list }: FoodGuideProps) {
           spaceBetween={30}
           centeredSlides={true}
           loop={true}
+          speed={900}
           autoplay={{ delay: 2500, disableOnInteraction: false }}
           initialSlide={2} // 첫 번째 슬라이드로 시작
           className="swiper mySwiper3"
@@ -117,7 +138,10 @@ function Section1({ list }: FoodGuideProps) {
             <SwiperSlide key={index} className="swiper-slide">
               <Link href={"/"}>
                 <Image src={food["main_img"]} alt="img" fill />
-                <p>{food["title"]}</p>
+                <p
+                  className="swiper-title"
+                  dangerouslySetInnerHTML={{ __html: food.title }}
+                />
                 <div className="totalPic">
                   <div className="num">8</div>
                   <div className="arrow"></div>

@@ -1,7 +1,6 @@
 .section1 {
   .swiper-container {
-    display: flex;
-    justify-content: space-between;
+    @include flex(space-between, stretch, row);
     position: relative;
     width: 100%;
     max-width: 1696px;
@@ -15,10 +14,9 @@
       bottom: 0;
 
       p {
-        display: flex;
-        align-items: center;
+        @include flexitems;
         margin-bottom: 0.625rem;
-        color: #0bab6d;
+        color: $primary-color4;
         font-size: 1.5rem;
         font-weight: 800;
 
@@ -35,19 +33,17 @@
       }
 
       button {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flexSpaceBetween;
         width: 17.5rem;
         height: 4.375rem;
         margin-top: 30px;
         padding: 0 30px;
-        color: #fff;
+        color: $primary-color1;
         font-size: 1.25rem;
         font-weight: 500;
         border-radius: 35px;
         box-sizing: border-box;
-        background-color: #0bab6d;
+        background-color: $primary-color4;
         background-image: url(../../../public/images/ic_plus.png);
         background-position: 90% center;
         background-repeat: no-repeat;
@@ -55,16 +51,14 @@
     }
 
     .swiper-control {
-      display: flex;
-      align-items: center;
+      @include flexitems;
       position: absolute;
       right: 0;
       bottom: 0;
       width: 29.875rem;
 
       .count {
-        display: flex;
-        align-items: center;
+        @include flexitems;
         width: 100%;
         margin-right: 1.25rem;
         font-weight: 500;
@@ -75,18 +69,16 @@
       }
 
       .progressbar-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flexCenter;
         position: relative;
         margin: 0 0.813rem;
 
         progress {
           height: 2px;
-          width: 185px; // ddd
+          width: 185px;
 
           &::-webkit-progress-bar {
-            background-color: #e5e5e5 !important;
+            background-color: $bg-color3 !important;
           }
         }
       }
@@ -96,9 +88,9 @@
         width: 1.5rem;
         height: 1.5rem;
         margin-right: 0.938rem;
-        border: solid 1px #15a775;
+        border: solid 1px $primary-color2;
         border-radius: 100%;
-        background-color: #fff;
+        background-color: $primary-color1;
         background-image: url(../../../public/images/ic_pause.png);
         background-repeat: no-repeat;
         background-position: center;
@@ -107,9 +99,9 @@
       .swiper-button {
         width: 3.5rem;
         height: 3.5rem;
-        border: 1px solid #d4d4d4;
+        border: 1px solid $primary-color4;
         border-radius: 100%;
-        background-color: #fff;
+        background-color: $primary-color1;
         background-repeat: no-repeat;
         background-position: center;
 
@@ -119,17 +111,15 @@
 
         z-index: 10;
         cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flexCenter;
       }
 
       .swiper-button-prev {
-        background-image: url("https://semie.cooking/assets/images/common/ic_prev.png") !important;
+        background-image: url(../../../public/images/ic_prev.png) !important;
       }
 
       .swiper-button-next {
-        background-image: url("https://semie.cooking/assets/images/common/ic_next.png") !important;
+        background-image: url(../../../public/images/ic_next.png) !important;
         margin-left: 0.438rem;
       }
     }
@@ -137,6 +127,11 @@
     .mySwiper1 {
       width: 23.625rem;
       height: 16.75rem;
+
+      .swiper-title,
+      .totalPic {
+        display: none;
+      }
     }
     .mySwiper2 {
       width: 33.75rem;
@@ -147,6 +142,11 @@
       height: 23.625rem;
       width: 23.625rem;
       margin-top: 8.5rem;
+
+      .swiper-title,
+      .totalPic {
+        display: none;
+      }
     }
 
     .swiper {
@@ -157,87 +157,6 @@
       .swiper-slide {
         text-align: center;
         font-size: 18px;
-        background: #faedce;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        p {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          padding: 4.063rem 2.5rem;
-          color: #fff;
-          font-size: 2.25rem;
-          font-weight: 800;
-          word-wrap: break-word;
-          border-radius: 20px;
-          background-image: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.2),
-            rgba(0, 0, 0, 0.29) 87%,
-            rgba(0, 0, 0, 0.45)
-          );
-          opacity: 0;
-          transform: translateY(50%);
-          transition: all 1s ease-out;
-
-          &::after {
-            position: absolute;
-            top: 0;
-            left: 2.5rem;
-            width: 2.5rem;
-            height: 2.5rem;
-            background-image: url(../../../public/images/il_ribbon.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-            content: "";
-          }
-        }
-
-        .totalPic {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: calc(100% - 6.25rem);
-          margin: 0 3.125rem;
-          padding: 3.125rem 0;
-          border-top: 1px solid rgba(255, 255, 255, 0.6);
-          box-sizing: border-box;
-          opacity: 1;
-          transition: all 0.2s ease-out;
-          transition-delay: 0.4s;
-
-          .num {
-            color: #fff;
-            font-size: 3rem;
-            font-weight: 800;
-          }
-
-          #mainVisual
-            .swiperContainer
-            .center-swiper
-            .swiper-slide
-            .picture
-            .totalPic
-            .arrow {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 3.5rem;
-            height: 3.5rem;
-            border-radius: 100%;
-            background-color: rgba(255, 255, 255, 0.2);
-            background-image: url(../../../public/images/ic_more.png);
-            background-repeat: no-repeat;
-            background-position: center;
-          }
-        }
       }
     }
   }
@@ -272,18 +191,19 @@
       }
 
       .mySwiper1 {
-        // height: 28.725rem;
         margin-right: 20px;
+
+        .swiper-title,
+        .totalPic {
+          display: block;
+        }
       }
 
       .mySwiper2 {
-        // height: 28.725rem;
-
         box-shadow: none;
       }
 
       .mySwiper3 {
-        // height: 28.725rem;
         margin-top: 0;
         margin-left: 20px;
       }
@@ -297,6 +217,11 @@
       .mySwiper1 {
         width: 92%;
         margin-right: 0;
+        overflow: hidden;
+      }
+
+      .swiper {
+        min-width: 500px !important;
       }
 
       .mySwiper2,
@@ -306,6 +231,7 @@
     }
   }
 }
+
 @media screen and (max-width: 800px) {
   .section1 {
     padding: 6rem 0rem 2.5rem;
@@ -314,10 +240,8 @@
       padding: 0;
 
       .swiper-title-container {
-        display: flex;
+        @include flex(start, center, row-reverse);
         order: 1;
-        align-items: center;
-        flex-direction: row-reverse;
       }
 
       .title {
@@ -327,10 +251,7 @@
         bottom: -8px;
 
         order: 2;
-        p {
-          display: none;
-        }
-
+        p,
         h3 {
           display: none;
         }
@@ -364,7 +285,7 @@
         .mb_dott {
           display: block;
           margin: 0 0.5rem;
-          color: #999;
+          color: $primary-color5;
         }
 
         .progressbar-container {
@@ -379,7 +300,7 @@
         }
 
         .all-num {
-          color: #999;
+          color: $primary-color5;
         }
 
         & * {
@@ -391,40 +312,23 @@
 
       .swiper {
         height: 42rem !important;
-        // min-width: 736px;
-        // border-radius: 20px;
+        min-width: 736px;
+        border-radius: 0;
       }
 
       .mySwiper1 {
         width: 100% !important;
-
-        // height: 31.625rem !important;
       }
 
-      .swiper-slide-active {
-        width: 90% !important;
+      img {
         border-radius: 20px;
-
-        img {
-          border-radius: 20px;
-        }
       }
 
       .swiper-slide-next,
       .swiper-slide-prev {
-        width: 5% !important;
-        transform: scale(0.9);
-      }
-      .swiper-slide-prev {
-        border-radius: 0 20px 20px 0 !important;
-        img {
-          border-radius: 0 20px 20px 0 !important;
-        }
-      }
-      .swiper-slide-next {
-        border-radius: 20px 0 0 20px !important;
-        img {
-          border-radius: 20px 0 0 20px !important;
+        .swiper-title,
+        .totalPic {
+          display: none;
         }
       }
     }
