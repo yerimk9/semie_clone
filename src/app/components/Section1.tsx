@@ -8,6 +8,7 @@ import logo from "../../../public/images/logo.png";
 import { FoodGuideProps } from "../types";
 import Link from "next/link";
 import GuideModal from "./GuideModal";
+import FoodGuideItem from "./FoodGuideItem";
 
 function Section1({ list }: FoodGuideProps) {
   console.log(list);
@@ -41,7 +42,7 @@ function Section1({ list }: FoodGuideProps) {
             <span className="current-num">0{slideIndex}</span>
             <span className="mb_dott"> · </span>
             <div className="progressbar-container">
-              <progress max="9" value={slideIndex}></progress>
+              <progress max="44" value={slideIndex}></progress>
             </div>
 
             <button type="button" className="pause">
@@ -104,14 +105,16 @@ function Section1({ list }: FoodGuideProps) {
           {list.map((food, index) => (
             <SwiperSlide key={index} className="swiper-slide">
               <Link href={"/"}>
-                <Image src={food["main_img"]} alt="img" fill />
-                <p
-                  className="swiper-title"
-                  dangerouslySetInnerHTML={{ __html: food.title }}
-                />
-                <div className="totalPic">
-                  <div className="num">8</div>
-                  <div className="arrow"></div>
+                <div className="picture">
+                  <Image src={food["main_img"]} alt="img" fill />
+                  <p
+                    className="swiper-title"
+                    dangerouslySetInnerHTML={{ __html: food.title }}
+                  />
+                  <div className="totalPic">
+                    <div className="num">8</div>
+                    <div className="arrow"></div>
+                  </div>
                 </div>
                 <ul className="thumb">
                   <li>
@@ -137,6 +140,7 @@ function Section1({ list }: FoodGuideProps) {
                       width={125}
                       height={125}
                     />
+                    <p className="more_detail">자세히 보기</p>
                   </li>
                 </ul>
               </Link>

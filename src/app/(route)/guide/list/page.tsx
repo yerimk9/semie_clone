@@ -48,10 +48,25 @@ export default async function page() {
           </div>
           <ul>
             {foodItems.map((food, idx) => (
-              <FoodGuideItem key={idx} />
+              <FoodGuideItem key={idx} item={food} />
             ))}
           </ul>
-          <div className="page_wrap">페이지네이션 구현</div>
+          <div className="pagination">
+            <button type="button" className="prev">
+              <i className="icon_prev">이전페이지</i>
+            </button>
+            <span className="page_p">
+              <button type="button">1</button>
+              <button type="button">2</button>
+              <button type="button" className="act">
+                3
+              </button>
+              <button type="button">4</button>
+            </span>
+            <button type="button" className="next">
+              <i className="icon_next">다음페이지</i>
+            </button>
+          </div>
         </div>
       </main>
 

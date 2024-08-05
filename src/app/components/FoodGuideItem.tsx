@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { FoodGuideProps } from "../types";
 
-function FoodGuideItem() {
+function FoodGuideItem({ item }: FoodGuideProps) {
   return (
     <li>
       <Link href={"/"}>
@@ -40,16 +41,10 @@ function FoodGuideItem() {
           </li>
         </ul>
         <div className="picture">
-          <Image
-            src={
-              "https://semie.cooking/image/contents/solution/js/sa/hkagfitd/143308762rtmh.jpg"
-            }
-            alt=""
-            width={1280}
-            height={1280}
-          />
+          <Image src={item["main_img"]} alt="" width={1280} height={1280} />
           <p>
-            우리 아이 스스로 요리하는 법<span className="num">7</span>
+            {item["title"]}
+            <span className="num">7</span>
           </p>
           <div className="text">
             요리를 시작하기 좋은 나이 10-13세!
