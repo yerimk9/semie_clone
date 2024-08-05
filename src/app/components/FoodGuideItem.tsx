@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FoodGuideProps } from "../types";
+import { FoodGuideItemProps } from "../types";
 
-function FoodGuideItem({ item }: FoodGuideProps) {
+function FoodGuideItem({ item }: FoodGuideItemProps) {
   return (
     <li>
       <Link href={"/"}>

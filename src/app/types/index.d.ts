@@ -18,6 +18,10 @@ export interface FoodGuide {
   items?: FoodGuideItem[];
 }
 
+export interface FoodGuideItemProps {
+  item: FoodGuide;
+}
+
 export interface FoodGuideProps {
   list: FoodGuide[];
 }

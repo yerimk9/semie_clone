@@ -9,6 +9,7 @@ import React from "react";
 
 export default async function page() {
   let foodItems: FoodGuide[] = [];
+
   try {
     // Firestore에서 데이터 가져오기
     const querySnapshot = await getDocs(

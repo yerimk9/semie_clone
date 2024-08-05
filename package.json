@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "json start": "json-server --watch db.json --port 5000"
+    "json start": "json-server --watch db.json --port 5006"
   },
   "dependencies": {
     "firebase": "^10.12.5",
