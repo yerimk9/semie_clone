@@ -3,7 +3,8 @@ import Link from "next/link";
 import React from "react";
 import { FoodGuideItemProps } from "../types";
 
-function FoodGuideItem({ item }: FoodGuideItemProps) {
+// function FoodGuideItem({ item }: FoodGuideItemProps) {
+function FoodGuideItem() {
   return (
     <li>
       <Link href={"/"}>
@@ -41,9 +42,17 @@ function FoodGuideItem({ item }: FoodGuideItemProps) {
           </li>
         </ul>
         <div className="picture">
-          <Image src={item["main_img"]} alt="" width={1280} height={1280} />
+          <Image
+            src={
+              "https://semie.cooking/image/contents/solution/js/sa/hkagfitd/143308762rtmh.jpg"
+            }
+            alt=""
+            width={1280}
+            height={1280}
+          />
           <p>
-            {item["title"]}
+            {/* {item["title"]} */}
+            함께 요리하면 더 즐거워요
             <span className="num">7</span>
           </p>
           <div className="text">

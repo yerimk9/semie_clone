@@ -10,7 +10,7 @@ import React from "react";
 export default async function page() {
   let foodItems: FoodGuide[] = [];
 
-  try {
+  /*  try {
     // Firestore에서 데이터 가져오기
     const querySnapshot = await getDocs(
       query(collection(db, "food_guide_list"))
@@ -22,7 +22,7 @@ export default async function page() {
     });
   } catch (e) {
     console.log(e);
-  }
+  } */
 
   return (
     <div>
@@ -48,9 +48,22 @@ export default async function page() {
             </ul>
           </div>
           <ul>
-            {foodItems.map((food, idx) => (
-              <FoodGuideItem key={idx} item={food} />
-            ))}
+            <FoodGuideItem />
+            <FoodGuideItem />
+            <FoodGuideItem />
+            <FoodGuideItem />
+            <FoodGuideItem />
+            <FoodGuideItem />
+            <FoodGuideItem />
+            <FoodGuideItem />
+            <FoodGuideItem />
+            <FoodGuideItem />
+            <FoodGuideItem />
+            <FoodGuideItem />
+            <FoodGuideItem />
+            <FoodGuideItem />
+            <FoodGuideItem />
+            <FoodGuideItem />
           </ul>
           <div className="pagination">
             <button type="button" className="prev">
