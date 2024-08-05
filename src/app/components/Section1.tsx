@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -7,11 +7,16 @@ import Image from "next/image";
 import logo from "../../../public/images/logo.png";
 import { FoodGuideProps } from "../types";
 import Link from "next/link";
+import GuideModal from "./GuideModal";
 
 function Section1({ list }: FoodGuideProps) {
   console.log(list);
   const [slideIndex, setSlideIndex] = useState(1);
-  const [foodList, setFoodList] = useState([]);
+  const [isModal, setIsModal] = useState(false);
+
+  const modalOpen = () => {
+    setIsModal((prev) => !prev);
+  };
 
   return (
     <>
@@ -27,10 +32,12 @@ function Section1({ list }: FoodGuideProps) {
               <br />
               가이드
             </h3>
-            <button type="button">
+            <button type="button" onClick={modalOpen}>
               <span>가이드 더보기</span>
             </button>
           </div>
+          <GuideModal list={list} isModal={isModal} setIsModal={modalOpen} />
+
           <div className="swiper-control">
             <div className="count">
               <span className="current-num">0{slideIndex}</span>
@@ -83,17 +90,6 @@ function Section1({ list }: FoodGuideProps) {
                   <div className="num">8</div>
                   <div className="arrow"></div>
                 </div>
-                <ul className="thumb">
-                  <li>
-                    <Image src={food["main_img"]} alt="img" fill />
-                  </li>
-                  <li>
-                    <Image src={food["main_img"]} alt="img" fill />
-                  </li>
-                  <li>
-                    <Image src={food["main_img"]} alt="img" fill />
-                  </li>
-                </ul>
               </Link>
             </SwiperSlide>
           ))}
@@ -103,7 +99,7 @@ function Section1({ list }: FoodGuideProps) {
           spaceBetween={30}
           centeredSlides={true}
           loop={true}
-          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          // autoplay={{ delay: 2500, disableOnInteraction: false }}
           initialSlide={1} // 첫 번째 슬라이드로 시작
           speed={900}
           className="swiper mySwiper2"
@@ -120,6 +116,32 @@ function Section1({ list }: FoodGuideProps) {
                   <div className="num">8</div>
                   <div className="arrow"></div>
                 </div>
+                <ul className="thumb">
+                  <li>
+                    <Image
+                      src={food["main_img"]}
+                      alt="img"
+                      width={125}
+                      height={125}
+                    />
+                  </li>
+                  <li>
+                    <Image
+                      src={food["main_img"]}
+                      alt="img"
+                      width={125}
+                      height={125}
+                    />
+                  </li>
+                  <li>
+                    <Image
+                      src={food["main_img"]}
+                      alt="img"
+                      width={125}
+                      height={125}
+                    />
+                  </li>
+                </ul>
               </Link>
             </SwiperSlide>
           ))}

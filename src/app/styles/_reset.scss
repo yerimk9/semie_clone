@@ -147,6 +147,16 @@ a {
   cursor: pointer;
 }
 
+[class*="btn_arrow_"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border: solid 1px #d4d4d4;
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
 @media screen and (max-width: 1200px) {
   body {
     font-size: 11.52px;

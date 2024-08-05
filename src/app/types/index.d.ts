@@ -21,3 +21,9 @@ export interface FoodGuide {
 export interface FoodGuideProps {
   list: FoodGuide[];
 }
+
+export interface GuideModalProps {
+  list: FoodGuide[];
+  isModal: boolean;
+  setIsModal: () => void;
+}
