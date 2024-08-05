@@ -15,7 +15,7 @@ function GuideModal({ list, isModal, setIsModal }: GuideModalProps) {
               <Image src={il_samie_1} alt="" width={70} height={70} />
               요리초보가이드
             </h3>
-            <Link href={"/"} className="btn_arrow_lg">
+            <Link href={"/guide/list"} className="btn_arrow_lg">
               전체보기
               <Image src={ic_right} alt="" width={40} height={40} />
             </Link>

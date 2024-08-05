@@ -3,6 +3,11 @@
   display: block !important;
 }
 
+main {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
 .section1 {
   overflow: hidden;
   padding: 12.5rem 0 6.25rem;
@@ -1217,11 +1222,6 @@ footer p {
     flex-direction: column;
     padding: 0;
   }
-  .section1 .swiper-container .swiper-title-container {
-    display: flex;
-    flex-direction: row-reverse;
-    order: 1;
-  }
   .section1 .swiper-container .title {
     position: relative;
     width: 57%;
@@ -1447,16 +1447,29 @@ footer p {
   border: solid 1px #d4d4d4;
 }
 
-.guideList li {
+.guideList > ul > li {
   overflow: hidden;
   position: relative;
   width: calc(33.33% - 2.125rem);
   height: 35.938rem;
-  margin: 0 0.2rem 2.125rem;
+  margin: 0 1.0625rem 2.125rem;
   border-radius: 1.5rem;
   box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.1);
 }
-.guideList li .thumb {
+.guideList > ul > li .scrap {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  text-indent: -9999px;
+  background-image: url(../../../public/images/ic_scrap.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  z-index: 10;
+}
+.guideList > ul > li .thumb {
   display: flex;
   justify-content: space-between;
   position: absolute;
@@ -1467,14 +1480,14 @@ footer p {
   padding: 1.25rem;
   background-color: #fff;
 }
-.guideList li .thumb li {
+.guideList > ul > li .thumb li {
   overflow: hidden;
   position: relative;
   width: 8.25rem;
   height: 8.25rem;
   border-radius: 0.625rem;
 }
-.guideList li .thumb li img {
+.guideList > ul > li .thumb li img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1483,7 +1496,7 @@ footer p {
   object-fit: cover;
   transform: translate(-50%, -50%);
 }
-.guideList li .thumb li .more_detail {
+.guideList > ul > li .thumb li .more_detail {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1497,7 +1510,7 @@ footer p {
   font-weight: 500;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.guideList li .picture {
+.guideList > ul > li .picture {
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -1507,7 +1520,7 @@ footer p {
   z-index: 10;
   transition: all 0.5s ease-out;
 }
-.guideList li .picture > img {
+.guideList > ul > li .picture > img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1517,7 +1530,7 @@ footer p {
   transform: translate(-50%, -50%);
   transition: all 2s ease-out;
 }
-.guideList li .picture p {
+.guideList > ul > li .picture p {
   position: absolute;
   top: 0;
   left: 0;
@@ -1532,7 +1545,7 @@ footer p {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.4) 87%, rgba(0, 0, 0, 0.6));
   transition: all 1s;
 }
-.guideList li .picture p .num {
+.guideList > ul > li .picture p .num {
   display: block;
   width: 3.75rem;
   margin-top: 1.25rem;
@@ -1545,10 +1558,10 @@ footer p {
   border-radius: 1.55rem;
   background-color: rgba(255, 255, 255, 0.25);
 }
-.guideList li .picture p .num::before {
+.guideList > ul > li .picture p .num::before {
   content: "+";
 }
-.guideList li .picture .text {
+.guideList > ul > li .picture .text {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1568,29 +1581,64 @@ footer p {
   transition: all 0.2s;
   transition-delay: 0.4s;
 }
-.guideList li .scrap {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  width: 2.25rem;
-  height: 2.25rem;
-  text-indent: -9999px;
-  background-image: url(../../../public/images/ic_scrap.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-  z-index: 10;
-}
-.guideList li:hover .picture {
+.guideList > ul > li:hover .picture {
   height: calc(100% - 10.75rem);
 }
-.guideList li:hover .picture p {
+.guideList > ul > li:hover .picture p {
   border-radius: 0;
 }
-.guideList li:hover .picture > img {
+.guideList > ul > li:hover .picture > img {
   width: 120%;
 }
-.guideList li:hover .picture .text {
+.guideList > ul > li:hover .picture .text {
   opacity: 0;
   transition: all 0s;
+}
+
+.guideList {
+  width: 100%;
+  max-width: 97.25rem;
+  margin: 0 auto;
+  padding: 12.5rem 1.875rem 6.25rem;
+  transition: max-width 0.4s;
+}
+.guideList .subTitle {
+  margin-bottom: 1.875rem;
+}
+.guideList .subTitle h3 {
+  font-size: 3.75rem;
+  font-weight: 800;
+}
+.guideList > ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 2.125rem);
+  margin-left: -1.0625rem;
+}
+
+.filter {
+  margin-bottom: 1.25rem;
+}
+.filter p {
+  display: none;
+}
+.filter ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.filter ul li {
+  display: inline-flex;
+  align-items: center;
+}
+.filter ul li::after {
+  width: 0.25rem;
+  height: 0.25rem;
+  margin: 0.5rem;
+  border-radius: 100%;
+  background-color: #c4c4c4;
+  content: "";
+}
+.filter ul li a {
+  color: #c4c4c4;
 }

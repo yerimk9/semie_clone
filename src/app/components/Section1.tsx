@@ -21,41 +21,38 @@ function Section1({ list }: FoodGuideProps) {
   return (
     <>
       <div className="swiper-container">
-        <div className="swiper-title-container">
-          <div className="title">
-            <p>
-              <Image src={logo} alt="logo" width={42} height={58} />
-              추천드려요!
-            </p>
-            <h3>
-              요리초보
-              <br />
-              가이드
-            </h3>
-            <button type="button" onClick={modalOpen}>
-              <span>가이드 더보기</span>
-            </button>
-          </div>
-          <GuideModal list={list} isModal={isModal} setIsModal={modalOpen} />
-
-          <div className="swiper-control">
-            <div className="count">
-              <span className="current-num">0{slideIndex}</span>
-              <span className="mb_dott"> · </span>
-              <div className="progressbar-container">
-                <progress max="9" value={slideIndex}></progress>
-              </div>
-
-              <button type="button" className="pause">
-                <span className="stop">
-                  <em className="hidden">play/stop</em>
-                </span>
-              </button>
-              <span className="all-num">44</span>
+        <div className="title">
+          <p>
+            <Image src={logo} alt="logo" width={42} height={58} />
+            추천드려요!
+          </p>
+          <h3>
+            요리초보
+            <br />
+            가이드
+          </h3>
+          <button type="button" onClick={modalOpen}>
+            <span>가이드 더보기</span>
+          </button>
+        </div>
+        <GuideModal list={list} isModal={isModal} setIsModal={modalOpen} />
+        <div className="swiper-control">
+          <div className="count">
+            <span className="current-num">0{slideIndex}</span>
+            <span className="mb_dott"> · </span>
+            <div className="progressbar-container">
+              <progress max="9" value={slideIndex}></progress>
             </div>
-            <div className="swiper-button swiper-button-prev"></div>
-            <div className="swiper-button swiper-button-next"></div>
+
+            <button type="button" className="pause">
+              <span className="stop">
+                <em className="hidden">play/stop</em>
+              </span>
+            </button>
+            <span className="all-num">44</span>
           </div>
+          <div className="swiper-button swiper-button-prev"></div>
+          <div className="swiper-button swiper-button-next"></div>
         </div>
 
         <Swiper

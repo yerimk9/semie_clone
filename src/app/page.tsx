@@ -26,13 +26,11 @@ export default async function Home() {
     <div>
       <Header />
 
-      <div className="section1">
-        <Section1 list={foodItems} />
-      </div>
-      <div className="h-screen guideList">
-        <FoodGuideItem />
-      </div>
-
+      <main>
+        <div className="section1">
+          <Section1 list={foodItems} />
+        </div>
+      </main>
       <Footer />
     </div>
   );
