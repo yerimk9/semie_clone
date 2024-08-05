@@ -41,7 +41,7 @@ export default async function page() {
               <li>
                 <Link href={"/"}>조회순</Link>
               </li>
-              <li>
+              <li className="on">
                 <Link href={"/"}>스크랩순</Link>
               </li>
             </ul>

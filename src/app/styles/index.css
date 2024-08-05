@@ -1639,6 +1639,18 @@ footer p {
   background-color: #c4c4c4;
   content: "";
 }
+.filter ul li.on a {
+  padding-left: 1.2rem;
+  color: #111;
+  font-weight: 500;
+  background-image: url(../../../public/svgs/check.svg);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: auto 100%;
+}
+.filter ul li.on::after {
+  display: none;
+}
 .filter ul li a {
   color: #c4c4c4;
 }

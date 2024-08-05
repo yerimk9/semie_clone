@@ -47,6 +47,20 @@
         content: "";
       }
 
+      &.on {
+        a {
+          padding-left: 1.2rem;
+          color: #111;
+          font-weight: 500;
+          background-image: url(../../../public/svgs/check.svg);
+          background-repeat: no-repeat;
+          background-position: 0 50%;
+          background-size: auto 100%;
+        }
+        &::after {
+          display: none;
+        }
+      }
       a {
         color: #c4c4c4;
       }
