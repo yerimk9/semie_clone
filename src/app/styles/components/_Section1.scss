@@ -154,11 +154,11 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 100%;
+            width: 120% !important;
             height: 100%;
             object-fit: cover;
 
-            transition: all 2s ease-out;
+            transition: all 0.3s ease-out;
           }
 
           p {
@@ -310,6 +310,10 @@
       .swiper-slide {
         text-align: center;
         font-size: 18px;
+
+        img {
+          transition: all 0.3s ease-out;
+        }
       }
     }
   }
@@ -341,6 +345,24 @@
 
       .swiper {
         height: 28.725rem;
+
+        .swiper-slide {
+          &:hover {
+            img {
+              transform: scale(1.1) !important;
+            }
+            .picture {
+              height: 100%;
+              > img {
+                transform: scale(1.1) !important;
+              }
+
+              .totalPic {
+                opacity: 1;
+              }
+            }
+          }
+        }
       }
 
       .mySwiper1 {
@@ -403,9 +425,11 @@
 @media screen and (max-width: 800px) {
   .section1 {
     padding: 6rem 0rem 2.5rem;
+
     .swiper-container {
-      flex-direction: column;
       padding: 0;
+      align-items: center;
+      justify-content: center;
 
       .title {
         position: relative;
@@ -475,39 +499,39 @@
 
       .swiper {
         height: 42rem !important;
-        min-width: 736px;
+        // min-width: 736px;
         border-radius: 20px;
       }
 
       .mySwiper1 {
-        width: 100% !important;
-        border-radius: 20px;
-
-        .swiper-slide-active {
-          width: 90% !important;
-        }
-        .swiper-slide-next,
-        .swiper-slide-prev {
-          width: 5% !important;
-        }
+        margin-left: 75px;
       }
 
-      img {
-        border-radius: 20px;
-      }
-
-      .swiper-slide-next,
-      .swiper-slide-prev {
+      .mySwiper1,
+      .mySwiper3 {
+        height: 37.625rem !important;
         .swiper-title,
         .totalPic {
           display: none;
         }
       }
+
+      .mySwiper1,
+      .mySwiper2,
+      .mySwiper3 {
+        min-width: 90%;
+      }
+
+      .mySwiper2,
+      .mySwiper3 {
+        display: block;
+        margin-left: 10px;
+      }
     }
   }
 }
 
-@media screen and (max-width: 560px) {
+/* @media screen and (max-width: 560px) {
   .section1 {
     .swiper-container {
       .mySwiper1 {
@@ -516,3 +540,4 @@
     }
   }
 }
+ */

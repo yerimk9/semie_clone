@@ -1104,10 +1104,10 @@ footer p {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100%;
+  width: 120% !important;
   height: 100%;
   object-fit: cover;
-  transition: all 2s ease-out;
+  transition: all 0.3s ease-out;
 }
 .section1 .swiper-container .mySwiper2 .swiper-slide .picture p {
   position: absolute;
@@ -1236,6 +1236,9 @@ footer p {
   text-align: center;
   font-size: 18px;
 }
+.section1 .swiper-container .swiper .swiper-slide img {
+  transition: all 0.3s ease-out;
+}
 
 @media screen and (max-width: 1200px) {
   .section1 .swiper-container .title {
@@ -1255,6 +1258,18 @@ footer p {
   }
   .section1 .swiper-container .swiper {
     height: 28.725rem;
+  }
+  .section1 .swiper-container .swiper .swiper-slide:hover img {
+    transform: scale(1.1) !important;
+  }
+  .section1 .swiper-container .swiper .swiper-slide:hover .picture {
+    height: 100%;
+  }
+  .section1 .swiper-container .swiper .swiper-slide:hover .picture > img {
+    transform: scale(1.1) !important;
+  }
+  .section1 .swiper-container .swiper .swiper-slide:hover .picture .totalPic {
+    opacity: 1;
   }
   .section1 .swiper-container .mySwiper1 {
     margin-right: 20px;
@@ -1303,8 +1318,9 @@ footer p {
     padding: 6rem 0rem 2.5rem;
   }
   .section1 .swiper-container {
-    flex-direction: column;
     padding: 0;
+    align-items: center;
+    justify-content: center;
   }
   .section1 .swiper-container .title {
     position: relative;
@@ -1362,35 +1378,42 @@ footer p {
   }
   .section1 .swiper-container .swiper {
     height: 42rem !important;
-    min-width: 736px;
     border-radius: 20px;
   }
   .section1 .swiper-container .mySwiper1 {
-    width: 100% !important;
-    border-radius: 20px;
+    margin-left: 75px;
   }
-  .section1 .swiper-container .mySwiper1 .swiper-slide-active {
-    width: 90% !important;
+  .section1 .swiper-container .mySwiper1,
+  .section1 .swiper-container .mySwiper3 {
+    height: 37.625rem !important;
   }
-  .section1 .swiper-container .mySwiper1 .swiper-slide-next,
-  .section1 .swiper-container .mySwiper1 .swiper-slide-prev {
-    width: 5% !important;
-  }
-  .section1 .swiper-container img {
-    border-radius: 20px;
-  }
-  .section1 .swiper-container .swiper-slide-next .swiper-title,
-  .section1 .swiper-container .swiper-slide-next .totalPic,
-  .section1 .swiper-container .swiper-slide-prev .swiper-title,
-  .section1 .swiper-container .swiper-slide-prev .totalPic {
+  .section1 .swiper-container .mySwiper1 .swiper-title,
+  .section1 .swiper-container .mySwiper1 .totalPic,
+  .section1 .swiper-container .mySwiper3 .swiper-title,
+  .section1 .swiper-container .mySwiper3 .totalPic {
     display: none;
   }
-}
-@media screen and (max-width: 560px) {
-  .section1 .swiper-container .mySwiper1 {
-    height: 31.625rem !important;
+  .section1 .swiper-container .mySwiper1,
+  .section1 .swiper-container .mySwiper2,
+  .section1 .swiper-container .mySwiper3 {
+    min-width: 90%;
+  }
+  .section1 .swiper-container .mySwiper2,
+  .section1 .swiper-container .mySwiper3 {
+    display: block;
+    margin-left: 10px;
   }
 }
+/* @media screen and (max-width: 560px) {
+  .section1 {
+    .swiper-container {
+      .mySwiper1 {
+        height: 31.625rem !important;
+      }
+    }
+  }
+}
+ */
 .guideWrap {
   display: none;
   position: fixed;
@@ -1679,7 +1702,7 @@ footer p {
   border-radius: 0;
 }
 .guideList > ul > li:hover .picture > img {
-  width: 120%;
+  width: 100%;
 }
 .guideList > ul > li:hover .picture .text {
   opacity: 0;

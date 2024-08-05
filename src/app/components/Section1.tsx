@@ -60,10 +60,9 @@ function Section1({ list }: FoodGuideProps) {
           modules={[Pagination, Autoplay]}
           spaceBetween={5}
           centeredSlides={true}
-          slidesPerView={3}
+          slidesPerView={1}
           loop={true}
           speed={900}
-          // watchOverflow
           autoplay={{ delay: 2500, disableOnInteraction: false }}
           initialSlide={0} // 첫 번째 슬라이드로 시작
           onSlideChangeTransitionEnd={(swiperCore) => {
@@ -71,7 +70,8 @@ function Section1({ list }: FoodGuideProps) {
           }}
           breakpoints={{
             800: {
-              slidesPerView: 1,
+              centeredSlides: true,
+              // slidesPerView: 1,
             },
           }}
           className="swiper mySwiper1"
