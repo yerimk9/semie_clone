@@ -5,6 +5,7 @@ import Link from "next/link";
 import React from "react";
 import ic_kakao2 from "@/../public/images/ic_kakao2.png";
 import ic_url from "@/../public/images/ic_url.png";
+import GuideDetailItem from "@/app/components/GuideDetailItem";
 
 function page() {
   return (
@@ -24,7 +25,7 @@ function page() {
           </div>
           <div className="detail_control">
             <div className="left">
-              <Link href={"/"} className="list_btn">
+              <Link href={"/guide/list"} className="list_btn">
                 목록으로
               </Link>
             </div>
@@ -74,37 +75,13 @@ function page() {
                 </div>
               </div>
               <ul className="tagList hashList">
-                <li>
-                  <Link href={"/"}>
-                    <div className="img">
-                      <Image
-                        src={
-                          "https://semie.cooking/image/contents/recipe/gh/dx/jrdsgitx/121173663tluo.jpg"
-                        }
-                        alt=""
-                        width={1280}
-                        height={1280}
-                      />
-                    </div>
-                    <div className="text">
-                      <h4>별미간식 옥수수전</h4>
-                      <p>옥수수캔으로 고소하고 달콤한 이색 전</p>
-                    </div>
-                  </Link>
-                  <ul className="tagWrap">
-                    <li>
-                      <span>준비시간</span>
-                      10분
-                    </li>
-                    <li>
-                      <span>조리시간</span>
-                      20분
-                    </li>
-                  </ul>
-                  <button type="button" className="scrap">
-                    스크랩
-                  </button>
-                </li>
+                <GuideDetailItem />
+                <GuideDetailItem />
+                <GuideDetailItem />
+                <GuideDetailItem />
+                <GuideDetailItem />
+                <GuideDetailItem />
+                <GuideDetailItem />
               </ul>
             </div>
           </div>

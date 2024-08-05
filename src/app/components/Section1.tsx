@@ -97,7 +97,7 @@ function Section1({ list }: FoodGuideProps) {
           spaceBetween={30}
           centeredSlides={true}
           loop={true}
-          // autoplay={{ delay: 2500, disableOnInteraction: false }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
           initialSlide={1} // 첫 번째 슬라이드로 시작
           speed={900}
           className="swiper mySwiper2"

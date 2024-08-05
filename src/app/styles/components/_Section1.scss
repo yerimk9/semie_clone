@@ -348,7 +348,7 @@
 
         .swiper-title,
         .totalPic {
-          display: block;
+          display: none;
         }
       }
 
@@ -375,6 +375,10 @@
 
         .swiper-slide {
           position: relative !important;
+        }
+        .swiper-title,
+        .totalPic {
+          display: block;
         }
 
         .swiper-title {
