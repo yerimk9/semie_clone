@@ -28,7 +28,7 @@ export default async function page() {
     <div>
       <Header />
 
-      <main className="guide_list_main">
+      <main>
         <div className="guideList">
           <div className="subTitle">
             <h3>요리초보가이드</h3>
