@@ -428,14 +428,14 @@
 
     .swiper-container {
       padding: 0;
+
       align-items: center;
       justify-content: center;
 
       .title {
-        position: relative;
-        width: 57%;
+        position: revert-layer;
+        width: auto;
         margin-right: 0;
-        bottom: -8px;
 
         order: 2;
         p,
@@ -463,7 +463,7 @@
       }
 
       .swiper-control {
-        width: 50%;
+        display: none;
 
         .count {
           justify-content: flex-end;
@@ -498,7 +498,7 @@
       }
 
       .swiper {
-        height: 42rem !important;
+        height: 32rem !important;
         // min-width: 736px;
         border-radius: 20px;
       }
@@ -509,7 +509,7 @@
 
       .mySwiper1,
       .mySwiper3 {
-        height: 37.625rem !important;
+        height: 28.625rem !important;
         .swiper-title,
         .totalPic {
           display: none;
@@ -530,14 +530,3 @@
     }
   }
 }
-
-/* @media screen and (max-width: 560px) {
-  .section1 {
-    .swiper-container {
-      .mySwiper1 {
-        height: 31.625rem !important;
-      }
-    }
-  }
-}
- */

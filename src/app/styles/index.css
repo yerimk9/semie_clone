@@ -50,8 +50,8 @@ main {
   bottom: 0;
   left: 0;
   width: calc(100% - 6.25rem);
-  margin: 0 3.125rem;
-  padding: 3.125rem 0;
+  margin: 0 3rem;
+  padding: 2.125rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.6);
   box-sizing: border-box;
   opacity: 1;
@@ -82,6 +82,17 @@ main {
 @media screen and (max-width: 800px) {
   .section1 {
     padding: 9.5rem 0 2.5rem;
+  }
+  .totalPic {
+    padding: 1.125rem 0;
+  }
+  .totalPic .arrow {
+    width: 3rem;
+    height: 3rem;
+  }
+  .totalPic .num {
+    font-size: 2rem;
+    font-weight: 600;
   }
 }
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -1323,10 +1334,9 @@ footer p {
     justify-content: center;
   }
   .section1 .swiper-container .title {
-    position: relative;
-    width: 57%;
+    position: revert-layer;
+    width: auto;
     margin-right: 0;
-    bottom: -8px;
     order: 2;
   }
   .section1 .swiper-container .title p,
@@ -1349,7 +1359,7 @@ footer p {
     content: "더보기";
   }
   .section1 .swiper-container .swiper-control {
-    width: 50%;
+    display: none;
   }
   .section1 .swiper-container .swiper-control .count {
     justify-content: flex-end;
@@ -1377,7 +1387,7 @@ footer p {
     font-weight: 600;
   }
   .section1 .swiper-container .swiper {
-    height: 42rem !important;
+    height: 32rem !important;
     border-radius: 20px;
   }
   .section1 .swiper-container .mySwiper1 {
@@ -1385,7 +1395,7 @@ footer p {
   }
   .section1 .swiper-container .mySwiper1,
   .section1 .swiper-container .mySwiper3 {
-    height: 37.625rem !important;
+    height: 28.625rem !important;
   }
   .section1 .swiper-container .mySwiper1 .swiper-title,
   .section1 .swiper-container .mySwiper1 .totalPic,
@@ -1404,16 +1414,6 @@ footer p {
     margin-left: 10px;
   }
 }
-/* @media screen and (max-width: 560px) {
-  .section1 {
-    .swiper-container {
-      .mySwiper1 {
-        height: 31.625rem !important;
-      }
-    }
-  }
-}
- */
 .guideWrap {
   display: none;
   position: fixed;
