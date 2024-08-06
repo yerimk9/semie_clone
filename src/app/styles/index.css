@@ -2056,6 +2056,118 @@ footer p {
     height: 3.875rem;
   }
 }
+.section3 .bg_wrap {
+  padding: 6.25rem 4.5rem 4.5rem;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background-color: #fff9e2;
+  background-image: url("https://semie.cooking/assets/images/common/bg_pattern.png");
+}
+.section3 .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 3.375rem;
+}
+.section3 .title h3 {
+  font-size: 3.75rem;
+  font-weight: 800;
+}
+.section3 .swiper-container-bg {
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+.section3 .swiper-container-bg img {
+  width: 28.75rem;
+  margin: 0 auto;
+}
+.section3 .swiper-container-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1736px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transform: translate(-50%, -50%);
+}
+.section3 .myfood {
+  position: relative;
+  width: 100%;
+}
+.section3 .myfood > img {
+  position: relative;
+  height: 8.375em;
+  margin-left: 3.125rem;
+  vertical-align: middle;
+  z-index: 10;
+}
+.section3 .myfood .myfoodBtnWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 3.375rem 1.5rem 15.875rem;
+  color: #fff;
+  border-radius: 2.625rem;
+  background-color: #fbb9bf;
+}
+.section3 .myfood .myfoodBtnWrap p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.section3 .myfood .myfoodBtnWrap a {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 2.625rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: inherit;
+}
+.section3 .myfood .myfoodBtnWrap a img {
+  margin-left: 5px;
+}
+.section3 .myfood .myfoodBtnWrap a::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 1px;
+  height: 1.25rem;
+  margin-top: -0.625rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  content: "";
+}
+
+@media screen and (max-width: 800px) {
+  .section3 {
+    /*   .swiper-container-bg {
+      > img {
+        // display: none;
+      }
+    } */
+  }
+  .section3 .bg_wrap {
+    padding: 6.25rem 0 6.25rem 1.875rem;
+    border-radius: 0;
+  }
+  .section3 .title h3 {
+    font-size: 2.1rem;
+  }
+  .section3 .swiper-container-box {
+    position: static;
+    width: 100%;
+    transform: translate(0);
+  }
+  .section3 .myfood {
+    display: none;
+  }
+}
 .guideList {
   width: 100%;
   max-width: 97.25rem;
