@@ -2612,7 +2612,31 @@ footer p {
 }
 
 @media screen and (max-width: 560px) {
+  .eventList {
+    padding-top: 4.5rem;
+  }
+  .eventList .subTitle {
+    position: fixed;
+    top: 1.6rem;
+    left: 50%;
+    width: auto;
+    margin-bottom: 0;
+    transform: translateX(-50%);
+    z-index: 1001;
+  }
+  .eventList .subTitle h3 {
+    font-size: 1.175rem;
+  }
+  .eventList .subTitle h3::before {
+    content: "WOW";
+  }
+  .eventList .subTitle h3 img {
+    display: none;
+  }
   .eventList .eventList_wrap .filter ul li::before {
+    display: none;
+  }
+  .eventList .eventList_wrap .filter ul li::after {
     display: none;
   }
 }

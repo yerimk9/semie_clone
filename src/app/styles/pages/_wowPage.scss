@@ -51,11 +51,37 @@
 
 @media screen and (max-width: 560px) {
   .eventList {
+    padding-top: 4.5rem;
+    .subTitle {
+      position: fixed;
+      top: 1.6rem;
+      left: 50%;
+      width: auto;
+      margin-bottom: 0;
+      transform: translateX(-50%);
+      z-index: 1001;
+
+      h3 {
+        font-size: 1.175rem;
+
+        &::before {
+          content: "WOW";
+        }
+
+        img {
+          display: none;
+        }
+      }
+    }
+
     .eventList_wrap {
       .filter {
         ul {
           li {
             &::before {
+              display: none;
+            }
+            &::after {
               display: none;
             }
           }
