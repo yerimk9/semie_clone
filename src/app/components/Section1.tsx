@@ -8,10 +8,8 @@ import logo from "../../../public/images/logo.png";
 import { FoodGuideProps } from "../types";
 import Link from "next/link";
 import GuideModal from "./GuideModal";
-import FoodGuideItem from "./FoodGuideItem";
 
 function Section1({ list }: FoodGuideProps) {
-  console.log(list);
   const [slideIndex, setSlideIndex] = useState(1);
   const [isModal, setIsModal] = useState(false);
 

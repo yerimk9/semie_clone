@@ -5,6 +5,10 @@ import { collection, doc, getDoc, getDocs, query } from "firebase/firestore";
 import { db } from "@/firebase";
 import { FoodGuide } from "./types";
 import FoodGuideItem from "./components/FoodGuideItem";
+import Image from "next/image";
+
+import Link from "next/link";
+import Section4 from "./components/Section4";
 
 export default async function Home() {
   let foodItems: FoodGuide[] = [];
@@ -29,6 +33,10 @@ export default async function Home() {
       <main>
         <div className="section1">
           <Section1 list={foodItems} />
+        </div>
+
+        <div className="section4">
+          <Section4 />
         </div>
       </main>
       <Footer />

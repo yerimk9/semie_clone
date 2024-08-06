@@ -13,6 +13,15 @@ main {
   border-bottom: 1px solid #e5e5e5;
 }
 
+.section4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 4.5rem 7rem;
+  box-sizing: border-box;
+}
+
 .swiper-title {
   position: absolute;
 
@@ -92,6 +101,10 @@ main {
 @media screen and (max-width: 800px) {
   .section1 {
     padding: 9.5rem 0 2.5rem;
+  }
+
+  .section4 {
+    padding: 4.5rem 1.875rem;
   }
 
   .totalPic {

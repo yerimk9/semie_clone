@@ -21,8 +21,7 @@
 
   .eventList_wrap {
     margin-top: 1.875rem;
-  }
-  .eventList_wrap {
+
     .filter {
       ul {
         li {
@@ -46,6 +45,22 @@
       flex-wrap: wrap;
       width: calc(100% + 2.125rem);
       margin-left: -1.0625rem;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .eventList {
+    .eventList_wrap {
+      .filter {
+        ul {
+          li {
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
     }
   }
 }

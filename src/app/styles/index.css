@@ -14,6 +14,15 @@ main {
   border-bottom: 1px solid #e5e5e5;
 }
 
+.section4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 4.5rem 7rem;
+  box-sizing: border-box;
+}
+
 .swiper-title {
   position: absolute;
   top: 0;
@@ -82,6 +91,9 @@ main {
 @media screen and (max-width: 800px) {
   .section1 {
     padding: 9.5rem 0 2.5rem;
+  }
+  .section4 {
+    padding: 4.5rem 1.875rem;
   }
   .totalPic {
     padding: 1.125rem 0;
@@ -1083,9 +1095,15 @@ footer p {
 .section1 .swiper-container .swiper-control .swiper-button-prev {
   background-image: url(../../../public/images/ic_prev.png) !important;
 }
+.section1 .swiper-container .swiper-control .swiper-button-prev::after {
+  display: none;
+}
 .section1 .swiper-container .swiper-control .swiper-button-next {
   background-image: url(../../../public/images/ic_next.png) !important;
   margin-left: 0.438rem;
+}
+.section1 .swiper-container .swiper-control .swiper-button-next::after {
+  display: none;
 }
 .section1 .swiper-container .mySwiper1 {
   width: 23.625rem;
@@ -1902,6 +1920,101 @@ footer p {
   background-color: #fff9e2;
 }
 
+@media screen and (max-width: 800px) {
+  .event_list li {
+    width: calc(50% - 2.125rem);
+  }
+}
+@media screen and (max-width: 560px) {
+  .event_list li {
+    width: calc(100% - 2.125rem);
+  }
+}
+.section4 .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.section4 .title h3 {
+  display: flex;
+  align-items: center;
+  font-size: 3.45rem;
+  font-weight: 800;
+}
+.section4 .title h3 img {
+  height: 5.875rem;
+  margin-right: 0.625rem;
+}
+.section4 .title h3 span {
+  font-size: 100%;
+}
+.section4 .btn_arrow_lg {
+  padding: 1rem 1.5rem;
+  font-size: 1.125rem;
+}
+.section4 .btn_arrow_lg img {
+  width: 1rem;
+  margin-left: 0.5rem;
+}
+.section4 .mySwiper {
+  width: 100%;
+}
+.section4 .mySwiper img.mb-show {
+  display: none;
+}
+.section4 .mySwiper .swiper-button-prev {
+  transform: rotate(180deg);
+}
+.section4 .mySwiper .swiper-button-prev,
+.section4 .mySwiper .swiper-button-next {
+  flex-shrink: 0;
+  width: 2.25rem !important;
+  height: 2.25rem !important;
+  margin-top: 0;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  background-image: url(../../../public/images/ic_more.png) !important;
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  border: 1px solid #d4d4d4;
+  border-radius: 100%;
+  background-position: center;
+}
+.section4 .mySwiper .swiper-button-prev::after,
+.section4 .mySwiper .swiper-button-next::after {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .section4 .title {
+    margin-bottom: 1.374rem;
+  }
+  .section4 .btn_arrow_lg img {
+    width: auto;
+    height: 1.587rem;
+    margin-left: 0;
+    padding-right: 0;
+  }
+  .section4 .mySwiper {
+    width: 100%;
+    height: 100%;
+  }
+  .section4 .mySwiper img.pc-show {
+    display: none;
+  }
+  .section4 .mySwiper img.mb-show {
+    display: block;
+  }
+}
+@media screen and (max-width: 560px) {
+  .section4 .btn_arrow_lg {
+    text-indent: -9999px;
+    border: none;
+  }
+  .section4 .btn_arrow_lg img {
+    height: 2.25rem;
+  }
+}
 .guideList {
   width: 100%;
   max-width: 97.25rem;
@@ -2496,4 +2609,10 @@ footer p {
   flex-wrap: wrap;
   width: calc(100% + 2.125rem);
   margin-left: -1.0625rem;
+}
+
+@media screen and (max-width: 560px) {
+  .eventList .eventList_wrap .filter ul li::before {
+    display: none;
+  }
 }

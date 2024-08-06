@@ -116,11 +116,19 @@
 
       .swiper-button-prev {
         background-image: url(../../../public/images/ic_prev.png) !important;
+
+        &::after {
+          display: none;
+        }
       }
 
       .swiper-button-next {
         background-image: url(../../../public/images/ic_next.png) !important;
         margin-left: 0.438rem;
+
+        &::after {
+          display: none;
+        }
       }
     }
 

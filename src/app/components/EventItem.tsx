@@ -24,7 +24,7 @@ function EventItem({ imgUrl, status }: EventItemProps) {
       </div>
       <p className="tit">새미와 함께 요리해!</p>
       <p className="date">
-        <span className={getStatusClass(status)}>진행중</span>
+        <span className={getStatusClass(status)}>{status}</span>
         2024.07.10 ~ 2024.08.11
       </p>
     </Link>
