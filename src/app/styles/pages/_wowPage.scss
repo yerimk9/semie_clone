@@ -1,0 +1,51 @@
+.eventList {
+  width: 100%;
+  max-width: 97.25rem;
+  margin: 0 auto;
+  padding: 12.5rem 1.875rem 6.25rem;
+  transition: max-width 0.4s;
+
+  .subTitle {
+    h3 {
+      display: flex;
+      align-items: center;
+      font-size: 3.75rem;
+      font-weight: 800;
+
+      img {
+        height: 5.875rem;
+        margin-right: 0.625rem;
+      }
+    }
+  }
+
+  .eventList_wrap {
+    margin-top: 1.875rem;
+  }
+  .eventList_wrap {
+    .filter {
+      ul {
+        li {
+          &:not(.on)::before {
+            width: 0.25rem;
+            height: 0.25rem;
+            margin: 0 0.5rem;
+            border-radius: 100%;
+            background-color: #c4c4c4;
+            content: "";
+          }
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .event_list {
+      display: flex;
+      flex-wrap: wrap;
+      width: calc(100% + 2.125rem);
+      margin-left: -1.0625rem;
+    }
+  }
+}

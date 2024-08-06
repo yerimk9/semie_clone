@@ -31,3 +31,8 @@ export interface GuideModalProps {
   isModal: boolean;
   setIsModal: () => void;
 }
+
+export interface EventItemProps {
+  imgUrl: string;
+  status: string;
+}
