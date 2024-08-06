@@ -5,6 +5,7 @@ import Link from "next/link";
 import React from "react";
 import il_smile2 from "@/../public/images/il_samie_2.png";
 import il_write from "@/../public/images/ic_write.png";
+import CookingListItem from "@/app/components/CookingListItem";
 
 function page() {
   return (
@@ -62,6 +63,80 @@ function page() {
                   </li>
                 </ul>
               </div>
+              <ul className="hashList">
+                <li>
+                  <CookingListItem />
+                </li>
+                <li>
+                  <CookingListItem />
+                </li>
+                <li>
+                  <CookingListItem />
+                </li>
+                <li>
+                  <CookingListItem />
+                </li>
+                <li>
+                  <CookingListItem />
+                </li>
+                <li>
+                  <CookingListItem />
+                </li>
+                <li>
+                  <CookingListItem />
+                </li>
+                <li>
+                  <CookingListItem />
+                </li>
+              </ul>
+              <div className="middle_bn">
+                <Link href={"/"}>
+                  <Image
+                    src={
+                      "https://semie.cooking/image/index/2024/07/143462772kabf.png"
+                    }
+                    alt=""
+                    className="pc-show"
+                    width={1496}
+                    height={160}
+                  />
+                  <Image
+                    src={
+                      "https://semie.cooking/image/index/2024/07/143462775lvhq.png"
+                    }
+                    alt=""
+                    className="mb-show"
+                    width={690}
+                    height={200}
+                  />
+                </Link>
+              </div>
+              <ul className="hashList">
+                <li>
+                  <CookingListItem />
+                </li>
+                <li>
+                  <CookingListItem />
+                </li>
+                <li>
+                  <CookingListItem />
+                </li>
+                <li>
+                  <CookingListItem />
+                </li>
+                <li>
+                  <CookingListItem />
+                </li>
+                <li>
+                  <CookingListItem />
+                </li>
+                <li>
+                  <CookingListItem />
+                </li>
+                <li>
+                  <CookingListItem />
+                </li>
+              </ul>
             </div>
 
             <div className="pagination">

@@ -185,6 +185,12 @@ main {
   }
 }
 
+img {
+  &.mb-show {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .section1 {
     padding: 9.5rem 0 2.5rem;
@@ -196,6 +202,16 @@ main {
 
   .section4 {
     padding: 4.5rem 1.875rem;
+  }
+
+  img {
+    &.pc-show {
+      display: none;
+    }
+
+    &.mb-show {
+      display: block;
+    }
   }
 
   .btn_arrow_lg {

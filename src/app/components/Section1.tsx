@@ -9,7 +9,8 @@ import { FoodGuideProps } from "../types";
 import Link from "next/link";
 import GuideModal from "./GuideModal";
 
-function Section1({ list }: FoodGuideProps) {
+// function Section1({ list }: FoodGuideProps) {
+function Section1() {
   const [slideIndex, setSlideIndex] = useState(1);
   const [isModal, setIsModal] = useState(false);
 
@@ -34,7 +35,7 @@ function Section1({ list }: FoodGuideProps) {
             <span>가이드 더보기</span>
           </button>
         </div>
-        <GuideModal list={list} isModal={isModal} setIsModal={modalOpen} />
+        {/* <GuideModal list={list} isModal={isModal} setIsModal={modalOpen} /> */}
         <div className="swiper-control">
           <div className="count">
             <span className="current-num">0{slideIndex}</span>
@@ -74,14 +75,22 @@ function Section1({ list }: FoodGuideProps) {
           }}
           className="swiper mySwiper1"
         >
-          {list.map((food, index) => (
+          {[1, 2, 3, 4, 5].map((food, index) => (
             <SwiperSlide key={index} className="swiper-slide">
               <Link href={"/"}>
-                <Image src={food["main_img"]} alt="img" fill />
-                <p
+                {/* <Image src={food["main_img"]} alt="img" fill /> */}
+                <Image
+                  src={
+                    "https://semie.cooking/image/contents/solution/js/sa/hkagfitd/143308762rtmh.jpg"
+                  }
+                  alt="img"
+                  fill
+                />
+                {/* <p
                   className="swiper-title"
                   dangerouslySetInnerHTML={{ __html: food.title }}
-                />
+                /> */}
+                <p>TITLE</p>
                 <div className="totalPic">
                   <div className="num">8</div>
                   <div className="arrow"></div>
@@ -100,15 +109,23 @@ function Section1({ list }: FoodGuideProps) {
           speed={900}
           className="swiper mySwiper2"
         >
-          {list.map((food, index) => (
+          {[1, 2, 3, 4, 5].map((food, index) => (
             <SwiperSlide key={index} className="swiper-slide">
               <Link href={"/"}>
                 <div className="picture">
-                  <Image src={food["main_img"]} alt="img" fill />
-                  <p
+                  {/* <Image src={food["main_img"]} alt="img" fill /> */}
+                  <Image
+                    src={
+                      "https://semie.cooking/image/contents/solution/js/sa/hkagfitd/143308762rtmh.jpg"
+                    }
+                    alt="img"
+                    fill
+                  />
+                  {/* <p
                     className="swiper-title"
                     dangerouslySetInnerHTML={{ __html: food.title }}
-                  />
+                  /> */}
+                  <p>TITLE</p>
                   <div className="totalPic">
                     <div className="num">8</div>
                     <div className="arrow"></div>
@@ -155,14 +172,22 @@ function Section1({ list }: FoodGuideProps) {
           initialSlide={2} // 첫 번째 슬라이드로 시작
           className="swiper mySwiper3"
         >
-          {list.map((food, index) => (
+          {[1, 2, 3, 4, 5].map((food, index) => (
             <SwiperSlide key={index} className="swiper-slide">
               <Link href={"/"}>
-                <Image src={food["main_img"]} alt="img" fill />
-                <p
+                {/* <Image src={food["main_img"]} alt="img" fill /> */}
+                <Image
+                  src={
+                    "https://semie.cooking/image/contents/solution/js/sa/hkagfitd/143308762rtmh.jpg"
+                  }
+                  alt="img"
+                  fill
+                />
+                {/* <p
                   className="swiper-title"
                   dangerouslySetInnerHTML={{ __html: food.title }}
-                />
+                /> */}
+                <p>TITLE</p>
                 <div className="totalPic">
                   <div className="num">8</div>
                   <div className="arrow"></div>

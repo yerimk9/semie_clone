@@ -167,6 +167,10 @@ main {
   margin-right: 0.625rem;
 }
 
+img.mb-show {
+  display: none;
+}
+
 @media screen and (max-width: 800px) {
   .section1 {
     padding: 9.5rem 0 2.5rem;
@@ -176,6 +180,12 @@ main {
   }
   .section4 {
     padding: 4.5rem 1.875rem;
+  }
+  img.pc-show {
+    display: none;
+  }
+  img.mb-show {
+    display: block;
   }
   .btn_arrow_lg img {
     width: auto;
@@ -2074,9 +2084,6 @@ footer p {
 .section4 .mySwiper {
   width: 100%;
 }
-.section4 .mySwiper img.mb-show {
-  display: none;
-}
 .section4 .mySwiper .swiper-button-prev {
   transform: rotate(180deg);
 }
@@ -2100,28 +2107,12 @@ footer p {
 }
 
 @media screen and (max-width: 800px) {
-  .section4 {
-    /*   .btn_arrow_lg {
-      img {
-        width: auto;
-        height: 1.287rem;
-        margin-left: 0;
-        padding-right: 0;
-      }
-    } */
-  }
   .section4 .title {
     margin-bottom: 1.374rem;
   }
   .section4 .mySwiper {
     width: 100%;
     height: 100%;
-  }
-  .section4 .mySwiper img.pc-show {
-    display: none;
-  }
-  .section4 .mySwiper img.mb-show {
-    display: block;
   }
 }
 @media screen and (max-width: 560px) {
@@ -2300,6 +2291,84 @@ footer p {
     width: 70% !important;
   }
 }
+.hashList > li {
+  width: calc(25% - 2rem);
+}
+.hashList > li .img {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+}
+.hashList > li .img::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 0.2));
+  z-index: 11;
+  content: "";
+}
+.hashList > li .img::after {
+  display: block;
+  padding-top: 100%;
+  content: "";
+}
+.hashList > li .img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease-out;
+  z-index: 10;
+}
+.hashList > li .info {
+  display: flex;
+  align-items: center;
+  min-height: 1.625rem;
+  margin-top: 1.125rem;
+  color: #999;
+  font-size: 0.875rem;
+}
+.hashList > li .info .date {
+  position: relative;
+  margin-left: 0.625rem;
+  padding-left: 0.625rem;
+}
+.hashList > li .info .date::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 8px;
+  transform: translateY(-50%);
+  background-color: #c4c4c4;
+  content: "";
+}
+.hashList > li .text {
+  padding-bottom: 0;
+}
+.hashList > li .text h4 {
+  -webkit-line-clamp: 2;
+}
+.hashList > li .scrap {
+  position: absolute;
+  top: 1.5rem !important;
+  right: 1.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  text-indent: -9999px;
+  background-image: url(../../../public/images/ic_scrap.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  z-index: 12;
+}
+
 .guideList {
   width: 100%;
   max-width: 97.25rem;
@@ -2891,6 +2960,9 @@ footer p {
   padding: 12.5rem 1.875rem 6.25rem;
   transition: max-width 0.4s;
 }
+.labList .myfood {
+  margin-bottom: 3rem;
+}
 .labList .myfood > img {
   width: 9%;
 }
@@ -2946,6 +3018,15 @@ footer p {
   max-width: 93.5rem;
   margin: 0 auto;
   background-color: #fff;
+}
+.labList .detail_wrap .detail_con .hashList {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 2rem);
+  margin-left: -1rem;
+}
+.labList .detail_wrap .detail_con .middle_bn {
+  margin-bottom: 5rem;
 }
 
 @media screen and (max-width: 560px) {

@@ -13,19 +13,19 @@ import Section3 from "./components/Section3";
 
 export default async function Home() {
   let foodItems: FoodGuide[] = [];
-  try {
-    // Firestore에서 데이터 가져오기
-    const querySnapshot = await getDocs(
-      query(collection(db, "food_guide_list"))
-    );
+  // try {
+  //   // Firestore에서 데이터 가져오기
+  //   const querySnapshot = await getDocs(
+  //     query(collection(db, "food_guide_list"))
+  //   );
 
-    querySnapshot.forEach((doc) => {
-      const data = doc.data() as FoodGuide;
-      foodItems.push(data);
-    });
-  } catch (e) {
-    console.log(e);
-  }
+  //   querySnapshot.forEach((doc) => {
+  //     const data = doc.data() as FoodGuide;
+  //     foodItems.push(data);
+  //   });
+  // } catch (e) {
+  //   console.log(e);
+  // }
 
   return (
     <div>
@@ -33,7 +33,8 @@ export default async function Home() {
 
       <main>
         <div className="section1">
-          <Section1 list={foodItems} />
+          {/* <Section1 list={foodItems} /> */}
+          <Section1 />
         </div>
 
         <div className="section3">
