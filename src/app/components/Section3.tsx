@@ -37,7 +37,7 @@ function Section3() {
             loop={true}
             autoplay={{ delay: 2500, disableOnInteraction: false }}
             initialSlide={0}
-            speed={900}
+            speed={700}
             className="swiper mySwiper1"
           >
             {[1, 2, 3, 4, 5].map((food, index) => (
@@ -59,7 +59,7 @@ function Section3() {
           </Swiper>
           <Swiper
             modules={[Autoplay]}
-            spaceBetween={20}
+            spaceBetween={-135}
             centeredSlides={true}
             loop={true}
             slidesPerView={2}
@@ -68,10 +68,13 @@ function Section3() {
                 slidesPerView: 1,
                 spaceBetween: 100,
               },
+              560: {
+                spaceBetween: 20,
+              },
             }}
-            // autoplay={{ delay: 2500, disableOnInteraction: false }}
+            autoplay={{ delay: 2500, disableOnInteraction: false }}
             initialSlide={1}
-            speed={900}
+            speed={700}
             className="swiper mySwiper2"
           >
             {[1, 2, 3, 4, 5].map((food, index) => (
@@ -110,7 +113,7 @@ function Section3() {
             loop={true}
             autoplay={{ delay: 2500, disableOnInteraction: false }}
             initialSlide={2}
-            speed={900}
+            speed={700}
             className="swiper mySwiper3"
           >
             {[1, 2, 3, 4, 5].map((food, index) => (
