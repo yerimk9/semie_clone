@@ -13,6 +13,11 @@ main {
   border-bottom: 1px solid #e5e5e5;
 }
 
+.section3 {
+  width: 100%;
+  padding: 0 2.5rem;
+}
+
 .section4 {
   display: flex;
   align-items: center;
@@ -98,13 +103,36 @@ main {
   }
 }
 
+.btn_arrow_lg {
+  padding: 1rem 1.5rem;
+  font-size: 1.125rem;
+
+  img {
+    width: 1rem;
+    margin-left: 0.5rem;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .section1 {
     padding: 9.5rem 0 2.5rem;
   }
 
+  .section3 {
+    padding: 0;
+  }
+
   .section4 {
     padding: 4.5rem 1.875rem;
+  }
+
+  .btn_arrow_lg {
+    img {
+      width: auto;
+      height: 1.287rem;
+      margin-left: 0;
+      padding-right: 0;
+    }
   }
 
   .totalPic {
@@ -118,6 +146,17 @@ main {
     .num {
       font-size: 2rem;
       font-weight: 600;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .btn_arrow_lg {
+    text-indent: -9999px;
+    border: none !important;
+
+    img {
+      height: 1.6rem;
     }
   }
 }

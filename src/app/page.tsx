@@ -9,6 +9,7 @@ import Image from "next/image";
 
 import Link from "next/link";
 import Section4 from "./components/Section4";
+import Section3 from "./components/Section3";
 
 export default async function Home() {
   let foodItems: FoodGuide[] = [];
@@ -33,6 +34,10 @@ export default async function Home() {
       <main>
         <div className="section1">
           <Section1 list={foodItems} />
+        </div>
+
+        <div className="section3">
+          <Section3 />
         </div>
 
         <div className="section4">
