@@ -2079,7 +2079,7 @@ footer p {
   position: relative;
   text-align: center;
 }
-.section3 .swiper-container-bg img {
+.section3 .swiper-container-bg > img {
   width: 28.75rem;
   margin: 0 auto;
 }
@@ -2087,11 +2087,22 @@ footer p {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 1736px;
+  width: 1136px;
   height: 100%;
   display: flex;
   align-items: center;
   transform: translate(-50%, -50%);
+  margin: 0 auto !important;
+}
+.section3 .swiper-container-box .swiper-slide .img {
+  display: flex;
+  justify-content: center;
+  margin: 0 30px;
+}
+.section3 .swiper-container-box .swiper-slide .img img {
+  min-width: 204px;
+  min-height: 204px;
+  border-radius: 20px;
 }
 .section3 .myfood {
   position: relative;
@@ -2145,19 +2156,16 @@ footer p {
 }
 
 @media screen and (max-width: 800px) {
-  .section3 {
-    /*   .swiper-container-bg {
-      > img {
-        // display: none;
-      }
-    } */
-  }
   .section3 .bg_wrap {
     padding: 6.25rem 0 6.25rem 1.875rem;
     border-radius: 0;
+    overflow: hidden;
   }
   .section3 .title h3 {
     font-size: 2.1rem;
+  }
+  .section3 .swiper-container-bg > img {
+    display: none;
   }
   .section3 .swiper-container-box {
     position: static;

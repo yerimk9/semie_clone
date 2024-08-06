@@ -25,7 +25,7 @@
     position: relative;
     text-align: center;
 
-    img {
+    > img {
       width: 28.75rem;
       margin: 0 auto;
     }
@@ -35,11 +35,26 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: calc(1840px - 104px);
+    width: calc(1840px - 704px);
     height: 100%;
     display: flex;
     align-items: center;
     transform: translate(-50%, -50%);
+    margin: 0 auto !important;
+    // gap: 130px;
+
+    .swiper-slide {
+      .img {
+        display: flex;
+        justify-content: center;
+        margin: 0 30px;
+        img {
+          min-width: 204px;
+          min-height: 204px;
+          border-radius: 20px;
+        }
+      }
+    }
   }
 
   .myfood {
@@ -105,6 +120,7 @@
     .bg_wrap {
       padding: 6.25rem 0 6.25rem 1.875rem;
       border-radius: 0;
+      overflow: hidden;
     }
 
     .title {
@@ -113,11 +129,11 @@
       }
     }
 
-    /*   .swiper-container-bg {
+    .swiper-container-bg {
       > img {
-        // display: none;
+        display: none;
       }
-    } */
+    }
 
     .swiper-container-box {
       position: static;

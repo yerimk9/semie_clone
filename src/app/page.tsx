@@ -37,6 +37,7 @@ export default async function Home() {
         </div>
 
         <div className="section3">
+          {/* <Section3 list={foodItems} /> */}
           <Section3 />
         </div>
 
