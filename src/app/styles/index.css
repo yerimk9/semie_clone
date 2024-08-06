@@ -102,6 +102,57 @@ main {
   margin-left: 0.5rem;
 }
 
+.myfood {
+  position: relative;
+  width: 100%;
+}
+.myfood > img {
+  position: relative;
+  height: 8.375em;
+  margin-left: 3.125rem;
+  vertical-align: middle;
+  z-index: 10;
+}
+.myfood .myfoodBtnWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 3.375rem 1.5rem 15.875rem;
+  color: #fff;
+  border-radius: 2.625rem;
+  background-color: #fbb9bf;
+}
+.myfood .myfoodBtnWrap p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.myfood .myfoodBtnWrap a {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 2.625rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: inherit;
+}
+.myfood .myfoodBtnWrap a img {
+  margin-left: 5px;
+}
+.myfood .myfoodBtnWrap a::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 1px;
+  height: 1.25rem;
+  margin-top: -0.625rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  content: "";
+}
+
 @media screen and (max-width: 800px) {
   .section1 {
     padding: 9.5rem 0 2.5rem;
@@ -2094,72 +2145,77 @@ footer p {
   transform: translate(-50%, -50%);
   margin: 0 auto !important;
 }
-.section3 .swiper-container-box .swiper-slide .img {
+.section3 .swiper-container-box .swiper {
+  height: 100%;
+}
+.section3 .swiper-container-box .swiper .swiper-slide a {
+  height: 100%;
   display: flex;
   justify-content: center;
-  margin: 0 30px;
+  align-items: flex-start;
 }
-.section3 .swiper-container-box .swiper-slide .img img {
+.section3 .swiper-container-box .swiper .swiper-slide a .img {
+  display: flex;
+  justify-self: center;
+  margin: 0 30px;
+  align-self: center;
+}
+.section3 .swiper-container-box .swiper .swiper-slide a .img img {
   min-width: 204px;
   min-height: 204px;
   border-radius: 20px;
 }
-.section3 .myfood {
-  position: relative;
-  width: 100%;
+.section3 .swiper-container-box .swiper.mySwiper2 .swiper-slide a {
+  flex-direction: column;
+  justify-content: space-around;
 }
-.section3 .myfood > img {
-  position: relative;
-  height: 8.375em;
-  margin-left: 3.125rem;
-  vertical-align: middle;
-  z-index: 10;
-}
-.section3 .myfood .myfoodBtnWrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 1.5rem 3.375rem 1.5rem 15.875rem;
-  color: #fff;
-  border-radius: 2.625rem;
-  background-color: #fbb9bf;
-}
-.section3 .myfood .myfoodBtnWrap p {
-  font-size: 1.5rem;
+.section3 .swiper-container-box .swiper.mySwiper2 .swiper-slide a .top_text h4 {
+  margin-bottom: 0.438rem;
+  font-size: 1.875rem;
   font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 40px;
 }
-.section3 .myfood .myfoodBtnWrap a {
-  display: flex;
-  align-items: center;
-  position: relative;
-  padding-left: 2.625rem;
-  font-size: 1.125rem;
-  font-weight: bold;
-  color: inherit;
-}
-.section3 .myfood .myfoodBtnWrap a img {
+.section3 .swiper-container-box .swiper.mySwiper2 .swiper-slide a .top_text p {
+  color: #999;
+  font-size: 1rem;
   margin-left: 5px;
 }
-.section3 .myfood .myfoodBtnWrap a::before {
+.section3 .swiper-container-box .swiper.mySwiper2 .swiper-slide a .top_text p span {
+  position: relative;
+  margin-right: 0.625rem;
+  padding-right: 0.625rem;
+}
+.section3 .swiper-container-box .swiper.mySwiper2 .swiper-slide a .top_text p span::after {
   position: absolute;
   top: 50%;
-  left: 0;
-  width: 1px;
-  height: 1.25rem;
-  margin-top: -0.625rem;
-  background-color: rgba(255, 255, 255, 0.6);
+  right: 0;
+  width: 0.063rem;
+  height: 0.625rem;
+  background-color: #c4c4c4;
+  transform: translateY(-50%);
   content: "";
+}
+.section3 .swiper-container-box .swiper.mySwiper2 .swiper-slide a .bottom_text {
+  width: 100%;
+  margin-top: -30px;
+  padding: 0px 40px;
+  font-size: 1.125rem;
+  line-height: 1.56;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media screen and (max-width: 800px) {
   .section3 .bg_wrap {
-    padding: 6.25rem 0 6.25rem 1.875rem;
+    padding: 3.5rem 0 6.25rem 1.875rem;
     border-radius: 0;
     overflow: hidden;
+  }
+  .section3 .title {
+    margin-bottom: 2rem;
   }
   .section3 .title h3 {
     font-size: 2.1rem;
@@ -2172,8 +2228,51 @@ footer p {
     width: 100%;
     transform: translate(0);
   }
+  .section3 .swiper.mySwiper1, .section3 .swiper.mySwiper3 {
+    display: none;
+  }
+  .section3 .swiper.mySwiper2 .swiper-slide {
+    min-width: 567.692px;
+    height: 100%;
+    border-radius: 20px;
+    background-image: url("https://semie.cooking/assets/images/common/bg_frame.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .section3 .swiper.mySwiper2 .swiper-slide .img img {
+    width: 250px;
+    height: 250px;
+  }
+  .section3 .swiper.mySwiper2 .swiper-slide .top_text {
+    margin-bottom: 15%;
+    margin-top: 7%;
+  }
+  .section3 .swiper.mySwiper2 .swiper-slide .bottom_text {
+    font-size: 1.325rem !important;
+    margin-top: 8% !important;
+    margin-bottom: 10%;
+  }
   .section3 .myfood {
     display: none;
+  }
+}
+@media screen and (max-width: 560px) {
+  .section3 .swiper.mySwiper2 .swiper-slide {
+    background-size: 73% 95%;
+  }
+  .section3 .swiper.mySwiper2 .swiper-slide .img {
+    align-self: baseline !important;
+    padding-left: 80px !important;
+  }
+  .section3 .swiper.mySwiper2 .swiper-slide .img img {
+    width: 188px;
+    height: 188px;
+  }
+  .section3 .swiper.mySwiper2 .swiper-slide .top_text {
+    margin-bottom: 7%;
+  }
+  .section3 .swiper.mySwiper2 .swiper-slide .bottom_text {
+    width: 70% !important;
   }
 }
 .guideList {
@@ -2800,4 +2899,73 @@ footer p {
   .eventList .eventList_wrap .filter ul li::after {
     display: none;
   }
+}
+.labList {
+  width: 100%;
+  max-width: 97.25rem;
+  margin: 0 auto;
+  padding: 12.5rem 1.875rem 6.25rem;
+  transition: max-width 0.4s;
+}
+.labList .subTitle {
+  margin-bottom: 1.875rem;
+}
+.labList .subTitle h3 {
+  font-size: 3.75rem;
+  font-weight: 800;
+}
+.labList .myfood > img {
+  width: 9%;
+}
+.labList .myfood .myfoodBtnWrap {
+  padding: 2rem 3.375rem 2rem 15.875rem;
+  border-radius: 8px;
+}
+.labList .myfood .myfoodBtnWrap p {
+  line-height: 1;
+}
+.labList .tab {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1.688rem;
+  border: solid 1px #e5e5e5;
+  border-radius: 3.0625rem;
+}
+.labList .tab ul {
+  display: flex;
+}
+.labList .tab ul li {
+  width: 100%;
+}
+.labList .tab ul li button {
+  display: block;
+  width: 100%;
+  padding: 1.375rem 0;
+  color: #999;
+  font-size: 1.375rem;
+  font-weight: 600;
+  text-align: center;
+}
+.labList .tab ul li.on button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  background-color: #fff9e2;
+}
+.labList .tab ul li.on button::before {
+  display: inline-block;
+  width: 1.875rem;
+  height: 1.875rem;
+  background-image: url(../../../public/images/ic_star_pink.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+  content: "";
+}
+.labList .detail_wrap {
+  width: 100%;
+  max-width: 93.5rem;
+  margin: 0 auto;
+  background-color: #fff;
 }
