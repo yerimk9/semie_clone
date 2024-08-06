@@ -2917,6 +2917,7 @@ footer p {
 .labList .tab ul li button {
   display: block;
   width: 100%;
+  height: 100%;
   padding: 1.375rem 0;
   color: #999;
   font-size: 1.375rem;
@@ -2948,6 +2949,9 @@ footer p {
 }
 
 @media screen and (max-width: 560px) {
+  .labList {
+    padding-top: 6rem;
+  }
   .labList .myfood {
     margin-top: 3.125rem;
   }
@@ -2979,5 +2983,13 @@ footer p {
   .labList .myfood > img {
     width: 16%;
     height: 6.375em;
+  }
+  .labList .tab ul li.on button {
+    padding: 1rem 0;
+    font-size: 1.275rem;
+  }
+  .labList .tab ul li button {
+    padding: 1rem 0;
+    font-size: 1.275rem;
   }
 }
