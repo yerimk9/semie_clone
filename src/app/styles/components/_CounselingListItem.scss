@@ -1,0 +1,71 @@
+.cardList {
+  > li {
+    overflow: hidden;
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    width: calc(25% - 2rem);
+    min-height: 30.625rem;
+    margin: 0 1rem 5rem;
+    border: 1px solid #e5e5e5;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+    > a {
+      display: block;
+      height: 100%;
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+      margin-top: 1.125rem;
+      margin-bottom: 1rem;
+      padding: 0 1.5rem;
+      color: #999;
+      font-size: 0.875rem;
+
+      .date {
+        position: relative;
+        margin-left: 0.625rem;
+        padding-left: 0.625rem;
+
+        &::before {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 1px;
+          height: 8px;
+          transform: translateY(-50%);
+          background-color: #c4c4c4;
+          content: "";
+        }
+      }
+    }
+
+    .text {
+      padding: 0 1.5rem;
+
+      h4 {
+        height: 3.563rem;
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+      }
+
+      p {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        font-size: 1rem;
+        line-height: 1.6;
+        border-top: 1px solid #e5e5e5;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 9;
+      }
+    }
+  }
+}

@@ -3,9 +3,9 @@ import Header from "@/app/components/Header";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import il_smile2 from "@/../public/images/il_samie_2.png";
+import il_smile4 from "@/../public/images/il_samie_4.png";
 import il_write from "@/../public/images/ic_write.png";
-import CookingListItem from "@/app/components/CookingListItem";
+import CounselingListItem from "@/app/components/CounselingListItem";
 
 function page() {
   return (
@@ -20,24 +20,23 @@ function page() {
 
           <div className="tab">
             <ul>
-              <li className="on">
+              <li>
                 <button type="button">요리해요</button>
               </li>
-              <li>
+              <li className="on">
                 <button type="button">고민있어요</button>
               </li>
             </ul>
           </div>
 
-          <div className="myfood">
-            <Image src={il_smile2} alt="" width={161} height={134} />
+          <div className="myfood v2">
+            <Image src={il_smile4} alt="" width={161} height={134} />
             <div className="myfoodBtnWrap">
               <p>
-                나만의 요리를 올려주세요!
+                요리에 대한 모든 고민
                 <br />
                 <span>
-                  나만의 요리법, 재밌는 플레이팅, 요리 꿀팁 등 다양한 이야기를
-                  새미네부엌에서 함께 나눠 주세요!
+                  고민이 있으세요? 지금 고민을 남기고 함께 해결방안을 찾아봐요!
                 </span>
               </p>
               <Link href={"/"}>
@@ -63,33 +62,12 @@ function page() {
                   </li>
                 </ul>
               </div>
-              <ul className="hashList">
+
+              <ul className="cardList">
                 <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
+                  <CounselingListItem />
                 </li>
               </ul>
-
               <div className="middle_bn">
                 <Link href={"/"}>
                   <Image
@@ -112,33 +90,6 @@ function page() {
                   />
                 </Link>
               </div>
-
-              <ul className="hashList">
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-              </ul>
             </div>
 
             <div className="pagination">

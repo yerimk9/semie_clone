@@ -105,6 +105,7 @@ main {
 .myfood {
   position: relative;
   width: 100%;
+  margin-bottom: 1.8rem;
 }
 .myfood > img {
   position: relative;
@@ -2369,6 +2370,69 @@ footer p {
   z-index: 12;
 }
 
+.cardList > li {
+  overflow: hidden;
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  width: calc(25% - 2rem);
+  min-height: 30.625rem;
+  margin: 0 1rem 5rem;
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.cardList > li > a {
+  display: block;
+  height: 100%;
+}
+.cardList > li .info {
+  display: flex;
+  align-items: center;
+  margin-top: 1.125rem;
+  margin-bottom: 1rem;
+  padding: 0 1.5rem;
+  color: #999;
+  font-size: 0.875rem;
+}
+.cardList > li .info .date {
+  position: relative;
+  margin-left: 0.625rem;
+  padding-left: 0.625rem;
+}
+.cardList > li .info .date::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 8px;
+  transform: translateY(-50%);
+  background-color: #c4c4c4;
+  content: "";
+}
+.cardList > li .text {
+  padding: 0 1.5rem;
+}
+.cardList > li .text h4 {
+  height: 3.563rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+.cardList > li .text p {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  border-top: 1px solid #e5e5e5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 9;
+}
+
 .guideList {
   width: 100%;
   max-width: 97.25rem;
@@ -2961,13 +3025,13 @@ footer p {
   transition: max-width 0.4s;
 }
 .labList .myfood {
-  margin-bottom: 3rem;
+  margin-bottom: 1.8rem;
 }
 .labList .myfood > img {
   width: 9%;
 }
 .labList .myfood .myfoodBtnWrap {
-  padding: 2rem 3.375rem 2rem 15.875rem;
+  padding: 2rem 3.375rem 2rem 11.875rem;
   border-radius: 8px;
 }
 .labList .myfood .myfoodBtnWrap p {
@@ -3073,4 +3137,49 @@ footer p {
     padding: 1rem 0;
     font-size: 1.275rem;
   }
+}
+.labList .myfood.v2 .myfoodBtnWrap {
+  background-color: #ffaf54 !important;
+}
+.labList .detail_wrap .detail_con .cardList {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 2rem);
+  margin-left: -1rem;
+}
+.labList .detail_wrap .detail_con .cardList > li .hashWrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding: 0 1.5rem;
+}
+.labList .detail_wrap .detail_con .cardList > li .foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.125rem 1.5rem;
+}
+.labList .detail_wrap .detail_con .cardList > li .foot .cmtNum {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+.labList .detail_wrap .detail_con .cardList > li .foot .cmtNum::before {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.125rem;
+  background-image: url(../../../public/images/ic_comment.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+  content: "";
+}
+.labList .detail_wrap .detail_con .cardList > li .foot .scrap {
+  width: 2.25rem;
+  height: 2.25rem;
+  text-indent: -9999px;
+  background-image: url(../../../public/images/ic_scrap_grey.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
 }
