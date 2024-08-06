@@ -5,15 +5,6 @@
   padding: 12.5rem 1.875rem 6.25rem;
   transition: max-width 0.4s;
 
-  .subTitle {
-    margin-bottom: 1.875rem;
-
-    h3 {
-      font-size: 3.75rem;
-      font-weight: 800;
-    }
-  }
-
   .myfood {
     > img {
       width: 9%;
@@ -80,5 +71,51 @@
     max-width: 93.5rem;
     margin: 0 auto;
     background-color: #fff;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .labList {
+    .myfood {
+      margin-top: 3.125rem;
+
+      .myfoodBtnWrap {
+        flex-flow: column;
+        align-items: flex-end;
+        padding: 1.95rem 2.125rem 1.25rem 3rem;
+
+        p {
+          margin-bottom: 0.6rem;
+          //   font-size: 2rem;
+          font-size: 1.3rem;
+
+          span {
+            display: none;
+          }
+        }
+
+        a {
+          padding-left: 0;
+          //   font-size: 1.625rem;
+
+          img {
+            width: 1.5rem;
+          }
+
+          &::before {
+            top: 27px;
+            width: 100%;
+            height: 1px;
+            background-color: #fff;
+            transform: translateY(0);
+          }
+        }
+      }
+
+      > img {
+        width: 16%;
+        height: 6.375em;
+      }
+    }
   }
 }

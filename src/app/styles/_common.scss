@@ -170,6 +170,21 @@ main {
   }
 }
 
+.subTitle {
+  margin-bottom: 1.875rem;
+  h3 {
+    display: flex;
+    align-items: center;
+    font-size: 3.75rem;
+    font-weight: 800;
+
+    img {
+      height: 5.875rem;
+      margin-right: 0.625rem;
+    }
+  }
+}
+
 @media screen and (max-width: 800px) {
   .section1 {
     padding: 9.5rem 0 2.5rem;
@@ -214,6 +229,20 @@ main {
 
     img {
       height: 1.6rem;
+    }
+  }
+
+  .subTitle {
+    position: fixed;
+    top: 1.6rem;
+    left: 50%;
+    width: auto;
+    margin-bottom: 0;
+    transform: translateX(-50%);
+    z-index: 1001;
+
+    h3 {
+      font-size: 1.175rem !important;
     }
   }
 }

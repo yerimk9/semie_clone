@@ -5,15 +5,6 @@
   padding: 10.5rem 1.875rem 6.25rem;
   transition: max-width 0.4s;
 
-  .subTitle {
-    margin-bottom: 1.875rem;
-
-    h3 {
-      font-size: 3.25rem;
-      font-weight: 800;
-    }
-  }
-
   > ul {
     display: flex;
     flex-wrap: wrap;
@@ -173,20 +164,6 @@
 @media screen and (max-width: 560px) {
   .guideList {
     padding-top: 5.3rem;
-
-    .subTitle {
-      position: fixed;
-      top: 1.6rem;
-      left: 50%;
-      width: auto;
-      margin-bottom: 0;
-      transform: translateX(-50%);
-      z-index: 1001;
-
-      h3 {
-        font-size: 1.175rem;
-      }
-    }
 
     > ul {
       width: 100%;

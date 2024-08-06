@@ -153,6 +153,20 @@ main {
   content: "";
 }
 
+.subTitle {
+  margin-bottom: 1.875rem;
+}
+.subTitle h3 {
+  display: flex;
+  align-items: center;
+  font-size: 3.75rem;
+  font-weight: 800;
+}
+.subTitle h3 img {
+  height: 5.875rem;
+  margin-right: 0.625rem;
+}
+
 @media screen and (max-width: 800px) {
   .section1 {
     padding: 9.5rem 0 2.5rem;
@@ -188,6 +202,18 @@ main {
   }
   .btn_arrow_lg img {
     height: 1.6rem;
+  }
+  .subTitle {
+    position: fixed;
+    top: 1.6rem;
+    left: 50%;
+    width: auto;
+    margin-bottom: 0;
+    transform: translateX(-50%);
+    z-index: 1001;
+  }
+  .subTitle h3 {
+    font-size: 1.175rem !important;
   }
 }
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -2281,13 +2307,6 @@ footer p {
   padding: 10.5rem 1.875rem 6.25rem;
   transition: max-width 0.4s;
 }
-.guideList .subTitle {
-  margin-bottom: 1.875rem;
-}
-.guideList .subTitle h3 {
-  font-size: 3.25rem;
-  font-weight: 800;
-}
 .guideList > ul {
   display: flex;
   flex-wrap: wrap;
@@ -2420,18 +2439,6 @@ footer p {
 @media screen and (max-width: 560px) {
   .guideList {
     padding-top: 5.3rem;
-  }
-  .guideList .subTitle {
-    position: fixed;
-    top: 1.6rem;
-    left: 50%;
-    width: auto;
-    margin-bottom: 0;
-    transform: translateX(-50%);
-    z-index: 1001;
-  }
-  .guideList .subTitle h3 {
-    font-size: 1.175rem;
   }
   .guideList > ul {
     width: 100%;
@@ -2839,16 +2846,6 @@ footer p {
   padding: 12.5rem 1.875rem 6.25rem;
   transition: max-width 0.4s;
 }
-.eventList .subTitle h3 {
-  display: flex;
-  align-items: center;
-  font-size: 3.75rem;
-  font-weight: 800;
-}
-.eventList .subTitle h3 img {
-  height: 5.875rem;
-  margin-right: 0.625rem;
-}
 .eventList .eventList_wrap {
   margin-top: 1.875rem;
 }
@@ -2874,18 +2871,6 @@ footer p {
   .eventList {
     padding-top: 4.5rem;
   }
-  .eventList .subTitle {
-    position: fixed;
-    top: 1.6rem;
-    left: 50%;
-    width: auto;
-    margin-bottom: 0;
-    transform: translateX(-50%);
-    z-index: 1001;
-  }
-  .eventList .subTitle h3 {
-    font-size: 1.175rem;
-  }
   .eventList .subTitle h3::before {
     content: "WOW";
   }
@@ -2905,13 +2890,6 @@ footer p {
   margin: 0 auto;
   padding: 12.5rem 1.875rem 6.25rem;
   transition: max-width 0.4s;
-}
-.labList .subTitle {
-  margin-bottom: 1.875rem;
-}
-.labList .subTitle h3 {
-  font-size: 3.75rem;
-  font-weight: 800;
 }
 .labList .myfood > img {
   width: 9%;
@@ -2967,4 +2945,39 @@ footer p {
   max-width: 93.5rem;
   margin: 0 auto;
   background-color: #fff;
+}
+
+@media screen and (max-width: 560px) {
+  .labList .myfood {
+    margin-top: 3.125rem;
+  }
+  .labList .myfood .myfoodBtnWrap {
+    flex-flow: column;
+    align-items: flex-end;
+    padding: 1.95rem 2.125rem 1.25rem 3rem;
+  }
+  .labList .myfood .myfoodBtnWrap p {
+    margin-bottom: 0.6rem;
+    font-size: 1.3rem;
+  }
+  .labList .myfood .myfoodBtnWrap p span {
+    display: none;
+  }
+  .labList .myfood .myfoodBtnWrap a {
+    padding-left: 0;
+  }
+  .labList .myfood .myfoodBtnWrap a img {
+    width: 1.5rem;
+  }
+  .labList .myfood .myfoodBtnWrap a::before {
+    top: 27px;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    transform: translateY(0);
+  }
+  .labList .myfood > img {
+    width: 16%;
+    height: 6.375em;
+  }
 }
