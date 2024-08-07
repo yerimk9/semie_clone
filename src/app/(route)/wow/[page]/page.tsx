@@ -4,61 +4,24 @@ import Image from "next/image";
 import React from "react";
 import il_wow from "../../../../../public/images/il_wow.png";
 import EventItem from "@/app/components/EventItem";
-import {
-  collection,
-  getDocs,
-  orderBy,
-  query,
-  startAfter,
-  limit,
-} from "firebase/firestore";
-import { db } from "@/firebase";
 import { WowListItemProps } from "@/app/types";
 import Filter from "@/app/components/Filter";
 import Link from "next/link";
-
-const pageClick = async (page: number) => {
-  let wowList: WowListItemProps["item"][] = [];
-  let querySnapshot;
-
-  const pageSize = 9;
-
-  const baseQuery = query(
-    collection(db, "wow"),
-    orderBy("date"),
-    limit(pageSize)
-  );
-
-  if (page === 1) {
-    querySnapshot = await getDocs(baseQuery);
-  } else {
-    const prevPageSnapshot = await getDocs(baseQuery);
-    const lastDoc = prevPageSnapshot.docs[prevPageSnapshot.docs.length - 1];
-
-    querySnapshot = await getDocs(query(baseQuery, startAfter(lastDoc)));
-  }
-
-  querySnapshot.forEach((doc) => {
-    const data = doc.data();
-    wowList.push(data as WowListItemProps["item"]);
-  });
-
-  return {
-    wowList,
-  };
-};
+import getMaxPageNumber from "@/app/utils/getMaxPageNumber";
+import pageClick from "@/app/utils/pageClick";
 
 async function page({ params }: { params: { page: string } }) {
   let wowList: WowListItemProps["item"][] = [];
   let currentPage = parseInt(params.page, 10);
+  let maxPageNumber = 1;
 
   try {
-    const { wowList: newWowList } = await pageClick(currentPage);
+    const { wowList: newWowList } = await pageClick(currentPage, "wow", 9);
+    maxPageNumber = await getMaxPageNumber("wow");
     wowList = newWowList;
   } catch (e) {
     console.log(e);
   }
-
   return (
     <div>
       <Header />
@@ -80,20 +43,29 @@ async function page({ params }: { params: { page: string } }) {
                 </li>
               ))}
             </ul>
-            <div className="pagination">
-              <Link href={"/"} className="prev">
-                <i className="icon_prev">이전페이지</i>
-              </Link>
-              <span className="page_p">
-                <Link href={`/wow/1`} className="act">
-                  1
-                </Link>
 
-                <Link href={`/wow/2`}>2</Link>
+            <div className="pagination">
+              {currentPage > 1 && (
+                <Link href={`/wow/${currentPage - 1}`} className="prev">
+                  <i className="icon_prev">이전페이지</i>
+                </Link>
+              )}
+              <span className="page_p">
+                {Array.from({ length: maxPageNumber }, (_, i) => (
+                  <Link
+                    key={i + 1}
+                    href={`/wow/${i + 1}`}
+                    className={i + 1 === currentPage ? "act" : ""}
+                  >
+                    {i + 1}
+                  </Link>
+                ))}
               </span>
-              <Link href={"/"} className="next">
-                <i className="icon_next">다음페이지</i>
-              </Link>
+              {currentPage < maxPageNumber && (
+                <Link href={`/wow/${currentPage + 1}`} className="next">
+                  <i className="icon_next">다음페이지</i>
+                </Link>
+              )}
             </div>
           </div>
         </div>
