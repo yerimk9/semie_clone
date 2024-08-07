@@ -5,6 +5,7 @@ import Header from "@/app/components/Header";
 import { FoodGuide } from "@/app/types";
 import { db } from "@/firebase";
 import { collection, getDocs, query } from "firebase/firestore";
+import Link from "next/link";
 import React from "react";
 
 export default async function page() {
@@ -54,20 +55,20 @@ export default async function page() {
             <FoodGuideItem />
           </ul>
           <div className="pagination">
-            <button type="button" className="prev">
+            <Link href={"/"} className="prev">
               <i className="icon_prev">이전페이지</i>
-            </button>
+            </Link>
             <span className="page_p">
-              <button type="button">1</button>
-              <button type="button">2</button>
-              <button type="button" className="act">
+              <Link href={"/"}>1</Link>
+              <Link href={"/"}>2</Link>
+              <Link href={"/"} className="act">
                 3
-              </button>
-              <button type="button">4</button>
+              </Link>
+              <Link href={"/"}>4</Link>
             </span>
-            <button type="button" className="next">
+            <Link href={"/"} className="next">
               <i className="icon_next">다음페이지</i>
-            </button>
+            </Link>
           </div>
         </div>
       </main>
