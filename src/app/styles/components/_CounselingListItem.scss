@@ -15,12 +15,15 @@
       display: flex;
       flex-direction: column;
       height: 100%;
+
+      position: relative;
     }
 
     .img {
       overflow: hidden;
       position: relative;
       width: 100%;
+      height: 100%;
 
       img {
         position: absolute;
@@ -96,6 +99,55 @@
       border: solid 1px #15a775;
       outline: solid 1px #15a775;
       box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.08);
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .cardList {
+    > li {
+      width: calc(33.33% - 2rem);
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .cardList {
+    > li {
+      width: calc(50% - 2rem);
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .cardList {
+    > li {
+      margin: 0 1rem 1.875rem;
+      border-radius: 5px;
+      min-height: auto;
+
+      .info {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.25rem;
+      }
+
+      .foot {
+        .cmtNum {
+          font-size: 1.5rem;
+
+          &::before {
+            width: 2.25rem;
+            height: 2.25rem;
+          }
+        }
+
+        .scrap {
+          display: inline-block;
+          width: 4rem;
+          height: 4rem;
+        }
+      }
     }
   }
 }

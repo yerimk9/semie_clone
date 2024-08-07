@@ -2484,6 +2484,26 @@ footer p {
   z-index: 12;
 }
 
+@media screen and (max-width: 1200px) {
+  .hashList > li {
+    width: calc(33% - 2rem);
+  }
+}
+@media screen and (max-width: 800px) {
+  .hashList > li {
+    width: calc(50% - 2rem);
+  }
+}
+@media screen and (max-width: 560px) {
+  .hashList > li .scrap {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+  }
+  .hashList > li .info {
+    font-size: 1.25rem;
+  }
+}
 .cardList > li {
   overflow: hidden;
   display: flex;
@@ -2500,11 +2520,13 @@ footer p {
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
 }
 .cardList > li .img {
   overflow: hidden;
   position: relative;
   width: 100%;
+  height: 100%;
 }
 .cardList > li .img img {
   position: absolute;
@@ -2573,6 +2595,40 @@ footer p {
   box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.08);
 }
 
+@media screen and (max-width: 1200px) {
+  .cardList > li {
+    width: calc(33.33% - 2rem);
+  }
+}
+@media screen and (max-width: 800px) {
+  .cardList > li {
+    width: calc(50% - 2rem);
+  }
+}
+@media screen and (max-width: 560px) {
+  .cardList > li {
+    margin: 0 1rem 1.875rem;
+    border-radius: 5px;
+    min-height: auto;
+  }
+  .cardList > li .info {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+  }
+  .cardList > li .foot .cmtNum {
+    font-size: 1.5rem;
+  }
+  .cardList > li .foot .cmtNum::before {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+  .cardList > li .foot .scrap {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+  }
+}
 .guideList {
   width: 100%;
   max-width: 97.25rem;
@@ -3138,6 +3194,14 @@ footer p {
   display: none;
 }
 
+@media screen and (max-width: 800px) {
+  .labList .detail_wrap {
+    padding: 0;
+  }
+  .labList .detail_wrap .detail_con {
+    overflow: hidden;
+  }
+}
 @media screen and (max-width: 560px) {
   .labList {
     padding-top: 6rem;
@@ -3181,6 +3245,9 @@ footer p {
   .labList .tab ul li a {
     padding: 1rem 0;
     font-size: 1.275rem;
+  }
+  .labList .detail_wrap .detail_con .middle_bn {
+    margin: 0 0 5rem;
   }
 }
 .labList .myfood.v2 .myfoodBtnWrap {

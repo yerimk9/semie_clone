@@ -3,18 +3,18 @@ import Link from "next/link";
 import React from "react";
 
 function CounselingListItem() {
-  let imgUrl =
-    "https://semie.cooking/image/board/worry/au/ug/ayoftiqr/144759975zsma.jpg";
+  let imgUrl = "null";
+  // "https://semie.cooking/image/board/worry/au/ug/ayoftiqr/144759975zsma.jpg";
   return (
     <>
       <Link href={"/"}>
-        {imgUrl && (
+        {imgUrl !== "null" && (
           <div className="img">
             <Image
               src={imgUrl}
               alt="Counseling Image"
-              width={3024}
-              height={4032}
+              width={274}
+              height={152}
             />
           </div>
         )}

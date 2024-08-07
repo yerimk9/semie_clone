@@ -91,3 +91,33 @@
     }
   }
 }
+@media screen and (max-width: 1200px) {
+  .hashList {
+    > li {
+      width: calc(33% - 2rem);
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .hashList {
+    > li {
+      width: calc(50% - 2rem);
+    }
+  }
+}
+@media screen and (max-width: 560px) {
+  .hashList {
+    > li {
+      .scrap {
+        display: inline-block;
+        width: 4rem;
+        height: 4rem;
+      }
+
+      .info {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}

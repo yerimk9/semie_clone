@@ -55,6 +55,24 @@ function page() {
                 <li>
                   <CounselingListItem />
                 </li>
+                <li>
+                  <CounselingListItem />
+                </li>
+                <li>
+                  <CounselingListItem />
+                </li>
+                <li>
+                  <CounselingListItem />
+                </li>
+                <li>
+                  <CounselingListItem />
+                </li>
+                <li>
+                  <CounselingListItem />
+                </li>
+                <li>
+                  <CounselingListItem />
+                </li>
               </ul>
               <div className="middle_bn">
                 <Link href={"/"}>
@@ -81,22 +99,22 @@ function page() {
             </div>
 
             <div className="pagination">
-              <button type="button" className="prev">
+              <Link href={"/"} className="prev">
                 <i className="icon_prev">이전페이지</i>
-              </button>
+              </Link>
               <span className="page_p">
-                <button type="button">1</button>
-                <button type="button">2</button>
-                <button type="button">3</button>
-                <button type="button">4</button>
+                <Link href={"/"}>1</Link>
+                <Link href={"/"}>2</Link>
+                <Link href={"/"}>3</Link>
+                <Link href={"/"}>4</Link>
 
-                <button type="button" className="act">
+                <Link href={"/"} className="act">
                   5
-                </button>
+                </Link>
               </span>
-              <button type="button" className="next">
+              <Link href={"/"} className="next">
                 <i className="icon_next">다음페이지</i>
-              </button>
+              </Link>
             </div>
           </div>
         </div>

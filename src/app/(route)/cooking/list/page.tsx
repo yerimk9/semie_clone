@@ -131,20 +131,22 @@ function page() {
             </div>
 
             <div className="pagination">
-              <button className="prev">
+              <Link href={"/"} className="prev">
                 <i className="icon_prev">이전페이지</i>
-              </button>
+              </Link>
               <span className="page_p">
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
+                <Link href={"/"}>1</Link>
+                <Link href={"/"}>2</Link>
+                <Link href={"/"}>3</Link>
+                <Link href={"/"}>4</Link>
 
-                <button className="act">5</button>
+                <Link href={"/"} className="act">
+                  5
+                </Link>
               </span>
-              <button className="next">
+              <Link href={"/"} className="next">
                 <i className="icon_next">다음페이지</i>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
