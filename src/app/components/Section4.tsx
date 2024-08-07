@@ -22,7 +22,7 @@ function Section4() {
           <Image src={il_wow} alt="" width={170} height={94} />
           <span>이벤트</span>
         </h3>
-        <Link href={"/wow"} className="btn_arrow_lg">
+        <Link href={"/wow/1"} className="btn_arrow_lg">
           더보기
           <Image src={ic_right} alt="" width={40} height={40} />
         </Link>

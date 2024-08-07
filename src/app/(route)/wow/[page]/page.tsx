@@ -2,8 +2,7 @@ import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 import Image from "next/image";
 import React from "react";
-import il_wow from "../../../../public/images/il_wow.png";
-import button from "next/button";
+import il_wow from "../../../../../public/images/il_wow.png";
 import EventItem from "@/app/components/EventItem";
 import {
   collection,
@@ -16,17 +15,27 @@ import {
 import { db } from "@/firebase";
 import { WowListItemProps } from "@/app/types";
 import Filter from "@/app/components/Filter";
+import Link from "next/link";
 
-const pageClick = async (startAfterDoc = null) => {
+const pageClick = async (page: number) => {
   let wowList: WowListItemProps["item"][] = [];
   let querySnapshot;
 
-  const baseQuery = query(collection(db, "wow"), orderBy("date"), limit(9));
+  const pageSize = 9;
 
-  if (startAfterDoc) {
-    querySnapshot = await getDocs(query(baseQuery, startAfter(startAfterDoc)));
-  } else {
+  const baseQuery = query(
+    collection(db, "wow"),
+    orderBy("date"),
+    limit(pageSize)
+  );
+
+  if (page === 1) {
     querySnapshot = await getDocs(baseQuery);
+  } else {
+    const prevPageSnapshot = await getDocs(baseQuery);
+    const lastDoc = prevPageSnapshot.docs[prevPageSnapshot.docs.length - 1];
+
+    querySnapshot = await getDocs(query(baseQuery, startAfter(lastDoc)));
   }
 
   querySnapshot.forEach((doc) => {
@@ -36,16 +45,16 @@ const pageClick = async (startAfterDoc = null) => {
 
   return {
     wowList,
-    lastVisibleDoc: querySnapshot.docs[querySnapshot.docs.length - 1] || null,
   };
 };
 
-async function page() {
+async function page({ params }: { params: { page: string } }) {
   let wowList: WowListItemProps["item"][] = [];
+  let currentPage = parseInt(params.page, 10);
 
   try {
-    const { wowList: newWowList, lastVisibleDoc } = await pageClick();
-    wowList = newWowList; // Ensure wowList is of type WowListItemProps["item"][]
+    const { wowList: newWowList } = await pageClick(currentPage);
+    wowList = newWowList;
   } catch (e) {
     console.log(e);
   }
@@ -63,23 +72,6 @@ async function page() {
             </h3>
           </div>
           <div className="eventList_wrap">
-            {/* <div className="filter">
-              <p>전체</p>
-              <ul>
-                <li className="on">
-                  <button type="button">전체</button>
-                </li>
-                <li>
-                  <button type="button">진행중</button>
-                </li>
-                <li>
-                  <button type="button">종료</button>
-                </li>
-                <li>
-                  <button type="button">당첨자발표</button>
-                </li>
-              </ul>
-            </div> */}
             <Filter list={["전체", "진행중", "종료", "당첨자발표"]} />
             <ul className="event_list">
               {wowList.map((item, idx) => (
@@ -89,19 +81,19 @@ async function page() {
               ))}
             </ul>
             <div className="pagination">
-              <button type="button" className="prev">
+              <Link href={"/"} className="prev">
                 <i className="icon_prev">이전페이지</i>
-              </button>
+              </Link>
               <span className="page_p">
-                <button type="button" className="act">
+                <Link href={`/wow/1`} className="act">
                   1
-                </button>
+                </Link>
 
-                <button type="button">2</button>
+                <Link href={`/wow/2`}>2</Link>
               </span>
-              <button type="button" className="next">
+              <Link href={"/"} className="next">
                 <i className="icon_next">다음페이지</i>
-              </button>
+              </Link>
             </div>
           </div>
         </div>

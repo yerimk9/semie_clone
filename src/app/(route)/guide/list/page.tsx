@@ -5,7 +5,6 @@ import Header from "@/app/components/Header";
 import { FoodGuide } from "@/app/types";
 import { db } from "@/firebase";
 import { collection, getDocs, query } from "firebase/firestore";
-import button from "next/button";
 import React from "react";
 
 export default async function page() {

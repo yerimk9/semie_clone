@@ -30,7 +30,7 @@
   align-items: center;
   justify-content: center;
 
-  button {
+  a {
     font-size: 1rem;
     z-index: 0;
     position: relative;
@@ -83,7 +83,7 @@
     flex-direction: row;
     align-items: center;
 
-    button {
+    a {
       text-indent: 0;
       background: none;
       margin: 0 1rem;
@@ -117,7 +117,7 @@
   }
 
   .pagination {
-    button {
+    a {
       width: 2rem;
       height: 2rem;
       line-height: 2rem;
@@ -137,7 +137,7 @@
 
   .pagination {
     .page_p {
-      button {
+      a {
         margin: 0;
       }
     }

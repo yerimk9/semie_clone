@@ -2597,7 +2597,7 @@ footer p {
   align-items: center;
   justify-content: center;
 }
-.pagination button {
+.pagination a {
   font-size: 1rem;
   z-index: 0;
   position: relative;
@@ -2611,7 +2611,7 @@ footer p {
   font-weight: 400;
   text-align: center;
 }
-.pagination button i {
+.pagination a i {
   display: block;
   text-align: center;
   text-indent: -9999px;
@@ -2622,20 +2622,20 @@ footer p {
   opacity: 1;
   transition: opacity 0.3s ease-out;
 }
-.pagination button.prev {
+.pagination a.prev {
   margin-left: 0;
   margin-right: 0.5555555556rem;
   color: #111111;
 }
-.pagination button.prev .icon_prev {
+.pagination a.prev .icon_prev {
   background-image: url(../../../public/images/p-arrow-l.png);
 }
-.pagination button.next {
+.pagination a.next {
   margin-left: 0.5555555556rem;
   margin-right: 0;
   color: #111111;
 }
-.pagination button.next .icon_next {
+.pagination a.next .icon_next {
   background-image: url(../../../public/images/p-arrow-r.png);
 }
 .pagination .page_p {
@@ -2644,7 +2644,7 @@ footer p {
   flex-direction: row;
   align-items: center;
 }
-.pagination .page_p button {
+.pagination .page_p a {
   text-indent: 0;
   background: none;
   margin: 0 1rem;
@@ -2654,7 +2654,7 @@ footer p {
   font-weight: 600;
   font-size: 14px;
 }
-.pagination .page_p button.act {
+.pagination .page_p a.act {
   background-color: rgba(0, 0, 0, 0);
   color: #15a775 !important;
   text-decoration: underline;
@@ -2667,7 +2667,7 @@ footer p {
   .guideList > ul > li .thumb {
     display: none;
   }
-  .pagination button {
+  .pagination a {
     width: 2rem;
     height: 2rem;
     line-height: 2rem;
@@ -2681,7 +2681,7 @@ footer p {
     width: 100%;
     margin-left: 0;
   }
-  .pagination .page_p button {
+  .pagination .page_p a {
     margin: 0;
   }
 }
