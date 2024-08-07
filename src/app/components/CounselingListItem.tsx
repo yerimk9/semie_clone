@@ -3,9 +3,8 @@ import Link from "next/link";
 import React from "react";
 
 function CounselingListItem() {
-  const imgUrl =
+  let imgUrl =
     "https://semie.cooking/image/board/worry/au/ug/ayoftiqr/144759975zsma.jpg";
-  // let imgUrl;
   return (
     <>
       <Link href={"/"}>
