@@ -1802,6 +1802,7 @@ footer p {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
+  max-height: 28px;
 }
 .guideWrap .guide_modal .guide_modal_body .guide_modal_cont .allMore {
   display: none;
@@ -2074,10 +2075,12 @@ footer p {
 }
 .hashList > li .tagWrap li {
   margin-right: 0.625rem;
+  margin-top: 0.625rem;
   padding: 0.625rem 1.125rem;
   font-size: 0.875rem;
   border-radius: 21px;
   background-color: #f3f3f3;
+  min-width: max-content;
 }
 .hashList > li .tagWrap li span {
   position: relative;
@@ -2110,6 +2113,10 @@ footer p {
 }
 .hashList > li:hover .img img {
   transform: translate(-50%, -50%) scale(1.1);
+}
+
+.tagList.hashList > li {
+  width: calc(33.33% - 2rem);
 }
 
 .event_list li {

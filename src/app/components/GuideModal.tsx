@@ -3,7 +3,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import ic_right from "../../../public/images/right.png";
 import il_samie_1 from "../../../public/svgs/il_samie_1-1.svg";
-import { FoodGuideProps, GuideModalProps } from "../types";
+import { GuideModalProps } from "../types";
+import parse from "html-react-parser";
 
 function GuideModal({ list, isModal, setIsModal }: GuideModalProps) {
   return (
@@ -29,7 +30,7 @@ function GuideModal({ list, isModal, setIsModal }: GuideModalProps) {
             <ul>
               {list.map((food, index) => (
                 <li key={index}>
-                  <Link href={"/"}>
+                  <Link href={`/guide/archive/${food.id}`}>
                     <div className="img">
                       <Image
                         src={food["main_img"]}
@@ -37,15 +38,11 @@ function GuideModal({ list, isModal, setIsModal }: GuideModalProps) {
                         width={1280}
                         height={1280}
                       />
-                      <span className="morePic">7</span>
+                      <span className="morePic">{food["items"]?.length}</span>
                     </div>
                     <div className="text">
-                      <p dangerouslySetInnerHTML={{ __html: food.title }} />
-                      <span>
-                        엄마,아빠 &quot;최고!&quot; 소리 듣는
-                        <br />
-                        아이들이 좋아할 간식 레시피
-                      </span>
+                      <p>{parse(food.title)}</p>
+                      <span>{parse(food.subTitle)}</span>
                     </div>
                   </Link>
                 </li>

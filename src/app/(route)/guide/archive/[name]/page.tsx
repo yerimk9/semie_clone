@@ -6,8 +6,31 @@ import React from "react";
 import ic_kakao2 from "@/../public/images/ic_kakao2.png";
 import ic_url from "@/../public/images/ic_url.png";
 import GuideDetailItem from "@/app/components/GuideDetailItem";
+import { collection, doc, getDoc, getDocs, query } from "firebase/firestore";
+import { db } from "@/firebase";
+import { FoodGuide } from "@/app/types";
+import parse from "html-react-parser";
 
-function page() {
+async function page({ params }: { params: number }) {
+  let selectItem: FoodGuide | undefined;
+  try {
+    const querySnapshot = await getDocs(
+      query(collection(db, "food_guide_list"))
+    );
+    const foodItems: FoodGuide[] = [];
+
+    querySnapshot.forEach((doc) => {
+      const data = doc.data() as FoodGuide;
+      foodItems.push(data);
+    });
+
+    selectItem = foodItems.find((item) => item.id == params.name);
+    console.log(selectItem);
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
+
   return (
     <div>
       <Header />
@@ -15,9 +38,7 @@ function page() {
         <div className="guideDetail">
           <div className="detail_bg">
             <Image
-              src={
-                "https://semie.cooking/image/contents/recipe/gh/dx/jrdsgitx/121173663tluo.jpg"
-              }
+              src={selectItem?.main_img || ""}
               alt=""
               width={1280}
               height={1280}
@@ -61,27 +82,20 @@ function page() {
           <div className="detail_wrap">
             <div className="detail_con">
               <div className="detail_title">
-                <h3>주말에 하기 좋은 간식 모음.zip</h3>
-                <p>
-                  아이들이 좋아하는 간식 레시피만 모았어요.
-                  <br />
-                  주말에 아이들과 즐거운 요리시간 보내볼까요?
-                </p>
+                <h3>{parse(selectItem?.title || "")}</h3>
+                <p>{parse(selectItem?.subTitle || "")}</p>
                 <div className="title_tag">
-                  <span className="tag">아이와 함께</span>
-                  <span className="tag">요리놀이</span>
-                  <span className="tag">아이간식</span>
-                  <span className="tag">간식</span>
+                  {selectItem?.hashTag?.map((item, idx) => (
+                    <span key={idx} className="tag">
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </div>
               <ul className="tagList hashList">
-                <GuideDetailItem />
-                <GuideDetailItem />
-                <GuideDetailItem />
-                <GuideDetailItem />
-                <GuideDetailItem />
-                <GuideDetailItem />
-                <GuideDetailItem />
+                {selectItem?.items?.map((item, idx) => (
+                  <GuideDetailItem key={idx} item={item} />
+                ))}
               </ul>
             </div>
           </div>

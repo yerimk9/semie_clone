@@ -8,9 +8,10 @@ import logo from "../../../public/images/logo.png";
 import { FoodGuideProps } from "../types";
 import Link from "next/link";
 import GuideModal from "./GuideModal";
+import parse from "html-react-parser";
 
-// function Section1({ list }: FoodGuideProps) {
-function Section1() {
+function Section1({ list }: FoodGuideProps) {
+  // function Section1() {
   const [slideIndex, setSlideIndex] = useState(1);
   const [isModal, setIsModal] = useState(false);
 
@@ -35,13 +36,13 @@ function Section1() {
             <span>가이드 더보기</span>
           </button>
         </div>
-        {/* <GuideModal list={list} isModal={isModal} setIsModal={modalOpen} /> */}
+        <GuideModal list={list} isModal={isModal} setIsModal={modalOpen} />
         <div className="swiper-control">
           <div className="count">
             <span className="current-num">0{slideIndex}</span>
             <span className="mb_dott"> · </span>
             <div className="progressbar-container">
-              <progress max="44" value={slideIndex}></progress>
+              <progress max={list.length} value={slideIndex}></progress>
             </div>
 
             <button type="button" className="pause">
@@ -49,7 +50,7 @@ function Section1() {
                 <em className="hidden">play/stop</em>
               </span>
             </button>
-            <span className="all-num">44</span>
+            <span className="all-num">{list.length}</span>
           </div>
           <div className="swiper-button swiper-button-prev"></div>
           <div className="swiper-button swiper-button-next"></div>
@@ -75,24 +76,14 @@ function Section1() {
           }}
           className="swiper mySwiper1"
         >
-          {[1, 2, 3, 4, 5].map((food, index) => (
+          {list.map((food, index) => (
             <SwiperSlide key={index} className="swiper-slide">
               <Link href={"/"}>
-                {/* <Image src={food["main_img"]} alt="img" fill /> */}
-                <Image
-                  src={
-                    "https://semie.cooking/image/contents/solution/js/sa/hkagfitd/143308762rtmh.jpg"
-                  }
-                  alt="img"
-                  fill
-                />
-                {/* <p
-                  className="swiper-title"
-                  dangerouslySetInnerHTML={{ __html: food.title }}
-                /> */}
-                <p>TITLE</p>
+                <Image src={food["main_img"]} alt="img" fill />
+
+                <p className="swiper-title">{parse(food.title)}</p>
                 <div className="totalPic">
-                  <div className="num">8</div>
+                  <div className="num">{food.items?.length}</div>
                   <div className="arrow"></div>
                 </div>
               </Link>
@@ -109,35 +100,22 @@ function Section1() {
           speed={900}
           className="swiper mySwiper2"
         >
-          {[1, 2, 3, 4, 5].map((food, index) => (
+          {list.map((food, index) => (
             <SwiperSlide key={index} className="swiper-slide">
               <Link href={"/"}>
                 <div className="picture">
-                  {/* <Image src={food["main_img"]} alt="img" fill /> */}
-                  <Image
-                    src={
-                      "https://semie.cooking/image/contents/solution/js/sa/hkagfitd/143308762rtmh.jpg"
-                    }
-                    alt="img"
-                    fill
-                  />
-                  {/* <p
-                    className="swiper-title"
-                    dangerouslySetInnerHTML={{ __html: food.title }}
-                  /> */}
-                  <p>TITLE</p>
+                  <Image src={food["main_img"]} alt="img" fill />
+
+                  <p className="swiper-title">{parse(food.title)}</p>
                   <div className="totalPic">
-                    <div className="num">8</div>
+                    <div className="num">{food.items?.length}</div>
                     <div className="arrow"></div>
                   </div>
                 </div>
                 <ul className="thumb">
                   <li>
                     <Image
-                      src={
-                        "https://semie.cooking/image/contents/solution/js/sa/hkagfitd/143308762rtmh.jpg"
-                      }
-                      // src={food["main_img"]}
+                      src={food["main_img"]}
                       alt="img"
                       width={125}
                       height={125}
@@ -145,10 +123,7 @@ function Section1() {
                   </li>
                   <li>
                     <Image
-                      src={
-                        "https://semie.cooking/image/contents/solution/js/sa/hkagfitd/143308762rtmh.jpg"
-                      }
-                      // src={food["main_img"]}
+                      src={food["main_img"]}
                       alt="img"
                       width={125}
                       height={125}
@@ -156,10 +131,7 @@ function Section1() {
                   </li>
                   <li>
                     <Image
-                      src={
-                        "https://semie.cooking/image/contents/solution/js/sa/hkagfitd/143308762rtmh.jpg"
-                      }
-                      // src={food["main_img"]}
+                      src={food["main_img"]}
                       alt="img"
                       width={125}
                       height={125}
@@ -181,24 +153,15 @@ function Section1() {
           initialSlide={2} // 첫 번째 슬라이드로 시작
           className="swiper mySwiper3"
         >
-          {[1, 2, 3, 4, 5].map((food, index) => (
+          {list.map((food, index) => (
             <SwiperSlide key={index} className="swiper-slide">
               <Link href={"/"}>
-                {/* <Image src={food["main_img"]} alt="img" fill /> */}
-                <Image
-                  src={
-                    "https://semie.cooking/image/contents/solution/js/sa/hkagfitd/143308762rtmh.jpg"
-                  }
-                  alt="img"
-                  fill
-                />
-                {/* <p
-                  className="swiper-title"
-                  dangerouslySetInnerHTML={{ __html: food.title }}
-                /> */}
-                <p>TITLE</p>
+                <Image src={food["main_img"]} alt="img" fill />
+
+                <p className="swiper-title">{parse(food.title)}</p>
+
                 <div className="totalPic">
-                  <div className="num">8</div>
+                  <div className="num">{food.items?.length}</div>
                   <div className="arrow"></div>
                 </div>
               </Link>

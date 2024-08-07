@@ -12,10 +12,20 @@ export interface FoodGuide {
   id: number;
   title: string;
   main_img: string;
-  sub_title1?: string; // 서브 타이틀 1은 선택적입니다.
-  sub_title2?: string; // 서브 타이틀 2는 선택적입니다.
+  subTitle: string; // 서브 타이틀 1은 선택적입니다.
   hashTag?: string[]; // 해시태그는 선택적입니다.
   items?: FoodGuideItem[];
+}
+
+export interface FoodGuideDetailItem {
+  item: {
+    cooking_time: string;
+    name: string;
+    hashTag: string | string[];
+    preparation_time: string;
+    main_img: string;
+    desc: string;
+  };
 }
 
 export interface FoodGuideItemProps {

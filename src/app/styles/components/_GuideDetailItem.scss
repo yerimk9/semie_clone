@@ -71,10 +71,12 @@
 
       li {
         margin-right: 0.625rem;
+        margin-top: 0.625rem;
         padding: 0.625rem 1.125rem;
         font-size: 0.875rem;
         border-radius: 21px;
         background-color: #f3f3f3;
+        min-width: max-content;
 
         span {
           position: relative;
@@ -116,6 +118,14 @@
           transform: translate(-50%, -50%) scale(1.1);
         }
       }
+    }
+  }
+}
+
+.tagList {
+  &.hashList {
+    > li {
+      width: calc(33.33% - 2rem);
     }
   }
 }
