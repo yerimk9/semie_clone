@@ -2577,7 +2577,6 @@ footer p {
   line-height: 1.5;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
 }
 .cardList > li .text p {
   margin-top: 1rem;
@@ -2587,7 +2586,6 @@ footer p {
   border-top: 1px solid #e5e5e5;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 9;
 }
 .cardList > li:hover {
   border: solid 1px #15a775;
