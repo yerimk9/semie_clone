@@ -1,10 +1,25 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 function CounselingListItem() {
+  const imgUrl =
+    "https://semie.cooking/image/board/worry/au/ug/ayoftiqr/144759975zsma.jpg";
+  // let imgUrl;
   return (
     <>
       <Link href={"/"}>
+        {imgUrl && (
+          <div className="img">
+            <Image
+              src={imgUrl}
+              alt="Counseling Image"
+              width={3024}
+              height={4032}
+            />
+          </div>
+        )}
+
         <div className="info">
           <span className="name">천블리네</span>
           <span className="date">2024.08.04 13:24</span>

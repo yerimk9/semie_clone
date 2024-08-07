@@ -134,7 +134,10 @@ function Section1() {
                 <ul className="thumb">
                   <li>
                     <Image
-                      src={food["main_img"]}
+                      src={
+                        "https://semie.cooking/image/contents/solution/js/sa/hkagfitd/143308762rtmh.jpg"
+                      }
+                      // src={food["main_img"]}
                       alt="img"
                       width={125}
                       height={125}
@@ -142,7 +145,10 @@ function Section1() {
                   </li>
                   <li>
                     <Image
-                      src={food["main_img"]}
+                      src={
+                        "https://semie.cooking/image/contents/solution/js/sa/hkagfitd/143308762rtmh.jpg"
+                      }
+                      // src={food["main_img"]}
                       alt="img"
                       width={125}
                       height={125}
@@ -150,7 +156,10 @@ function Section1() {
                   </li>
                   <li>
                     <Image
-                      src={food["main_img"]}
+                      src={
+                        "https://semie.cooking/image/contents/solution/js/sa/hkagfitd/143308762rtmh.jpg"
+                      }
+                      // src={food["main_img"]}
                       alt="img"
                       width={125}
                       height={125}
