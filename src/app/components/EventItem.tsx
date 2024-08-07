@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { EventItemProps } from "../types";
+import { WowListItemProps } from "../types";
 
-function EventItem({ imgUrl, status }: EventItemProps) {
+function EventItem({ item }: WowListItemProps) {
   const getStatusClass = (status: string) => {
     switch (status) {
       case "진행중":
@@ -20,12 +20,12 @@ function EventItem({ imgUrl, status }: EventItemProps) {
   return (
     <Link href={"/"}>
       <div className="img">
-        <Image src={imgUrl} alt="" width={476} height={268} />
+        <Image src={item["imgUrl"]} alt="" width={476} height={268} />
       </div>
-      <p className="tit">새미와 함께 요리해!</p>
+      <p className="tit">{item["title"]}</p>
       <p className="date">
-        <span className={getStatusClass(status)}>{status}</span>
-        2024.07.10 ~ 2024.08.11
+        <span className={getStatusClass(item["status"])}>{item["status"]}</span>
+        {item["date"]}
       </p>
     </Link>
   );

@@ -6,6 +6,7 @@ import React from "react";
 import il_smile4 from "@/../public/images/il_samie_4.png";
 import il_write from "@/../public/images/ic_write.png";
 import CounselingListItem from "@/app/components/CounselingListItem";
+import Filter from "@/app/components/Filter";
 
 function page() {
   return (
@@ -21,10 +22,10 @@ function page() {
           <div className="tab">
             <ul>
               <li>
-                <button type="button">요리해요</button>
+                <Link href={"/cooking/list"}>요리해요</Link>
               </li>
               <li className="on">
-                <button type="button">고민있어요</button>
+                <Link href={"/counseling/list"}>고민있어요</Link>
               </li>
             </ul>
           </div>
@@ -48,20 +49,7 @@ function page() {
 
           <div className="detail_wrap">
             <div className="detail_con">
-              <div className="filter">
-                <p>스크랩순</p>
-                <ul>
-                  <li>
-                    <Link href={"/"}>최신순</Link>
-                  </li>
-                  <li>
-                    <Link href={"/"}>조회순</Link>
-                  </li>
-                  <li className="on">
-                    <Link href={"/"}>스크랩순</Link>
-                  </li>
-                </ul>
-              </div>
+              <Filter list={["최신순", "조회순", "스크랩순"]} />
 
               <ul className="cardList">
                 <li>

@@ -32,7 +32,15 @@ export interface GuideModalProps {
   setIsModal: () => void;
 }
 
-export interface EventItemProps {
-  imgUrl: string;
-  status: string;
+export interface WowListItemProps {
+  item: {
+    date: string;
+    imgUrl: string;
+    status: string;
+    title: string;
+  };
+}
+
+export interface FilterProps {
+  list: string[];
 }

@@ -34,7 +34,7 @@
       li {
         width: 100%;
 
-        button {
+        a {
           display: block;
           width: 100%;
           height: 100%;
@@ -46,7 +46,7 @@
         }
 
         &.on {
-          button {
+          a {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -85,6 +85,16 @@
 
       .middle_bn {
         margin-bottom: 5rem;
+      }
+    }
+  }
+
+  .filter {
+    > ul {
+      li:last-child {
+        &::after {
+          display: none;
+        }
       }
     }
   }
@@ -139,12 +149,12 @@
       ul {
         li {
           &.on {
-            button {
+            a {
               padding: 1rem 0;
               font-size: 1.275rem;
             }
           }
-          button {
+          a {
             padding: 1rem 0;
             font-size: 1.275rem;
           }

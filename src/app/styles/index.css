@@ -172,6 +172,58 @@ img.mb-show {
   display: none;
 }
 
+.filter {
+  margin-bottom: 1.25rem;
+}
+.filter p {
+  display: none;
+}
+.filter ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.filter ul li {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.filter ul li::after {
+  width: 0.25rem;
+  height: 0.25rem;
+  margin: 0.5rem;
+  border-radius: 100%;
+  background-color: #c4c4c4;
+  content: "";
+}
+.filter ul li.on button {
+  padding-left: 1.2rem;
+  color: #111;
+  font-weight: 500;
+  background-image: url(../../../public/svgs/check.svg);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: auto 100%;
+}
+.filter ul li.on::after {
+  display: none;
+}
+.filter ul li button {
+  color: #c4c4c4;
+}
+.filter ul li:not(.on)::before {
+  width: 0.25rem;
+  height: 0.25rem;
+  margin: 0 0.5rem;
+  border-radius: 100%;
+  background-color: #c4c4c4;
+  content: "";
+}
+.filter ul li::after {
+  display: none;
+}
+
 @media screen and (max-width: 800px) {
   .section1 {
     padding: 9.5rem 0 2.5rem;
@@ -225,6 +277,68 @@ img.mb-show {
   }
   .subTitle h3 {
     font-size: 1.175rem !important;
+  }
+  .filter {
+    display: flex;
+    margin-left: auto;
+    position: relative;
+    width: 9.625rem;
+    z-index: 100;
+    margin-bottom: 0.5rem;
+    margin-left: 79%;
+  }
+  .filter p {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    height: 2.563rem;
+    padding: 0 1rem;
+    font-weight: 500;
+    border: solid 1px #d4d4d4;
+    border-radius: 2rem;
+    background-color: #fff;
+    background-image: url(../../../public/images/ic_down.png);
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    background-position: calc(100% - 1rem) 50%;
+  }
+  .filter p:hover ~ ul {
+    height: 9.525rem;
+    padding: 1rem;
+    border: solid 1px #d4d4d4;
+  }
+  .filter p:hover ~ ul li::after {
+    width: 0;
+    height: 0;
+  }
+  .filter ul {
+    overflow: hidden;
+    flex-flow: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: -67px;
+    width: 12.688rem;
+    height: 0;
+    border-radius: 0.8rem;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
+    background-color: #fff;
+    transition: height 0.2s;
+  }
+  .filter ul li {
+    width: 100%;
+    height: 4.063rem;
+    padding: 0 1.5rem;
+  }
+  .filter ul li.on {
+    background-color: #f3f3f3;
+  }
+  .filter ul li.on a {
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    background-size: 1rem 1rem;
+    background-position: 100% 50%;
   }
 }
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -2472,44 +2586,8 @@ footer p {
   width: calc(100% + 2.125rem);
   margin-left: -1.0625rem;
 }
-
-.filter {
-  margin-bottom: 1.25rem;
-}
-.filter p {
+.guideList .filter > ul li:last-child::after {
   display: none;
-}
-.filter ul {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-.filter ul li {
-  display: inline-flex;
-  align-items: center;
-}
-.filter ul li::after {
-  width: 0.25rem;
-  height: 0.25rem;
-  margin: 0.5rem;
-  border-radius: 100%;
-  background-color: #c4c4c4;
-  content: "";
-}
-.filter ul li.on a {
-  padding-left: 1.2rem;
-  color: #111;
-  font-weight: 500;
-  background-image: url(../../../public/svgs/check.svg);
-  background-repeat: no-repeat;
-  background-position: 0 50%;
-  background-size: auto 100%;
-}
-.filter ul li.on::after {
-  display: none;
-}
-.filter ul li a {
-  color: #c4c4c4;
 }
 
 .pagination {
@@ -2602,68 +2680,6 @@ footer p {
   .guideList > ul {
     width: 100%;
     margin-left: 0;
-  }
-  .filter {
-    display: flex;
-    margin-left: auto;
-    position: relative;
-    width: 9.625rem;
-    z-index: 100;
-    margin-bottom: 0.5rem;
-    margin-left: 79%;
-  }
-  .filter p {
-    display: flex;
-    align-items: center;
-    width: 75%;
-    height: 2.563rem;
-    padding: 0 1rem;
-    font-weight: 500;
-    border: solid 1px #d4d4d4;
-    border-radius: 2rem;
-    background-color: #fff;
-    background-image: url(../../../public/images/ic_down.png);
-    background-repeat: no-repeat;
-    background-size: 1rem;
-    background-position: calc(100% - 1rem) 50%;
-  }
-  .filter p:hover ~ ul {
-    height: 9.525rem;
-    padding: 1rem;
-    border: solid 1px #d4d4d4;
-  }
-  .filter p:hover ~ ul li::after {
-    width: 0;
-    height: 0;
-  }
-  .filter ul {
-    overflow: hidden;
-    flex-flow: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: -67px;
-    width: 12.688rem;
-    height: 0;
-    border-radius: 0.8rem;
-    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
-    background-color: #fff;
-    transition: height 0.2s;
-  }
-  .filter ul li {
-    width: 100%;
-    height: 4.063rem;
-    padding: 0 1.5rem;
-  }
-  .filter ul li.on {
-    background-color: #f3f3f3;
-  }
-  .filter ul li.on a {
-    display: block;
-    width: 100%;
-    padding-left: 0;
-    background-size: 1rem 1rem;
-    background-position: 100% 50%;
   }
   .pagination .page_p button {
     margin: 0;
@@ -3076,7 +3092,7 @@ footer p {
 .labList .tab ul li {
   width: 100%;
 }
-.labList .tab ul li button {
+.labList .tab ul li a {
   display: block;
   width: 100%;
   height: 100%;
@@ -3086,14 +3102,14 @@ footer p {
   font-weight: 600;
   text-align: center;
 }
-.labList .tab ul li.on button {
+.labList .tab ul li.on a {
   display: flex;
   align-items: center;
   justify-content: center;
   color: #111;
   background-color: #fff9e2;
 }
-.labList .tab ul li.on button::before {
+.labList .tab ul li.on a::before {
   display: inline-block;
   width: 1.875rem;
   height: 1.875rem;
@@ -3117,6 +3133,9 @@ footer p {
 }
 .labList .detail_wrap .detail_con .middle_bn {
   margin-bottom: 5rem;
+}
+.labList .filter > ul li:last-child::after {
+  display: none;
 }
 
 @media screen and (max-width: 560px) {
@@ -3155,11 +3174,11 @@ footer p {
     width: 16%;
     height: 6.375em;
   }
-  .labList .tab ul li.on button {
+  .labList .tab ul li.on a {
     padding: 1rem 0;
     font-size: 1.275rem;
   }
-  .labList .tab ul li button {
+  .labList .tab ul li a {
     padding: 1rem 0;
     font-size: 1.275rem;
   }

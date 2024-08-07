@@ -6,6 +6,7 @@ import React from "react";
 import il_smile2 from "@/../public/images/il_samie_2.png";
 import il_write from "@/../public/images/ic_write.png";
 import CookingListItem from "@/app/components/CookingListItem";
+import Filter from "@/app/components/Filter";
 
 function page() {
   return (
@@ -21,10 +22,10 @@ function page() {
           <div className="tab">
             <ul>
               <li className="on">
-                <button type="button">요리해요</button>
+                <Link href={"/cooking/list"}>요리해요</Link>
               </li>
               <li>
-                <button type="button">고민있어요</button>
+                <Link href={"/counseling/list"}>고민있어요</Link>
               </li>
             </ul>
           </div>
@@ -49,20 +50,8 @@ function page() {
 
           <div className="detail_wrap">
             <div className="detail_con">
-              <div className="filter">
-                <p>스크랩순</p>
-                <ul>
-                  <li>
-                    <Link href={"/"}>최신순</Link>
-                  </li>
-                  <li>
-                    <Link href={"/"}>조회순</Link>
-                  </li>
-                  <li className="on">
-                    <Link href={"/"}>스크랩순</Link>
-                  </li>
-                </ul>
-              </div>
+              <Filter list={["최신순", "조회순", "스크랩순"]} />
+
               <ul className="hashList">
                 <li>
                   <CookingListItem />
@@ -142,20 +131,18 @@ function page() {
             </div>
 
             <div className="pagination">
-              <button type="button" className="prev">
+              <button className="prev">
                 <i className="icon_prev">이전페이지</i>
               </button>
               <span className="page_p">
-                <button type="button">1</button>
-                <button type="button">2</button>
-                <button type="button">3</button>
-                <button type="button">4</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
 
-                <button type="button" className="act">
-                  5
-                </button>
+                <button className="act">5</button>
               </span>
-              <button type="button" className="next">
+              <button className="next">
                 <i className="icon_next">다음페이지</i>
               </button>
             </div>

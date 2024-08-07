@@ -1,10 +1,11 @@
+import Filter from "@/app/components/Filter";
 import FoodGuideItem from "@/app/components/FoodGuideItem";
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 import { FoodGuide } from "@/app/types";
 import { db } from "@/firebase";
 import { collection, getDocs, query } from "firebase/firestore";
-import Link from "next/link";
+import button from "next/button";
 import React from "react";
 
 export default async function page() {
@@ -33,20 +34,8 @@ export default async function page() {
           <div className="subTitle">
             <h3>요리초보가이드</h3>
           </div>
-          <div className="filter">
-            <p>스크랩순</p>
-            <ul>
-              <li>
-                <Link href={"/"}>최신순</Link>
-              </li>
-              <li>
-                <Link href={"/"}>조회순</Link>
-              </li>
-              <li className="on">
-                <Link href={"/"}>스크랩순</Link>
-              </li>
-            </ul>
-          </div>
+
+          <Filter list={["최신순", "조회순", "스크랩순"]} />
           <ul>
             <FoodGuideItem />
             <FoodGuideItem />
