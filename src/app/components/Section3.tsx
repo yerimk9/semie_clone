@@ -17,6 +17,7 @@ import {
   startAfter,
 } from "firebase/firestore";
 import { db } from "@/firebase";
+import parse from "html-react-parser";
 
 const pageClick = async (
   page: number,
@@ -152,11 +153,7 @@ function Section3() {
                       height={204}
                     />
                   </div>
-                  <div className="bottom_text">
-                    아삭이 고추로 간단한 반찬뚝딱😁 토장과 참기름, 통깨로 쉽게
-                    후다닥~ 아삭이 고추는 먹기좋은 크기로 썰어 된장양념에 무치면
-                    끝~!
-                  </div>
+                  <div className="bottom_text">{parse(food?.text)}</div>
                 </Link>
               </SwiperSlide>
             ))}

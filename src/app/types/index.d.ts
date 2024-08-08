@@ -57,22 +57,44 @@ export interface FilterProps {
 
 export interface CookingListItemsProps {
   author: string;
+  authorDesc?: string;
   date: string;
-  detail: boolean;
+  detail?: boolean;
   images: string[];
   imgUrl: string;
   text: string;
   title: string;
+  hashTag?: string[];
+  ready?: {
+    personNum: number;
+    cooking_time: number;
+    ready_time: number;
+    main: string[];
+    sub: string[];
+    seasoning: string[];
+  };
+  step?: [{ desc: string; stepNm: string; tip?: string }];
 }
 export interface CookingListItemProps {
   item: {
     author: string;
+    authorDesc?: string;
     date: string;
-    detail: boolean;
+    detail?: boolean;
     images: string[];
     imgUrl: string;
     text: string;
     title: string;
+    hashTag?: string[];
+    ready?: {
+      personNum: number;
+      cooking_time: number;
+      ready_time: number;
+      main: string[];
+      sub: string[];
+      seasoning: string[];
+    };
+    step?: [{ desc: string; stepNm: string; tip?: string }];
   };
 }
 
