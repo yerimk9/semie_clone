@@ -4,7 +4,6 @@ import React from "react";
 import { CookingListItemProps } from "../types";
 
 function CookingListItem({ item }: CookingListItemProps) {
-  console.log(item);
   return (
     <>
       <Link href={"/"}>

@@ -99,15 +99,17 @@ export interface CookingListItemProps {
 }
 
 export interface CounselingItemsProps {
+  id: string;
   date: string;
   name: string;
   text: string;
   title: string;
-  imgUrl: string;
-  hashTag: string[];
+  imgUrl?: string;
+  hashTag?: string[];
 }
 export interface CounselingItemProps {
   item: {
+    id: string;
     date: string;
     name: string;
     text: string;

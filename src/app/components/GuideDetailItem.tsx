@@ -4,7 +4,6 @@ import React from "react";
 import { FoodGuideDetailItem } from "../types";
 
 function GuideDetailItem({ item }: FoodGuideDetailItem) {
-  console.log(item);
   return (
     <li>
       <Link href={"/"}>

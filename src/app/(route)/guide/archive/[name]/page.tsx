@@ -25,7 +25,6 @@ async function page({ params }: { params: number }) {
     });
 
     selectItem = foodItems.find((item) => item.id == params.name);
-    console.log(selectItem);
   } catch (e) {
     console.error(e);
     return null;

@@ -6,7 +6,7 @@ import { CounselingItemProps } from "../types";
 function CounselingListItem({ item }: CounselingItemProps) {
   return (
     <>
-      <Link href={"/"}>
+      <Link href={`/counseling/worry/${item?.id}`}>
         {item?.imgUrl && (
           <div className="img">
             <Image
