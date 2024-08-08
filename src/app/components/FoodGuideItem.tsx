@@ -24,10 +24,10 @@ function FoodGuideItem({ item }: FoodGuideItemProps) {
         <div className="picture">
           <Image src={item["main_img"]} alt="" width={1280} height={1280} />
           <p>
-            {parse(item["title"])}
+            {parse(item?.title || "")}
             <span className="num">{item?.items?.length}</span>
           </p>
-          <div className="text">{parse(item.subTitle)}</div>
+          <div className="text">{parse(item?.subTitle || "")}</div>
         </div>
       </Link>
       <button type="button" className="scrap">

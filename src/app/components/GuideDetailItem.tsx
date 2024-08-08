@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FoodGuideDetailItem, FoodGuideItemProps } from "../types";
+import { FoodGuideDetailItem } from "../types";
 
 function GuideDetailItem({ item }: FoodGuideDetailItem) {
+  console.log(item);
   return (
     <li>
       <Link href={"/"}>
@@ -16,14 +17,26 @@ function GuideDetailItem({ item }: FoodGuideDetailItem) {
         </div>
       </Link>
       <ul className="tagWrap">
-        <li>
-          <span>준비시간</span>
-          {item?.preparation_time}분
-        </li>
-        <li>
-          <span>조리시간</span>
-          {item?.cooking_time}분
-        </li>
+        {item?.hashTag !== "null" ? (
+          <>
+            {item?.hashTag.map((item, idx) => (
+              <li className="hash" key={idx}>
+                #{item}
+              </li>
+            ))}
+          </>
+        ) : (
+          <>
+            <li>
+              <span>준비시간</span>
+              {item?.preparation_time}분
+            </li>
+            <li>
+              <span>조리시간</span>
+              {item?.cooking_time}분
+            </li>
+          </>
+        )}
       </ul>
       <button type="button" className="scrap">
         스크랩

@@ -2054,7 +2054,7 @@ footer p {
 }
 .hashList > li .text {
   position: relative;
-  padding: 1.25rem 0 2rem;
+  padding: 1.25rem 0 2rem !important;
 }
 .hashList > li .text h4 {
   margin-bottom: 0.75rem;
@@ -2073,7 +2073,7 @@ footer p {
 .hashList > li .tagWrap {
   display: flex;
 }
-.hashList > li .tagWrap li {
+.hashList > li .tagWrap li:not(.hash) {
   margin-right: 0.625rem;
   margin-top: 0.625rem;
   padding: 0.625rem 1.125rem;
@@ -2081,6 +2081,22 @@ footer p {
   border-radius: 21px;
   background-color: #f3f3f3;
   min-width: max-content;
+}
+.hashList > li .tagWrap li.hash {
+  margin-bottom: 0.4rem;
+  margin-right: 0.625rem;
+  color: #15a775;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.hashList > li .tagWrap li p {
+  margin: 0 0.625rem 0.4rem 0 !important;
+  border-radius: 0 !important;
+  margin-bottom: 0.4rem;
+  margin-right: 0.625rem;
+  color: #15a775 !important;
+  font-size: 1rem;
+  font-weight: 500;
 }
 .hashList > li .tagWrap li span {
   position: relative;
