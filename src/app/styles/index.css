@@ -2324,18 +2324,22 @@ footer p {
   flex-direction: column;
   justify-content: space-around;
 }
+.section3 .swiper-container-box .swiper.mySwiper2 .swiper-slide a .top_text {
+  text-align: left;
+  margin-left: 40px;
+}
 .section3 .swiper-container-box .swiper.mySwiper2 .swiper-slide a .top_text h4 {
   margin-bottom: 0.438rem;
   font-size: 1.875rem;
   font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding-left: 40px;
 }
 .section3 .swiper-container-box .swiper.mySwiper2 .swiper-slide a .top_text p {
   color: #999;
   font-size: 1rem;
   margin-left: 5px;
+  margin-top: 1rem;
 }
 .section3 .swiper-container-box .swiper.mySwiper2 .swiper-slide a .top_text p span {
   position: relative;

@@ -4,7 +4,6 @@ import React from "react";
 import { CounselingItemProps } from "../types";
 
 function CounselingListItem({ item }: CounselingItemProps) {
-  // let imgUrl = "null";
   return (
     <>
       <Link href={"/"}>

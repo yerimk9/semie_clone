@@ -1,16 +1,75 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ic_right from "@/../public/images/right.png";
 import il_smile2 from "@/../public/images/il_samie_2.png";
 import il_write from "@/../public/images/ic_write.png";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
-import { FoodGuideProps } from "../types";
+import { CookingListItemsProps, CounselingItemsProps } from "../types";
+import {
+  collection,
+  getDocs,
+  limit,
+  query,
+  startAfter,
+} from "firebase/firestore";
+import { db } from "@/firebase";
+
+const pageClick = async (
+  page: number,
+  collectionName: string,
+  size: number
+): Promise<{ dataList: CookingListItemsProps[] }> => {
+  let dataList: CookingListItemsProps[] = [];
+  let querySnapshot;
+
+  const pageSize = size;
+
+  const baseQuery = query(
+    collection(db, collectionName),
+    // orderBy("date"),
+    limit(pageSize)
+  );
+
+  if (page === 1) {
+    querySnapshot = await getDocs(baseQuery);
+  } else {
+    const prevPageSnapshot = await getDocs(baseQuery);
+    const lastDoc = prevPageSnapshot.docs[prevPageSnapshot.docs.length - 1];
+
+    querySnapshot = await getDocs(query(baseQuery, startAfter(lastDoc)));
+  }
+
+  querySnapshot.forEach((doc) => {
+    const data = doc.data() as CookingListItemsProps;
+    dataList.push(data);
+  });
+
+  return {
+    dataList,
+  };
+};
 
 function Section3() {
+  const [counselingItems, setCounselingItems] = useState<
+    CookingListItemsProps[]
+  >([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { dataList } = await pageClick(1, "cooking_list", 16);
+        setCounselingItems(dataList);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <div className="bg_wrap">
       <div className="title">
@@ -40,14 +99,12 @@ function Section3() {
             speed={700}
             className="swiper mySwiper1"
           >
-            {[1, 2, 3, 4, 5].map((food, index) => (
+            {counselingItems.map((food, index) => (
               <SwiperSlide className="swiper-slide" key={index}>
                 <Link href={"/"}>
                   <div className="img">
                     <Image
-                      src={
-                        "https://semie.cooking/image/board/cooking/yf/sf/uaujqtyl/144970930elnu.jpg"
-                      }
+                      src={food?.imgUrl}
                       alt="img"
                       width={204}
                       height={204}
@@ -77,21 +134,19 @@ function Section3() {
             speed={700}
             className="swiper mySwiper2"
           >
-            {[1, 2, 3, 4, 5].map((food, index) => (
+            {counselingItems.map((food, index) => (
               <SwiperSlide className="swiper-slide" key={index}>
                 <Link href={"/"}>
                   <div className="top_text">
-                    <h4>아삭이고추 된장무침</h4>
+                    <h4>{food?.title}</h4>
                     <p>
-                      <span>김예림</span>
-                      2024.08.04 21:43
+                      <span>{food?.author}</span>
+                      {food?.date}
                     </p>
                   </div>
                   <div className="img">
                     <Image
-                      src={
-                        "https://semie.cooking/image/board/cooking/yf/sf/uaujqtyl/144970930elnu.jpg"
-                      }
+                      src={food?.imgUrl}
                       alt="img"
                       width={204}
                       height={204}
@@ -116,14 +171,12 @@ function Section3() {
             speed={700}
             className="swiper mySwiper3"
           >
-            {[1, 2, 3, 4, 5].map((food, index) => (
+            {counselingItems.map((food, index) => (
               <SwiperSlide className="swiper-slide" key={index}>
                 <Link href={"/"}>
                   <div className="img">
                     <Image
-                      src={
-                        "https://semie.cooking/image/board/cooking/yf/sf/uaujqtyl/144970930elnu.jpg"
-                      }
+                      src={food?.imgUrl}
                       alt="img"
                       width={204}
                       height={204}

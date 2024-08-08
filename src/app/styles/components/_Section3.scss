@@ -73,19 +73,22 @@
             justify-content: space-around;
 
             .top_text {
+              text-align: left;
+              margin-left: 40px;
               h4 {
                 margin-bottom: 0.438rem;
                 font-size: 1.875rem;
                 font-weight: bold;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                padding-left: 40px;
+                // padding-left: 40px;
               }
 
               p {
                 color: #999;
                 font-size: 1rem;
                 margin-left: 5px;
+                margin-top: 1rem;
 
                 span {
                   position: relative;
