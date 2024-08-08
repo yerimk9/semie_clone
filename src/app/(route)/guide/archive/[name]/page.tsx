@@ -46,7 +46,7 @@ async function page({ params }: { params: number }) {
           </div>
           <div className="detail_control">
             <div className="left">
-              <Link href={"/guide/list"} className="list_btn">
+              <Link href={"/guide/list/1"} className="list_btn">
                 목록으로
               </Link>
             </div>

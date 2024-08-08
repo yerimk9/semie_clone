@@ -8,7 +8,7 @@ import il_write from "@/../public/images/ic_write.png";
 import CounselingListItem from "@/app/components/CounselingListItem";
 import Filter from "@/app/components/Filter";
 
-function page() {
+function page({ params }: { params: { page: string } }) {
   return (
     <div>
       <Header />
@@ -21,11 +21,11 @@ function page() {
 
           <div className="tab">
             <ul>
-              <li>
-                <Link href={"/cooking/list"}>요리해요</Link>
-              </li>
               <li className="on">
-                <Link href={"/counseling/list"}>고민있어요</Link>
+                <Link href={`/cooking/list/${params.page}`}>요리해요</Link>
+              </li>
+              <li>
+                <Link href={`/counseling/list/${params.page}`}>고민있어요</Link>
               </li>
             </ul>
           </div>

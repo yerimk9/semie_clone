@@ -82,10 +82,10 @@ async function page({ params }: { params: { page: string } }) {
           <div className="tab">
             <ul>
               <li className="on">
-                <Link href={"/cooking/list"}>요리해요</Link>
+                <Link href={`/cooking/list/${params.page}`}>요리해요</Link>
               </li>
               <li>
-                <Link href={"/counseling/list"}>고민있어요</Link>
+                <Link href={`/counseling/list/${params.page}`}>고민있어요</Link>
               </li>
             </ul>
           </div>

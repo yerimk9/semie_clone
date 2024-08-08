@@ -15,7 +15,7 @@ function Section3() {
     <div className="bg_wrap">
       <div className="title">
         <h3>요리해요</h3>
-        <Link href={"/cooking/list"} className="btn_arrow_lg">
+        <Link href={"/cooking/list/1"} className="btn_arrow_lg">
           더보기
           <Image src={ic_right} alt="" width={40} height={40} />
         </Link>
