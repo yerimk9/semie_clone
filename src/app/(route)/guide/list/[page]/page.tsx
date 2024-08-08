@@ -71,7 +71,7 @@ export default async function page({ params }: { params: { page: string } }) {
   } */
   try {
     const { wowList } = await pageClick(currentPage, "food_guide_list", 12);
-    maxPageNumber = await getMaxPageNumber("food_guide_list");
+    maxPageNumber = await getMaxPageNumber("food_guide_list", 12);
     foodItems = wowList;
   } catch (e) {
     console.log(e);

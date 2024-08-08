@@ -1,27 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { CookingListItemProps } from "../types";
 
-function CookingListItem() {
+function CookingListItem({ item }: CookingListItemProps) {
+  console.log(item);
   return (
     <>
       <Link href={"/"}>
         <div className="img">
-          <Image
-            src={
-              "https://semie.cooking/image/board/cooking/bz/he/lthwjojo/145137870rprm.jpg"
-            }
-            alt=""
-            width={2268}
-            height={3080}
-          />
+          <Image src={item?.imgUrl} alt="" width={2268} height={3080} />
         </div>
         <div className="info">
-          <span className="name">코알라</span>
-          <span className="date">2024.08.06 20:06</span>
+          <span className="name">{item?.author}</span>
+          <span className="date">{item?.date}</span>
         </div>
         <div className="text">
-          <h4>두반장 마파두부~</h4>
+          <h4>{item?.title}</h4>
         </div>
       </Link>
       <Link href={"/"} className="scrap">

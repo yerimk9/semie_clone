@@ -17,7 +17,7 @@ async function page({ params }: { params: { page: string } }) {
 
   try {
     const { wowList: newWowList } = await pageClick(currentPage, "wow", 9);
-    maxPageNumber = await getMaxPageNumber("wow");
+    maxPageNumber = await getMaxPageNumber("wow", 9);
     wowList = newWowList;
   } catch (e) {
     console.log(e);

@@ -7,8 +7,68 @@ import il_smile2 from "@/../public/images/il_samie_2.png";
 import il_write from "@/../public/images/ic_write.png";
 import CookingListItem from "@/app/components/CookingListItem";
 import Filter from "@/app/components/Filter";
+import {
+  collection,
+  getDocs,
+  limit,
+  orderBy,
+  query,
+  startAfter,
+} from "firebase/firestore";
+import { db } from "@/firebase";
+import { CookingListItemsProps } from "@/app/types";
+import getMaxPageNumber from "@/app/utils/getMaxPageNumber";
 
-function page() {
+const pageClick = async (
+  page: number,
+  collectionName: string,
+  size: number
+): Promise<{ dataList: CookingListItemsProps[] }> => {
+  let dataList: CookingListItemsProps[] = [];
+  let querySnapshot;
+
+  const pageSize = size;
+
+  const baseQuery = query(
+    collection(db, collectionName),
+    // orderBy("date"),
+    limit(pageSize)
+  );
+
+  if (page === 1) {
+    querySnapshot = await getDocs(baseQuery);
+  } else {
+    const prevPageSnapshot = await getDocs(baseQuery);
+    const lastDoc = prevPageSnapshot.docs[prevPageSnapshot.docs.length - 1];
+
+    querySnapshot = await getDocs(query(baseQuery, startAfter(lastDoc)));
+  }
+
+  querySnapshot.forEach((doc) => {
+    const data = doc.data() as CookingListItemsProps;
+    dataList.push(data);
+  });
+
+  return {
+    dataList,
+  };
+};
+
+async function page({ params }: { params: { page: string } }) {
+  let cookingItems: CookingListItemsProps[] = [];
+  let currentPage = parseInt(params.page, 10);
+  let maxPageNumber = 1;
+  try {
+    const { dataList } = await pageClick(currentPage, "cooking_list", 16);
+    maxPageNumber = await getMaxPageNumber("cooking_list", 16);
+    cookingItems = dataList;
+  } catch (e) {
+    console.log(e);
+  }
+
+  const firstHalf = cookingItems.slice(0, 8);
+  const secondHalf = cookingItems.slice(8, 16);
+
   return (
     <div>
       <Header />
@@ -53,30 +113,11 @@ function page() {
               <Filter list={["최신순", "조회순", "스크랩순"]} />
 
               <ul className="hashList">
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
+                {firstHalf.map((item, idx) => (
+                  <li key={idx}>
+                    <CookingListItem item={item} />
+                  </li>
+                ))}
               </ul>
 
               <div className="middle_bn">
@@ -103,50 +144,42 @@ function page() {
               </div>
 
               <ul className="hashList">
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
-                <li>
-                  <CookingListItem />
-                </li>
+                {secondHalf.map((item, idx) => (
+                  <li key={idx}>
+                    <CookingListItem item={item} />
+                  </li>
+                ))}
               </ul>
             </div>
 
             <div className="pagination">
-              <Link href={"/"} className="prev">
-                <i className="icon_prev">이전페이지</i>
-              </Link>
-              <span className="page_p">
-                <Link href={"/"}>1</Link>
-                <Link href={"/"}>2</Link>
-                <Link href={"/"}>3</Link>
-                <Link href={"/"}>4</Link>
-
-                <Link href={"/"} className="act">
-                  5
+              {currentPage > 1 && (
+                <Link
+                  href={`/cooking/list/${currentPage - 1}`}
+                  className="prev"
+                >
+                  <i className="icon_prev">이전페이지</i>
                 </Link>
+              )}
+              <span className="page_p">
+                {Array.from({ length: maxPageNumber }, (_, i) => (
+                  <Link
+                    key={i + 1}
+                    href={`/cooking/list/${i + 1}`}
+                    className={i + 1 === currentPage ? "act" : ""}
+                  >
+                    {i + 1}
+                  </Link>
+                ))}
               </span>
-              <Link href={"/"} className="next">
-                <i className="icon_next">다음페이지</i>
-              </Link>
+              {currentPage < maxPageNumber && (
+                <Link
+                  href={`/cooking/list/${currentPage + 1}`}
+                  className="next"
+                >
+                  <i className="icon_next">다음페이지</i>
+                </Link>
+              )}
             </div>
           </div>
         </div>

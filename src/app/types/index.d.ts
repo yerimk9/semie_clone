@@ -54,3 +54,24 @@ export interface WowListItemProps {
 export interface FilterProps {
   list: string[];
 }
+
+export interface CookingListItemsProps {
+  author: string;
+  date: string;
+  detail: boolean;
+  images: string[];
+  imgUrl: string;
+  text: string;
+  title: string;
+}
+export interface CookingListItemProps {
+  item: {
+    author: string;
+    date: string;
+    detail: boolean;
+    images: string[];
+    imgUrl: string;
+    text: string;
+    title: string;
+  };
+}
