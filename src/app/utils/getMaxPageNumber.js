@@ -1,8 +1,8 @@
 import { db } from "@/firebase";
 import { collection, getDocs, query } from "firebase/firestore";
 
-const getMaxPageNumber = async (collectionName: string, size: number) => {
-  const totalDocuments: any["item"][] = [];
+const getMaxPageNumber = async (collectionName, size) => {
+  const totalDocument = [];
 
   const querySnapshot = await getDocs(query(collection(db, collectionName)));
   querySnapshot.forEach((doc) => {

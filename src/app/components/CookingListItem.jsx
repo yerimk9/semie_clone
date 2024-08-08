@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { CookingListItemProps } from "../types";
 
-function CookingListItem({ item }: CookingListItemProps) {
+function CookingListItem({ item }) {
   return (
     <>
       <Link href={"/"}>

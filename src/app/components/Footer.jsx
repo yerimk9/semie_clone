@@ -12,9 +12,7 @@ import createScrollHandler from "../utils/scrollUtils";
 
 function Footer() {
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(
-    null
-  );
+  const [scrollTimeout, setScrollTimeout] = useState(null);
   const [siteListVisible, setSiteListVisible] = useState(false);
   const [bizInfoVisible, setBizInfoVisible] = useState(false);
   const handleScroll = createScrollHandler(
@@ -98,11 +96,11 @@ function Footer() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const toggleSiteList = (event: MouseEvent<HTMLButtonElement>) => {
+  const toggleSiteList = (event) => {
     setSiteListVisible((prev) => !prev);
   };
 
-  const toggleBizInfo = (event: MouseEvent<HTMLUListElement>) => {
+  const toggleBizInfo = (event) => {
     setBizInfoVisible((prev) => !prev);
   };
 

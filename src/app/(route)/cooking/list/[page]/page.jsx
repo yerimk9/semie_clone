@@ -18,12 +18,8 @@ import { db } from "@/firebase";
 import { CookingListItemsProps } from "@/app/types";
 import getMaxPageNumber from "@/app/utils/getMaxPageNumber";
 
-const pageClick = async (
-  page: number,
-  collectionName: string,
-  size: number
-): Promise<{ dataList: CookingListItemsProps[] }> => {
-  let dataList: CookingListItemsProps[] = [];
+const pageClick = async (page, collectionName, size) => {
+  let dataList = [];
   let querySnapshot;
 
   const pageSize = size;
@@ -44,7 +40,7 @@ const pageClick = async (
   }
 
   querySnapshot.forEach((doc) => {
-    const data = doc.data() as CookingListItemsProps;
+    const data = doc.data();
     dataList.push(data);
   });
 
@@ -53,8 +49,8 @@ const pageClick = async (
   };
 };
 
-async function page({ params }: { params: { page: string } }) {
-  let cookingItems: CookingListItemsProps[] = [];
+async function page({ params }) {
+  let cookingItems = [];
   let currentPage = parseInt(params.page, 10);
   let maxPageNumber = 1;
   try {

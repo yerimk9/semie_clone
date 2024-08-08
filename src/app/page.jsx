@@ -3,12 +3,11 @@ import Footer from "./components/Footer";
 import Section1 from "./components/Section1";
 import { collection, getDocs, query } from "firebase/firestore";
 import { db } from "@/firebase";
-import { FoodGuide } from "./types";
 import Section4 from "./components/Section4";
 import Section3 from "./components/Section3";
 
 export default async function Home() {
-  let foodItems: FoodGuide[] = [];
+  let foodItems = [];
   try {
     // Firestore에서 데이터 가져오기
     const querySnapshot = await getDocs(
@@ -16,7 +15,7 @@ export default async function Home() {
     );
 
     querySnapshot.forEach((doc) => {
-      const data = doc.data() as FoodGuide;
+      const data = doc.data();
       foodItems.push(data);
     });
   } catch (e) {
@@ -30,7 +29,6 @@ export default async function Home() {
       <main>
         <div className="section1">
           <Section1 list={foodItems} />
-          {/* <Section1 /> */}
         </div>
 
         <div className="section3">

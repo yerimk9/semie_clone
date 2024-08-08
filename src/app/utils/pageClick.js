@@ -8,12 +8,8 @@ import {
   startAfter,
 } from "firebase/firestore";
 
-const pageClick = async (
-  page: number,
-  collectionName: string,
-  size: number
-) => {
-  let wowList: any["item"][] = [];
+const pageClick = async (page, collectionName, size) => {
+  let wowList = [];
   let querySnapshot;
 
   const pageSize = size;

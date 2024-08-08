@@ -10,17 +10,17 @@ import ic_url from "@/../public/images/ic_url.png";
 import profileImg from "@/../public/images/profile.png";
 import Link from "next/link";
 
-async function page({ params }: { params: { id: string } }) {
-  let selectItem: CounselingItemsProps | undefined;
+async function page({ params }) {
+  let selectItemd;
 
   try {
     const querySnapshot = await getDocs(
       query(collection(db, "counseling_list"))
     );
-    const foodItems: CounselingItemsProps[] = [];
+    const foodItems = [];
 
     querySnapshot.forEach((doc) => {
-      const data = doc.data() as CounselingItemsProps;
+      const data = doc.data();
       foodItems.push(data);
     });
 

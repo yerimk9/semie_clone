@@ -16,9 +16,7 @@ function Header() {
   };
 
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(
-    null
-  );
+  const [scrollTimeout, setScrollTimeout] = useState(null);
 
   const handleScroll = createScrollHandler(
     lastScrollY,

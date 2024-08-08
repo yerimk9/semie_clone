@@ -8,7 +8,6 @@ import il_write from "@/../public/images/ic_write.png";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
-import { CookingListItemsProps, CounselingItemsProps } from "../types";
 import {
   collection,
   getDocs,
@@ -19,12 +18,8 @@ import {
 import { db } from "@/firebase";
 import parse from "html-react-parser";
 
-const pageClick = async (
-  page: number,
-  collectionName: string,
-  size: number
-): Promise<{ dataList: CookingListItemsProps[] }> => {
-  let dataList: CookingListItemsProps[] = [];
+const pageClick = async (page, collectionName, size) => {
+  let dataList = [];
   let querySnapshot;
 
   const pageSize = size;
@@ -45,7 +40,7 @@ const pageClick = async (
   }
 
   querySnapshot.forEach((doc) => {
-    const data = doc.data() as CookingListItemsProps;
+    const data = doc.data();
     dataList.push(data);
   });
 
@@ -55,9 +50,7 @@ const pageClick = async (
 };
 
 function Section3() {
-  const [counselingItems, setCounselingItems] = useState<
-    CookingListItemsProps[]
-  >([]);
+  const [counselingItems, setCounselingItems] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {

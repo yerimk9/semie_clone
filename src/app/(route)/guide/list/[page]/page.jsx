@@ -16,12 +16,8 @@ import {
 import Link from "next/link";
 import React from "react";
 
-const pageClick = async (
-  page: number,
-  collectionName: string,
-  size: number
-): Promise<{ wowList: FoodGuide[] }> => {
-  let wowList: FoodGuide[] = [];
+const pageClick = async (page, collectionName, size) => {
+  let wowList = [];
   let querySnapshot;
 
   const pageSize = size;
@@ -42,7 +38,7 @@ const pageClick = async (
   }
 
   querySnapshot.forEach((doc) => {
-    const data = doc.data() as FoodGuide;
+    const data = doc.data();
     wowList.push(data);
   });
 
@@ -51,8 +47,8 @@ const pageClick = async (
   };
 };
 
-export default async function page({ params }: { params: { page: string } }) {
-  let foodItems: FoodGuide[] = [];
+export default async function page({ params }) {
+  let foodItems = [];
   let currentPage = parseInt(params.page, 10);
   let maxPageNumber = 1;
 

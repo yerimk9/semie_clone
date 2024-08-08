@@ -5,12 +5,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
 import logo from "../../../public/images/logo.png";
-import { FoodGuideProps } from "../types";
 import Link from "next/link";
 import GuideModal from "./GuideModal";
 import parse from "html-react-parser";
 
-function Section1({ list }: FoodGuideProps) {
+function Section1({ list }) {
   // function Section1() {
   const [slideIndex, setSlideIndex] = useState(1);
   const [isModal, setIsModal] = useState(false);

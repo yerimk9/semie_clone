@@ -11,16 +11,16 @@ import { db } from "@/firebase";
 import { FoodGuide } from "@/app/types";
 import parse from "html-react-parser";
 
-async function page({ params }: { params: number }) {
-  let selectItem: FoodGuide | undefined;
+async function page({ params }) {
+  let selectItem;
   try {
     const querySnapshot = await getDocs(
       query(collection(db, "food_guide_list"))
     );
-    const foodItems: FoodGuide[] = [];
+    const foodItems = [];
 
     querySnapshot.forEach((doc) => {
-      const data = doc.data() as FoodGuide;
+      const data = doc.data();
       foodItems.push(data);
     });
 

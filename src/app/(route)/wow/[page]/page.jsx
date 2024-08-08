@@ -10,8 +10,8 @@ import Link from "next/link";
 import getMaxPageNumber from "@/app/utils/getMaxPageNumber";
 import pageClick from "@/app/utils/pageClick";
 
-async function page({ params }: { params: { page: string } }) {
-  let wowList: WowListItemProps["item"][] = [];
+async function page({ params }) {
+  let wowList = [];
   let currentPage = parseInt(params.page, 10);
   let maxPageNumber = 1;
 

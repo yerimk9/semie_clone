@@ -1,11 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { FilterProps } from "../types";
 
-function Filter({ list }: FilterProps) {
+function Filter({ list }) {
   const [activeItem, setActiveItem] = useState("전체"); // 초기 활성화 항목
 
-  const handleClick = (item: string) => {
+  const handleClick = (item) => {
     setActiveItem(item);
   };
 
