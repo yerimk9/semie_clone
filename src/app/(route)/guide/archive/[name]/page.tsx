@@ -11,7 +11,7 @@ import { db } from "@/firebase";
 import { FoodGuide } from "@/app/types";
 import parse from "html-react-parser";
 
-async function page({ params }: { params: number }) {
+async function page({ params }: { params: { name: number } }) {
   let selectItem: FoodGuide | undefined;
   try {
     const querySnapshot = await getDocs(
