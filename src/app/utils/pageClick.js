@@ -9,7 +9,7 @@ import {
 } from "firebase/firestore";
 
 const pageClick = async (page, collectionName, size) => {
-  let wowList = [];
+  let wowList;
   let querySnapshot;
 
   const pageSize = size;

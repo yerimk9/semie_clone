@@ -4,7 +4,6 @@ import Image from "next/image";
 import React from "react";
 import il_wow from "../../../../../public/images/il_wow.png";
 import EventItem from "@/app/components/EventItem";
-import { WowListItemProps } from "@/app/types";
 import Filter from "@/app/components/Filter";
 import Link from "next/link";
 import getMaxPageNumber from "@/app/utils/getMaxPageNumber";
