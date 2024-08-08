@@ -75,3 +75,22 @@ export interface CookingListItemProps {
     title: string;
   };
 }
+
+export interface CounselingItemsProps {
+  date: string;
+  name: string;
+  text: string;
+  title: string;
+  imgUrl: string;
+  hashTag: string[];
+}
+export interface CounselingItemProps {
+  item: {
+    date: string;
+    name: string;
+    text: string;
+    title: string;
+    imgUrl: string;
+    hashTag: string[];
+  };
+}

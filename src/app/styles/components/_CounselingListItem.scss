@@ -90,6 +90,10 @@
         border-top: 1px solid #e5e5e5;
         overflow: hidden;
         text-overflow: ellipsis;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
       }
     }
 
@@ -97,6 +101,10 @@
       border: solid 1px #15a775;
       outline: solid 1px #15a775;
       box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.08);
+
+      img {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
     }
   }
 }

@@ -2609,11 +2609,17 @@ footer p {
   border-top: 1px solid #e5e5e5;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .cardList > li:hover {
   border: solid 1px #15a775;
   outline: solid 1px #15a775;
   box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.08);
+}
+.cardList > li:hover img {
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 @media screen and (max-width: 1200px) {
@@ -3170,7 +3176,6 @@ footer p {
   width: 100%;
 }
 .labList .tab ul li a {
-  display: block;
   width: 100%;
   height: 100%;
   padding: 1.375rem 0;
@@ -3178,6 +3183,9 @@ footer p {
   font-size: 1.375rem;
   font-weight: 600;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .labList .tab ul li.on a {
   display: flex;
